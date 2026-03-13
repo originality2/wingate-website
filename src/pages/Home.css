@@ -1,0 +1,121 @@
+.home-about__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.home-about__body {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+}
+
+.home-about__cta {
+  margin-top: var(--space-lg);
+}
+
+.home-about__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.home-about__stat {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  transition: transform var(--transition);
+}
+
+.home-about__stat:hover {
+  transform: translateY(-4px);
+}
+
+.home-about__stat-value {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.home-about__stat-label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+/* Programs */
+.home-programs {
+  background: var(--color-bg);
+}
+
+.home-programs__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.home-programs__cta {
+  margin-top: var(--space-lg);
+}
+
+/* CTA Banner */
+.home-cta {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #F57C00 100%);
+  padding: var(--space-3xl) 0;
+  color: #fff;
+}
+
+.home-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.home-cta__headline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin-bottom: var(--space-sm);
+  color: #fff;
+}
+
+.home-cta__subtext {
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  max-width: 480px;
+}
+
+.home-cta__actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .home-about__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .home-cta__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .home-cta__subtext {
+    margin: 0 auto;
+  }
+  .home-cta__actions {
+    justify-content: center;
+  }
+}

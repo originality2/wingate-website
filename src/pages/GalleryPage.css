@@ -1,0 +1,9 @@
+.gallery-page .gallery__grid {
+  grid-auto-rows: 260px;
+}
+
+@media (max-width: 768px) {
+  .gallery-page .gallery__grid {
+    grid-auto-rows: 200px;
+  }
+}

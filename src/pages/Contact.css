@@ -1,0 +1,111 @@
+.contact-page__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+/* Info blocks */
+.contact-info-block {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contact-info-block:first-of-type {
+  padding-top: 0;
+}
+
+.contact-info-block__icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 36px;
+  text-align: center;
+}
+
+.contact-info-block__title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.contact-info-block__text {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.contact-info-block__link {
+  color: var(--color-text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.contact-info-block__link:hover {
+  color: var(--color-primary);
+}
+
+/* Hours table */
+.contact-hours {
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.contact-hours td {
+  padding: 3px 0;
+  color: var(--color-text-muted);
+}
+
+.contact-hours__day {
+  padding-right: var(--space-xl);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Map */
+.contact-map {
+  margin-top: var(--space-xl);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.contact-map__placeholder {
+  background: #E8F5E9;
+  padding: var(--space-2xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.contact-map__placeholder span {
+  font-size: 3rem;
+}
+
+.contact-map__btn {
+  font-size: 0.875rem;
+  padding: 0.5rem 1.25rem;
+}
+
+/* Form intro */
+.contact-page__form-intro {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xl);
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .contact-page__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+}
