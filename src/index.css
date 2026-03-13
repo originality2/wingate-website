@@ -1,0 +1,7 @@
+/* index.css is intentionally minimal – all global styles live in src/styles/global.css */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

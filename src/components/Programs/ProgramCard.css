@@ -1,0 +1,99 @@
+.program-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.program-card__icon-wrap {
+  background: var(--card-color, #E8F5E9);
+  padding: var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.program-card__icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.program-card__body {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.program-card__age {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  background: rgba(46,125,50,0.08);
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  align-self: flex-start;
+}
+
+.program-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--color-text);
+  margin-top: var(--space-xs);
+}
+
+.program-card__description {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.program-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: var(--space-sm);
+  transition: gap var(--transition);
+}
+
+.program-card__link:hover {
+  gap: var(--space-sm);
+}
+
+.program-card--featured {
+  border-color: var(--color-primary);
+  position: relative;
+}
+
+.program-card--featured::before {
+  content: 'Popular';
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: var(--color-secondary);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  z-index: 1;
+}
