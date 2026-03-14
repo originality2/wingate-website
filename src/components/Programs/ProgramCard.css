@@ -1,22 +1,22 @@
 .program-card {
   display: flex;
   flex-direction: column;
-  background: #fff;
-  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, #fff 0%, #fffdf8 100%);
+  border-radius: 2.2rem 1.6rem 2rem 1.5rem;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-border);
-  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid rgba(240, 223, 196, 0.95);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
 .program-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) rotate(-1deg);
   box-shadow: var(--shadow-lg);
 }
 
 .program-card__icon-wrap {
   background: var(--card-color, #E8F5E9);
-  padding: var(--space-xl);
+  padding: calc(var(--space-xl) + 0.25rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,6 +53,7 @@
   font-size: 1.3rem;
   color: var(--color-text);
   margin-top: var(--space-xs);
+  line-height: 1.25;
 }
 
 .program-card__description {
@@ -68,7 +69,7 @@
   gap: var(--space-xs);
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
   margin-top: var(--space-sm);
   transition: gap var(--transition);
 }
@@ -78,7 +79,7 @@
 }
 
 .program-card--featured {
-  border-color: var(--color-primary);
+  border-color: rgba(47, 143, 91, 0.55);
   position: relative;
 }
 
@@ -87,13 +88,13 @@
   position: absolute;
   top: var(--space-md);
   right: var(--space-md);
-  background: var(--color-secondary);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #FF9267 100%);
   color: #fff;
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-full);
+  border-radius: 0.8rem 1rem 0.8rem 1.2rem;
   z-index: 1;
 }

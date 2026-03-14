@@ -8,8 +8,9 @@
 .gallery__item {
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-lg);
+  border-radius: 1.9rem 1.4rem 2rem 1.3rem;
   cursor: pointer;
+  box-shadow: var(--shadow-sm);
 }
 
 .gallery__item:nth-child(4) {

@@ -5,6 +5,15 @@
   align-items: start;
 }
 
+.contact-page__info,
+.contact-page__form {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(240, 223, 196, 0.9);
+  border-radius: 2.2rem 1.8rem 2.3rem 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  box-shadow: var(--shadow-sm);
+}
+
 /* Info blocks */
 .contact-info-block {
   display: flex;
@@ -21,7 +30,12 @@
 .contact-info-block__icon {
   font-size: 1.5rem;
   flex-shrink: 0;
-  width: 36px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 1rem 1.2rem 1rem 1.3rem;
+  background: rgba(255, 180, 58, 0.16);
   text-align: center;
 }
 
@@ -70,13 +84,13 @@
 /* Map */
 .contact-map {
   margin-top: var(--space-xl);
-  border-radius: var(--radius-lg);
+  border-radius: 1.8rem 1.4rem 1.9rem 1.3rem;
   overflow: hidden;
   border: 1px solid var(--color-border);
 }
 
 .contact-map__placeholder {
-  background: #E8F5E9;
+  background: linear-gradient(180deg, #F4FFE9 0%, #FFF7E5 100%);
   padding: var(--space-2xl);
   text-align: center;
   display: flex;

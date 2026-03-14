@@ -22,20 +22,21 @@
 }
 
 .home-about__stat {
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, #fff 0%, var(--color-surface-tint) 100%);
+  border: 1px solid rgba(240, 223, 196, 0.95);
+  border-radius: 2.2rem 1.5rem 2rem 1.6rem;
   padding: var(--space-xl);
   text-align: center;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
-  transition: transform var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .home-about__stat:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: var(--shadow-md);
 }
 
 .home-about__stat-value {
@@ -54,7 +55,19 @@
 
 /* Programs */
 .home-programs {
-  background: var(--color-bg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255, 211, 108, 0.12) 100%);
+  position: relative;
+}
+
+.home-programs::before {
+  content: '';
+  position: absolute;
+  inset: 2rem auto auto 8%;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 49% 51% 63% 37% / 48% 36% 64% 52%;
+  background: rgba(255, 111, 169, 0.1);
+  pointer-events: none;
 }
 
 .home-programs__grid {
@@ -70,7 +83,6 @@
 
 /* CTA Banner */
 .home-cta {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #F57C00 100%);
   padding: var(--space-3xl) 0;
   color: #fff;
 }
@@ -81,6 +93,36 @@
   justify-content: space-between;
   gap: var(--space-2xl);
   flex-wrap: wrap;
+  background: linear-gradient(135deg, #FFB43A 0%, #FF9267 100%);
+  border-radius: 2.5rem 2rem 2.6rem 1.8rem;
+  padding: clamp(2rem, 4vw, 3rem);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.home-cta__inner::before,
+.home-cta__inner::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.home-cta__inner::before {
+  width: 13rem;
+  height: 13rem;
+  top: -5rem;
+  right: -3rem;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.home-cta__inner::after {
+  width: 8rem;
+  height: 8rem;
+  bottom: -3rem;
+  left: 35%;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .home-cta__headline {
@@ -101,6 +143,8 @@
   gap: var(--space-md);
   flex-shrink: 0;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 900px) {

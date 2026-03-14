@@ -1,7 +1,34 @@
 /* Shared page hero styles */
 .page-hero {
-  padding: 5rem 0 4rem;
+  padding: 5rem 0 4.5rem;
   color: #fff;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 2.8rem 2.8rem;
+}
+
+.page-hero::before,
+.page-hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.page-hero::before {
+  width: 15rem;
+  height: 15rem;
+  top: -5rem;
+  left: -4rem;
+  background: rgba(255,255,255,0.12);
+}
+
+.page-hero::after {
+  width: 10rem;
+  height: 10rem;
+  right: 12%;
+  bottom: -3rem;
+  background: rgba(255,255,255,0.1);
 }
 
 .page-hero--green {
@@ -22,6 +49,8 @@
 
 .page-hero__inner {
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .page-hero__title {
@@ -54,7 +83,7 @@
 }
 
 .about-story__image {
-  border-radius: var(--radius-xl);
+  border-radius: 2.4rem 1.8rem 2.5rem 1.6rem;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
 }
@@ -67,7 +96,7 @@
 
 /* Stats */
 .about-stats {
-  background: var(--color-primary-dark);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #2F8F5B 100%);
   padding: var(--space-2xl) 0;
 }
 
@@ -106,15 +135,16 @@
 
 .about-values__card {
   background: #fff;
-  border-radius: var(--radius-xl);
+  border-radius: 2.1rem 1.5rem 2rem 1.6rem;
   padding: var(--space-xl);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border);
-  transition: transform var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .about-values__card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: var(--shadow-md);
 }
 
 .about-values__icon {
@@ -137,7 +167,7 @@
 
 /* Team */
 .about-team {
-  background: #F1F8E9;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 211, 108, 0.12) 100%);
 }
 
 .about-team__grid {
@@ -148,15 +178,17 @@
 
 .about-team__card {
   background: #fff;
-  border-radius: var(--radius-xl);
+  border-radius: 2rem 1.6rem 2.1rem 1.5rem;
   padding: var(--space-xl);
   text-align: center;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition);
+  border: 1px solid rgba(240, 223, 196, 0.95);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .about-team__card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) rotate(1deg);
+  box-shadow: var(--shadow-md);
 }
 
 .about-team__avatar {

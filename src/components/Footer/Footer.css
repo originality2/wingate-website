@@ -1,7 +1,23 @@
 .footer {
-  background: var(--color-primary-dark);
+  background: linear-gradient(180deg, #226F47 0%, var(--color-primary-dark) 100%);
   color: rgba(255,255,255,0.85);
+  margin-top: var(--space-3xl);
+  border-radius: 2.5rem 2.5rem 0 0;
   padding-top: var(--space-3xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  top: -6rem;
+  right: -5rem;
+  background: rgba(255, 211, 108, 0.12);
+  pointer-events: none;
 }
 
 .footer__inner {
@@ -20,6 +36,15 @@
   font-family: var(--font-heading);
   color: #fff;
   margin-bottom: var(--space-md);
+}
+
+.footer__logo span:first-child {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 1rem 1.2rem 1rem 1.3rem;
 }
 
 .footer__logo-name {
@@ -45,7 +70,7 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: var(--radius-full);
+  border-radius: 1rem 1.2rem 1rem 1.3rem;
   background: rgba(255,255,255,0.1);
   color: rgba(255,255,255,0.8);
   transition: background var(--transition), color var(--transition);
