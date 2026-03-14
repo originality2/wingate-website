@@ -13,7 +13,7 @@ describe('ProgramCard', () => {
         <ProgramCard program={program} />
       </MemoryRouter>
     );
-    expect(screen.getByText(program.fields.title)).toBeInTheDocument();
+    expect(screen.getByText(program.title)).toBeInTheDocument();
   });
 
   it('renders the age range', () => {
@@ -22,7 +22,7 @@ describe('ProgramCard', () => {
         <ProgramCard program={program} />
       </MemoryRouter>
     );
-    expect(screen.getByText(program.fields.ageRange)).toBeInTheDocument();
+    expect(screen.getByText(program.ageRange)).toBeInTheDocument();
   });
 
   it('renders the description', () => {
@@ -31,7 +31,7 @@ describe('ProgramCard', () => {
         <ProgramCard program={program} />
       </MemoryRouter>
     );
-    expect(screen.getByText(program.fields.description)).toBeInTheDocument();
+    expect(screen.getByText(program.description)).toBeInTheDocument();
   });
 
   it('does not show Popular badge when not featured', () => {

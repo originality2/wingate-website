@@ -5,135 +5,109 @@
 
 export const mockPrograms = [
   {
-    sys: { id: 'p1' },
-    fields: {
-      title: 'Infant Care',
-      ageRange: '6 weeks – 12 months',
-      description:
-        'Our nurturing infant program provides a safe, loving environment for your littlest ones. Experienced caregivers follow each baby\'s individual schedule for feeding, sleeping, and play.',
-      icon: '👶',
-      color: '#FFF3E0',
-    },
+    id: 'p1',
+    title: 'Infant Care',
+    ageRange: '6 weeks – 12 months',
+    description:
+      'Our nurturing infant program provides a safe, loving environment for your littlest ones. Experienced caregivers follow each baby\'s individual schedule for feeding, sleeping, and play.',
+    icon: '👶',
+    color: '#FFF3E0',
   },
   {
-    sys: { id: 'p2' },
-    fields: {
-      title: 'Toddler Program',
-      ageRange: '1 – 3 years',
-      description:
-        'Our toddler classrooms are designed to spark curiosity and independence. Children explore through hands-on activities, sensory play, music, and language-rich storytelling.',
-      icon: '🧒',
-      color: '#E8F5E9',
-    },
+    id: 'p2',
+    title: 'Toddler Program',
+    ageRange: '1 – 3 years',
+    description:
+      'Our toddler classrooms are designed to spark curiosity and independence. Children explore through hands-on activities, sensory play, music, and language-rich storytelling.',
+    icon: '🧒',
+    color: '#E8F5E9',
   },
   {
-    sys: { id: 'p3' },
-    fields: {
-      title: 'Preschool',
-      ageRange: '3 – 5 years',
-      description:
-        'Our preschool prepares children for kindergarten success. With a play-based curriculum, children build literacy, numeracy, social-emotional, and creative skills every day.',
-      icon: '📚',
-      color: '#E3F2FD',
-    },
+    id: 'p3',
+    title: 'Preschool',
+    ageRange: '3 – 5 years',
+    description:
+      'Our preschool prepares children for kindergarten success. With a play-based curriculum, children build literacy, numeracy, social-emotional, and creative skills every day.',
+    icon: '📚',
+    color: '#E3F2FD',
   },
   {
-    sys: { id: 'p4' },
-    fields: {
-      title: 'Before & After School',
-      ageRange: 'K – 5th grade',
-      description:
-        'We partner with local elementary schools to provide safe, enriching care before and after the school day, including homework help, outdoor play, and enrichment activities.',
-      icon: '🌟',
-      color: '#F3E5F5',
-    },
+    id: 'p4',
+    title: 'Before & After School',
+    ageRange: 'K – 5th grade',
+    description:
+      'We partner with local elementary schools to provide safe, enriching care before and after the school day, including homework help, outdoor play, and enrichment activities.',
+    icon: '🌟',
+    color: '#F3E5F5',
   },
 ];
 
 export const mockTestimonials = [
   {
-    sys: { id: 't1' },
-    fields: {
-      quote:
-        'Wingate Childcare has been such a blessing for our family. Our son absolutely loves going every morning – the staff is incredible and so caring!',
-      authorName: 'Sarah M.',
-      authorTitle: 'Parent of a 2-year-old',
-    },
+    id: 't1',
+    quote:
+      'Wingate Childcare has been such a blessing for our family. Our son absolutely loves going every morning – the staff is incredible and so caring!',
+    authorName: 'Sarah M.',
+    authorTitle: 'Parent of a 2-year-old',
   },
   {
-    sys: { id: 't2' },
-    fields: {
-      quote:
-        'The preschool program here is outstanding. Our daughter came home singing songs and counting in Spanish within the first week. We couldn\'t be happier.',
-      authorName: 'James & Lisa T.',
-      authorTitle: 'Parents of a 4-year-old',
-    },
+    id: 't2',
+    quote:
+      'The preschool program here is outstanding. Our daughter came home singing songs and counting in Spanish within the first week. We couldn\'t be happier.',
+    authorName: 'James & Lisa T.',
+    authorTitle: 'Parents of a 4-year-old',
   },
   {
-    sys: { id: 't3' },
-    fields: {
-      quote:
-        'From the moment we toured, we knew this was the right place. The classrooms are beautiful, the curriculum is thoughtful, and the communication from teachers is excellent.',
-      authorName: 'Angela R.',
-      authorTitle: 'Parent of twins, age 3',
-    },
+    id: 't3',
+    quote:
+      'From the moment we toured, we knew this was the right place. The classrooms are beautiful, the curriculum is thoughtful, and the communication from teachers is excellent.',
+    authorName: 'Angela R.',
+    authorTitle: 'Parent of twins, age 3',
   },
 ];
 
 export const mockGalleryImages = [
   {
-    sys: { id: 'g1' },
-    fields: {
-      title: 'Art & Creativity',
-      description: 'Children express themselves through painting and crafts',
-      imageUrl:
-        'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80',
-    },
+    id: 'g1',
+    title: 'Art & Creativity',
+    description: 'Children express themselves through painting and crafts',
+    imageUrl:
+      'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80',
   },
   {
-    sys: { id: 'g2' },
-    fields: {
-      title: 'Outdoor Play',
-      description: 'Exploring nature on our safe outdoor playground',
-      imageUrl:
-        'https://images.unsplash.com/photo-1555861496-0666c8981751?w=600&q=80',
-    },
+    id: 'g2',
+    title: 'Outdoor Play',
+    description: 'Exploring nature on our safe outdoor playground',
+    imageUrl:
+      'https://images.unsplash.com/photo-1555861496-0666c8981751?w=600&q=80',
   },
   {
-    sys: { id: 'g3' },
-    fields: {
-      title: 'Story Time',
-      description: 'Building a love of reading through daily story time',
-      imageUrl:
-        'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80',
-    },
+    id: 'g3',
+    title: 'Story Time',
+    description: 'Building a love of reading through daily story time',
+    imageUrl:
+      'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80',
   },
   {
-    sys: { id: 'g4' },
-    fields: {
-      title: 'Sensory Play',
-      description: 'Hands-on sensory activities for toddlers',
-      imageUrl:
-        'https://images.unsplash.com/photo-1535572290543-960a8046f5af?w=600&q=80',
-    },
+    id: 'g4',
+    title: 'Sensory Play',
+    description: 'Hands-on sensory activities for toddlers',
+    imageUrl:
+      'https://images.unsplash.com/photo-1535572290543-960a8046f5af?w=600&q=80',
   },
   {
-    sys: { id: 'g5' },
-    fields: {
-      title: 'Music & Movement',
-      description: 'Singing, dancing and making music together',
-      imageUrl:
-        'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=600&q=80',
-    },
+    id: 'g5',
+    title: 'Music & Movement',
+    description: 'Singing, dancing and making music together',
+    imageUrl:
+      'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=600&q=80',
   },
   {
-    sys: { id: 'g6' },
-    fields: {
-      title: 'Building & STEM',
-      description: 'Early STEM exploration through block building',
-      imageUrl:
-        'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&q=80',
-    },
+    id: 'g6',
+    title: 'Building & STEM',
+    description: 'Early STEM exploration through block building',
+    imageUrl:
+      'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&q=80',
   },
 ];
 

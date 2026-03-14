@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './ProgramCard.css';
 
 export default function ProgramCard({ program, featured = false }) {
-  const { title, ageRange, description, icon, color } = program.fields;
+  const { title, ageRange, description, icon, color } = program;
 
   return (
     <article

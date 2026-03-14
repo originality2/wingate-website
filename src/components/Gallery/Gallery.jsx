@@ -9,19 +9,19 @@ export default function Gallery({ images, compact = false }) {
     <div className={`gallery${compact ? ' gallery--compact' : ''}`}>
       <div className="gallery__grid">
         {displayImages.map((item, index) => {
-          const { title, description, imageUrl } = item.fields;
+          const imageUrl = item.imageUrl || item.image?.file?.url || item.file?.url;
           return (
             <figure
-              key={item.sys.id}
+              key={item.id || item.sys?.id || `${item.title}-${index}`}
               className={`gallery__item gallery__item--${(index % 3) + 1}`}
             >
               <img
                 src={imageUrl}
-                alt={description || title}
+                alt={item.description || item.title}
                 className="gallery__image"
                 loading="lazy"
               />
-              <figcaption className="gallery__caption">{title}</figcaption>
+              <figcaption className="gallery__caption">{item.title}</figcaption>
             </figure>
           );
         })}

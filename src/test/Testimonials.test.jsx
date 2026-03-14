@@ -7,8 +7,8 @@ describe('Testimonials', () => {
   it('renders all testimonials', () => {
     render(<Testimonials testimonials={mockTestimonials} />);
     mockTestimonials.forEach((t) => {
-      expect(screen.getByText(t.fields.quote)).toBeInTheDocument();
-      expect(screen.getByText(t.fields.authorName)).toBeInTheDocument();
+      expect(screen.getByText(t.quote)).toBeInTheDocument();
+      expect(screen.getByText(t.authorName)).toBeInTheDocument();
     });
   });
 

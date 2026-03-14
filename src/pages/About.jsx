@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { mockAboutContent } from '../lib/mockData';
+import { useContentfulEntries } from '../hooks/useContentful';
 import './About.css';
 
 const VALUES = [
@@ -53,6 +54,9 @@ const TEAM = [
 ];
 
 export default function About() {
+  const { data: aboutUs } = useContentfulEntries('aboutUs', mockAboutContent);
+  const aboutContent = aboutUs ?? mockAboutContent;
+
   return (
     <main>
       {/* Page header */}
@@ -70,7 +74,7 @@ export default function About() {
         <div className="container about-story__inner">
           <div className="about-story__text">
             <h2 className="section-title">Our Story</h2>
-            {mockAboutContent.body.split('\n\n').map((para, i) => (
+            {aboutContent.body.split('\n\n').map((para, i) => (
               <p key={i} className="about-story__para">{para.trim()}</p>
             ))}
             <Link to="/contact" className="btn btn-primary">Schedule a Tour</Link>
@@ -89,7 +93,7 @@ export default function About() {
       <section className="about-stats section" aria-label="Key statistics">
         <div className="container">
           <div className="about-stats__grid">
-            {mockAboutContent.stats.map(({ value, label }) => (
+            {(aboutContent.stats ?? mockAboutContent.stats).map(({ value, label }) => (
               <div key={label} className="about-stats__item">
                 <span className="about-stats__value">{value}</span>
                 <span className="about-stats__label">{label}</span>

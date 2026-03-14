@@ -54,7 +54,7 @@ export default function Programs() {
           <div className="programs-list__grid">
             {programs.map((program, index) => (
               <ProgramCard
-                key={program.sys.id}
+                key={program.id || program.sys?.id || program.title}
                 program={program}
                 featured={index === 2}
               />

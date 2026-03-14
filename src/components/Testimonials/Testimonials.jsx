@@ -1,7 +1,7 @@
 import './Testimonials.css';
 
 function TestimonialCard({ testimonial }) {
-  const { quote, authorName, authorTitle } = testimonial.fields;
+  const { quote, authorName, authorTitle } = testimonial;
   return (
     <blockquote className="testimonial-card">
       <svg className="testimonial-card__quote-icon" viewBox="0 0 40 40" width="40" height="40" fill="none" aria-hidden="true">
@@ -36,7 +36,7 @@ export default function Testimonials({ testimonials }) {
 
         <div className="testimonials__grid">
           {testimonials.map((t) => (
-            <TestimonialCard key={t.sys.id} testimonial={t} />
+            <TestimonialCard key={t.id || t.sys?.id || t.authorName} testimonial={t} />
           ))}
         </div>
       </div>

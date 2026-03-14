@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { fetchEntries } from '../lib/contentful';
+import { fetchEntries, normalizeContentfulValue } from '../lib/contentful';
 
 /**
  * Generic hook for fetching a list of Contentful entries.
@@ -12,14 +12,14 @@ import { fetchEntries } from '../lib/contentful';
 export function useContentfulEntries(contentType, fallbackData = []) {
   // Keep the latest fallbackData available in the effect without adding it
   // to the dependency array (avoids re-fetching when an inline array is passed).
-  const fallbackRef = useRef(fallbackData);
+  const fallbackRef = useRef(normalizeContentfulValue(fallbackData));
   useEffect(() => {
-    fallbackRef.current = fallbackData;
+    fallbackRef.current = normalizeContentfulValue(fallbackData);
   });
 
   // useState lazy initializer avoids reading the ref during the render phase.
   const [state, setState] = useState(() => ({
-    data: fallbackData,
+    data: normalizeContentfulValue(fallbackData),
     loading: true,
     error: null,
   }));
@@ -30,8 +30,12 @@ export function useContentfulEntries(contentType, fallbackData = []) {
     fetchEntries(contentType)
       .then((items) => {
         if (!cancelled) {
+          const expectsCollection = Array.isArray(fallbackRef.current);
+
           setState({
-            data: items.length > 0 ? items : fallbackRef.current,
+            data: expectsCollection
+              ? (items.length > 0 ? items : fallbackRef.current)
+              : (items[0] ?? fallbackRef.current),
             loading: false,
             error: null,
           });
