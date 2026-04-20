@@ -1,26 +1,27 @@
-import Gallery from '../components/Gallery/Gallery';
-import { mockGalleryImages } from '../lib/mockData';
-import { useContentfulEntries } from '../hooks/useContentful';
-import './About.css';
-import './GalleryPage.css';
+import { galleryImages } from '../content/siteContent';
 
 export default function GalleryPage() {
-  const { data: images } = useContentfulEntries('galleryImage', mockGalleryImages);
-
   return (
-    <main>
-      <section className="page-hero page-hero--blue" aria-label="Gallery page header">
-        <div className="container page-hero__inner">
-          <h1 className="page-hero__title">Our Gallery</h1>
-          <p className="page-hero__subtitle">
-            A glimpse into the joy, creativity, and learning happening every day at Wingate Childcare.
+    <main className="page-shell">
+      <section className="page-hero" aria-label="Gallery page header">
+        <div className="container">
+          <p className="page-eyebrow">Wingate Childcare Co-operative</p>
+          <h1>Gallery</h1>
+          <p className="page-intro">
+            Temporary photos are in place to give the site a warm, lived-in feel while final photography is being prepared.
           </p>
         </div>
       </section>
 
-      <section className="gallery-page section">
+      <section className="page-section">
         <div className="container">
-          <Gallery images={images} />
+          <div className="gallery-grid" aria-label="Photo gallery">
+            {galleryImages.map((image, index) => (
+              <figure key={`${image.alt}-${index}`} className="gallery-card">
+                <img src={image.src} alt={image.alt} loading="lazy" />
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
     </main>

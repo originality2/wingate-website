@@ -20,7 +20,6 @@
   gap: var(--space-md);
   align-items: flex-start;
   padding: var(--space-lg) 0;
-  border-bottom: 1px solid var(--color-border);
 }
 
 .contact-info-block:first-of-type {
@@ -86,7 +85,6 @@
   margin-top: var(--space-xl);
   border-radius: 1.8rem 1.4rem 1.9rem 1.3rem;
   overflow: hidden;
-  border: 1px solid var(--color-border);
 }
 
 .contact-map__placeholder {

@@ -1,96 +1,67 @@
-import ContactForm from '../components/Contact/ContactForm';
-import { mockContactInfo } from '../lib/mockData';
-import './About.css';
-import './Contact.css';
+import { contactPage, siteContact } from '../content/siteContent';
 
 export default function Contact() {
-  const { address, phone, email, hours } = mockContactInfo;
-
   return (
-    <main>
-      <section className="page-hero page-hero--purple" aria-label="Contact page header">
-        <div className="container page-hero__inner">
-          <h1 className="page-hero__title">Get in Touch</h1>
-          <p className="page-hero__subtitle">
-            We&apos;d love to meet you and your family. Reach out to schedule a tour or ask any questions.
-          </p>
+    <main className="page-shell">
+      <section className="page-hero" aria-label="Contact page header">
+        <div className="container">
+          <p className="page-eyebrow">Wingate Childcare Co-operative</p>
+          <h1>{contactPage.title}</h1>
+          <p className="page-intro">{contactPage.intro}</p>
         </div>
       </section>
 
-      <section className="contact-page section">
-        <div className="container contact-page__inner">
-
-          <div className="contact-page__info">
-            <h2 className="section-title">Contact Information</h2>
-
-            <div className="contact-info-block">
-              <span className="contact-info-block__icon" aria-hidden="true">📍</span>
-              <div>
-                <h3 className="contact-info-block__title">Address</h3>
-                <p className="contact-info-block__text">{address}</p>
-              </div>
-            </div>
-
-            <div className="contact-info-block">
-              <span className="contact-info-block__icon" aria-hidden="true">📞</span>
-              <div>
-                <h3 className="contact-info-block__title">Phone</h3>
-                <a href={`tel:${phone.replace(/\D/g,'')}`} className="contact-info-block__link">
-                  {phone}
-                </a>
-              </div>
-            </div>
-
-            <div className="contact-info-block">
-              <span className="contact-info-block__icon" aria-hidden="true">✉️</span>
-              <div>
-                <h3 className="contact-info-block__title">Email</h3>
-                <a href={`mailto:${email}`} className="contact-info-block__link">{email}</a>
-              </div>
-            </div>
-
-            <div className="contact-info-block">
-              <span className="contact-info-block__icon" aria-hidden="true">🕐</span>
-              <div>
-                <h3 className="contact-info-block__title">Hours of Operation</h3>
-                <table className="contact-hours">
-                  <tbody>
-                    {hours.map(({ day, time }) => (
-                      <tr key={day}>
-                        <td className="contact-hours__day">{day}</td>
-                        <td className="contact-hours__time">{time}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            {/* Map placeholder */}
-            <div className="contact-map" aria-label="Map location placeholder">
-              <div className="contact-map__placeholder">
-                <span aria-hidden="true">🗺️</span>
-                <p>123 Wingate Way, Childcare Town</p>
-                <a
-                  href="https://maps.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary contact-map__btn"
-                >
-                  Open in Google Maps
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="contact-page__form">
-            <h2 className="section-title">Send Us a Message</h2>
-            <p className="contact-page__form-intro">
-              Fill in the form below and we&apos;ll get back to you within one business day.
+      <section id="details" className="page-section">
+        <div className="container card-grid two-col">
+          <article className="soft-card">
+            <h2>Contact Details</h2>
+            <p>{siteContact.address}</p>
+            <p>
+              <a href={`tel:${siteContact.phone.replace(/\D/g, '')}`}>{siteContact.phone}</a>
             </p>
-            <ContactForm />
-          </div>
+            <p>
+              <a href={`mailto:${siteContact.email}`}>{siteContact.email}</a>
+            </p>
+            <h3>Opening Hours</h3>
+            <ul>
+              {siteContact.hours.map((item) => (
+                <li key={item.day}>{item.day}: {item.time}</li>
+              ))}
+            </ul>
+          </article>
+          <article className="soft-card">
+            <h2>Visit Us</h2>
+            <p>Book a tour to see the rooms, meet educators, and ask questions about enrolment availability.</p>
+            <a className="btn btn-primary" href={siteContact.mapLink} target="_blank" rel="noreferrer">
+              Open Map
+            </a>
+          </article>
+        </div>
+      </section>
 
+      <section id="message" className="page-section page-section--alt">
+        <div className="container">
+          <article className="soft-card message-card">
+            <h2>Message Us</h2>
+            <p>
+              Send us a short message and we will get back to you about tours, availability, and enrolment steps.
+            </p>
+            <form className="simple-form" onSubmit={(event) => event.preventDefault()}>
+              <label>
+                Name
+                <input type="text" name="name" autoComplete="name" />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" autoComplete="email" />
+              </label>
+              <label>
+                Message
+                <textarea name="message" rows="5" />
+              </label>
+              <button type="submit" className="btn btn-primary">Send Message</button>
+            </form>
+          </article>
         </div>
       </section>
     </main>

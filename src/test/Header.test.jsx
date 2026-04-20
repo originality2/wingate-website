@@ -19,20 +19,28 @@ describe('Header', () => {
         <Header />
       </MemoryRouter>
     );
-    const navLinks = ['Home', 'About', 'Programs', 'Gallery', 'Contact'];
+    const navLinks = [
+      'About',
+      'Program',
+      'Enrolments',
+      'Our People',
+      'Gallery',
+      'Parent Resources',
+      'Contact',
+    ];
     navLinks.forEach((link) => {
       expect(screen.getByRole('link', { name: link })).toBeInTheDocument();
     });
   });
 
-  it('renders the Schedule a Tour CTA', () => {
+  it('renders the Enrol Now CTA', () => {
     render(
       <MemoryRouter>
         <Header />
       </MemoryRouter>
     );
     expect(
-      screen.getByRole('link', { name: /schedule a tour/i })
+      screen.getByRole('link', { name: /enrol now/i })
     ).toBeInTheDocument();
   });
 });
