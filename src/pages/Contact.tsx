@@ -1,4 +1,4 @@
-import { contactPage, siteContact } from '../content/siteContent';
+import { contactPage, siteContact } from "../content/siteContent";
 
 export default function Contact() {
   return (
@@ -17,7 +17,9 @@ export default function Contact() {
             <h2>Contact Details</h2>
             <p>{siteContact.address}</p>
             <p>
-              <a href={`tel:${siteContact.phone.replace(/\D/g, '')}`}>{siteContact.phone}</a>
+              <a href={`tel:${siteContact.phone.replace(/\D/g, "")}`}>
+                {siteContact.phone}
+              </a>
             </p>
             <p>
               <a href={`mailto:${siteContact.email}`}>{siteContact.email}</a>
@@ -25,14 +27,24 @@ export default function Contact() {
             <h3>Opening Hours</h3>
             <ul>
               {siteContact.hours.map((item) => (
-                <li key={item.day}>{item.day}: {item.time}</li>
+                <li key={item.day}>
+                  {item.day}: {item.time}
+                </li>
               ))}
             </ul>
           </article>
           <article className="soft-card">
             <h2>Visit Us</h2>
-            <p>Book a tour to see the rooms, meet educators, and ask questions about enrolment availability.</p>
-            <a className="btn btn-primary" href={siteContact.mapLink} target="_blank" rel="noreferrer">
+            <p>
+              Book a tour to see the rooms, meet educators, and ask questions
+              about enrolment availability.
+            </p>
+            <a
+              className="btn btn-primary"
+              href={siteContact.mapLink}
+              target="_blank"
+              rel="noreferrer"
+            >
               Open Map
             </a>
           </article>
@@ -44,9 +56,13 @@ export default function Contact() {
           <article className="soft-card message-card">
             <h2>Message Us</h2>
             <p>
-              Send us a short message and we will get back to you about tours, availability, and enrolment steps.
+              Send us a short message and we will get back to you about tours,
+              availability, and enrolment steps.
             </p>
-            <form className="simple-form" onSubmit={(event) => event.preventDefault()}>
+            <form
+              className="simple-form"
+              onSubmit={(event) => event.preventDefault()}
+            >
               <label>
                 Name
                 <input type="text" name="name" autoComplete="name" />
@@ -57,9 +73,11 @@ export default function Contact() {
               </label>
               <label>
                 Message
-                <textarea name="message" rows="5" />
+                <textarea name="message" rows={5} />
               </label>
-              <button type="submit" className="btn btn-primary">Send Message</button>
+              <button type="submit" className="btn btn-primary">
+                Send Message
+              </button>
             </form>
           </article>
         </div>

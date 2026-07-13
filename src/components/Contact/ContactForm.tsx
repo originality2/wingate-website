@@ -1,51 +1,67 @@
-import { useState } from 'react';
-import './ContactForm.css';
+import { useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
+import "./ContactForm.css";
 
 const INITIAL_FORM = {
-  name: '',
-  email: '',
-  phone: '',
-  childAge: '',
-  program: '',
-  message: '',
+  name: "",
+  email: "",
+  phone: "",
+  childAge: "",
+  program: "",
+  message: "",
 };
 
 const PROGRAM_OPTIONS = [
-  'Infant Care (6 wks – 12 months)',
-  'Toddler Program (1 – 3 years)',
-  'Preschool (3 – 5 years)',
-  'Before & After School (K – 5th grade)',
-  'General Enquiry',
+  "Infant Care (6 wks – 12 months)",
+  "Toddler Program (1 – 3 years)",
+  "Preschool (3 – 5 years)",
+  "Before & After School (K – 5th grade)",
+  "General Enquiry",
 ];
 
-export default function ContactForm() {
-  const [form, setForm] = useState(INITIAL_FORM);
-  const [status, setStatus] = useState('idle'); // idle | submitting | success | error
+type ContactFormValues = {
+  name: string;
+  email: string;
+  phone: string;
+  childAge: string;
+  program: string;
+  message: string;
+};
 
-  const handleChange = (e) => {
+type SubmissionStatus = "idle" | "submitting" | "success" | "error";
+
+export default function ContactForm() {
+  const [form, setForm] = useState<ContactFormValues>(INITIAL_FORM);
+  const [status, setStatus] = useState<SubmissionStatus>("idle"); // idle | submitting | success | error
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('submitting');
+    setStatus("submitting");
     // Simulate form submission (replace with real endpoint or service)
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    setStatus('success');
+    setStatus("success");
     setForm(INITIAL_FORM);
   };
 
-  if (status === 'success') {
+  if (status === "success") {
     return (
       <div className="contact-form__success" role="status" aria-live="polite">
-        <span className="contact-form__success-icon" aria-hidden="true">🎉</span>
+        <span className="contact-form__success-icon" aria-hidden="true">
+          🎉
+        </span>
         <h3>Thank you, we&apos;ll be in touch soon!</h3>
-        <p>We usually respond within one business day. We look forward to meeting you and your family.</p>
-        <button
-          className="btn btn-primary"
-          onClick={() => setStatus('idle')}
-        >
+        <p>
+          We usually respond within one business day. We look forward to meeting
+          you and your family.
+        </p>
+        <button className="btn btn-primary" onClick={() => setStatus("idle")}>
           Send another message
         </button>
       </div>
@@ -134,7 +150,9 @@ export default function ContactForm() {
         >
           <option value="">Select a program…</option>
           {PROGRAM_OPTIONS.map((opt) => (
-            <option key={opt} value={opt}>{opt}</option>
+            <option key={opt} value={opt}>
+              {opt}
+            </option>
           ))}
         </select>
       </div>
@@ -158,12 +176,18 @@ export default function ContactForm() {
       <button
         type="submit"
         className="btn btn-primary contact-form__submit"
-        disabled={status === 'submitting'}
+        disabled={status === "submitting"}
       >
-        {status === 'submitting' ? 'Sending…' : 'Send Message'}
-        {status !== 'submitting' && (
-          <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor" aria-hidden="true">
-            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+        {status === "submitting" ? "Sending…" : "Send Message"}
+        {status !== "submitting" && (
+          <svg
+            viewBox="0 0 20 20"
+            width="18"
+            height="18"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
           </svg>
         )}
       </button>

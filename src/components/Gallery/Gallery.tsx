@@ -1,15 +1,23 @@
-import './Gallery.css';
+import "./Gallery.css";
+import type { GalleryItem } from "../../types/content";
 
-export default function Gallery({ images, compact = false }) {
+type GalleryProps = {
+  images: GalleryItem[];
+  compact?: boolean;
+};
+
+export default function Gallery({ images, compact = false }: GalleryProps) {
   if (!images || images.length === 0) return null;
 
   const displayImages = compact ? images.slice(0, 6) : images;
 
   return (
-    <div className={`gallery${compact ? ' gallery--compact' : ''}`}>
+    <div className={`gallery${compact ? " gallery--compact" : ""}`}>
       <div className="gallery__grid">
         {displayImages.map((item, index) => {
-          const imageUrl = item.imageUrl || item.image?.file?.url || item.file?.url;
+          const imageUrl =
+            item.imageUrl || item.image?.file?.url || item.file?.url;
+          const altText = item.description || item.title || "Gallery image";
           return (
             <figure
               key={item.id || item.sys?.id || `${item.title}-${index}`}
@@ -17,7 +25,7 @@ export default function Gallery({ images, compact = false }) {
             >
               <img
                 src={imageUrl}
-                alt={item.description || item.title}
+                alt={altText}
                 className="gallery__image"
                 loading="lazy"
               />

@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
-import { navItems, sectionLinksByPath } from '../../content/siteContent';
-import logo from '../../assets/logo.png';
-import logoIcon from '../../assets/logo_icon.png';
-import './Header.css';
+import { useState, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { navItems, sectionLinksByPath } from "../../content/siteContent";
+import logo from "../../assets/logo.png";
+import logoIcon from "../../assets/logo_icon.png";
+import "./Header.css";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,8 +13,8 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -22,21 +22,26 @@ export default function Header() {
   }, [location.pathname]);
 
   useEffect(() => {
-    document.body.classList.toggle('header-menu-open', menuOpen);
+    document.body.classList.toggle("header-menu-open", menuOpen);
 
     return () => {
-      document.body.classList.remove('header-menu-open');
+      document.body.classList.remove("header-menu-open");
     };
   }, [menuOpen]);
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className={`header${scrolled ? ' header--scrolled' : ''}`} role="banner">
+    <header
+      className={`header${scrolled ? " header--scrolled" : ""}`}
+      role="banner"
+    >
       <div className="container header__inner">
         <button
-          className={`header__burger${menuOpen ? ' header__burger--open' : ''}`}
-          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          className={`header__burger${menuOpen ? " header__burger--open" : ""}`}
+          aria-label={
+            menuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={menuOpen}
           aria-controls="main-navigation"
           onClick={() => setMenuOpen((o) => !o)}
@@ -45,20 +50,36 @@ export default function Header() {
           <span />
           <span />
         </button>
-        
-        <Link to="/" className="header__logo" onClick={closeMenu} aria-label="Wingate Childcare Home">
-          <img className="header__logo-image" src={logo} alt="Wingate Childcare" />
-          <img className="header__logo-icon-image" src={logoIcon} alt="" aria-hidden="true" />
+        <Link
+          to="/"
+          className="header__logo"
+          onClick={closeMenu}
+          aria-label="Wingate Childcare Home"
+        >
+          <img
+            className="header__logo-image"
+            src={logo}
+            alt="Wingate Childcare"
+          />
+          <img
+            className="header__logo-icon-image"
+            src={logoIcon}
+            alt=""
+            aria-hidden="true"
+          />
         </Link>
 
-        <nav className={`header__nav${menuOpen ? ' header__nav--open' : ''}`} aria-label="Main navigation">
+        <nav
+          className={`header__nav${menuOpen ? " header__nav--open" : ""}`}
+          aria-label="Main navigation"
+        >
           <ul id="main-navigation" className="header__nav-list">
             {navItems.map(({ label, to }) => (
               <li key={to} className="header__nav-item">
                 <NavLink
                   to={to}
                   className={({ isActive }) =>
-                    `header__nav-link${isActive ? ' header__nav-link--active' : ''}`
+                    `header__nav-link${isActive ? " header__nav-link--active" : ""}`
                   }
                   onClick={closeMenu}
                 >
@@ -67,7 +88,11 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <Link to="/enrolments" className="btn btn-primary header__cta" onClick={closeMenu}>
+          <Link
+            to="/enrolments"
+            className="btn btn-primary header__cta"
+            onClick={closeMenu}
+          >
             Enrol Now
           </Link>
         </nav>
@@ -90,7 +115,11 @@ export default function Header() {
               <ul className="header__subnav-list">
                 {sectionLinks.map((section) => (
                   <li key={section.id}>
-                    <a className="header__subnav-link" href={`${location.pathname}#${section.id}`} onClick={closeMenu}>
+                    <a
+                      className="header__subnav-link"
+                      href={`${location.pathname}#${section.id}`}
+                      onClick={closeMenu}
+                    >
                       {section.label}
                     </a>
                   </li>
