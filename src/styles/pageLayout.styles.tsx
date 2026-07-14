@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
+export const layoutBreakpoints = {
+  mobile: "720px",
+  tablet: "960px",
+  desktop: "1120px",
+} as const;
+
 export const Main = styled.main`
   flex: 1;
 `;
 
 export const HeroSection = styled.section`
-  padding: 4rem 0 2rem;
+  padding: 2rem 0 2rem;
   background: linear-gradient(135deg, #dbffe8 0%, #e6fbff 100%);
 `;
 
@@ -49,7 +55,7 @@ export const ContentGrid = styled.div`
     display: flex;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: ${layoutBreakpoints.mobile}) {
     flex-direction: column;
     min-height: 0;
   }
@@ -91,11 +97,11 @@ export const CardGrid = styled.div<{ $twoCol?: boolean }>`
   grid-template-columns: ${({ $twoCol }) =>
     $twoCol ? "repeat(2, minmax(0, 1fr))" : "repeat(3, minmax(0, 1fr))"};
 
-  @media (max-width: 960px) {
+  @media (max-width: ${layoutBreakpoints.tablet}) {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: ${layoutBreakpoints.mobile}) {
     grid-template-columns: 1fr;
   }
 `;
