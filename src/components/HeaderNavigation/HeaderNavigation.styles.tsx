@@ -112,7 +112,7 @@ export const NavItem = styled.li``;
 export const MainNavLink = styled(NavLink)`
   padding: 0.35rem 0;
   border-radius: 0;
-  color: var(--color-muted);
+  color: #5e5850;
   background-image: linear-gradient(
     to right,
     var(--color-primary-dark),

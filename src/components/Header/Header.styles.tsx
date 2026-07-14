@@ -7,7 +7,7 @@ export const HeaderRoot = styled.header<{ $scrolled: boolean }>`
   top: 0;
   /* Required so the sticky header remains above page content while scrolling. */
   z-index: 1200;
-  background: var(--color-soft);
+  background: var(--color-banner);
   border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(6px);
   transition: box-shadow 0.2s ease;

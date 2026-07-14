@@ -77,27 +77,6 @@ export default function Header() {
 
         <MobileSpacer aria-hidden="true" />
       </HeaderInner>
-
-      {sectionLinks.length > 0 && (
-        <SubnavWrap>
-          <SubnavContainer>
-            <Subnav aria-label="Section navigation">
-              <SubnavList>
-                {sectionLinks.map((section) => (
-                  <li key={section.id}>
-                    <SubnavLink
-                      href={`${location.pathname}#${section.id}`}
-                      onClick={closeMenu}
-                    >
-                      {section.label}
-                    </SubnavLink>
-                  </li>
-                ))}
-              </SubnavList>
-            </Subnav>
-          </SubnavContainer>
-        </SubnavWrap>
-      )}
     </HeaderRoot>
   );
 }

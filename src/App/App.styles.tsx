@@ -17,6 +17,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-text: #1e1f16;
     --color-muted: #a39975;
     --color-border: #a0826d;
+    --color-banner: #c5c49b;
     --radius-lg: 0;
     --radius-md: 0;
     --shadow-sm: 0 12px 24px rgba(30, 31, 22, 0.1);
