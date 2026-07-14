@@ -52,31 +52,59 @@ export const LinksGrid = styled.section`
   }
 `;
 
-export const Tile = styled.article`
+export const Tile = styled.div`
   display: grid;
-  min-height: 44vh;
+  height: 44vh;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+
+  &:nth-child(3n) {
+    grid-column: 1 / -1;
+  }
+
+  &:last-child {
+    grid-column: 1 / -1;
+  }
 `;
 
 export const TileImage = styled.img`
   grid-area: 1 / 1;
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.35s ease;
+
+  ${Tile}:hover & {
+    transform: scale(1.06);
+  }
 `;
 
 export const TileOverlay = styled(Link)`
-  grid-area: 1 / 1;
+  position: absolute;
+  inset: 0;
   background: linear-gradient(rgba(51, 42, 30, 0.15), rgba(51, 42, 30, 0.7));
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 1.5rem;
   color: #fff;
+  z-index: 2;
+  cursor: pointer;
+  transition: background 0.35s ease;
+
+  ${Tile}:hover & {
+    background: linear-gradient(rgba(51, 42, 30, 0.22), rgba(51, 42, 30, 0.82));
+  }
 
   h2,
   p,
   span {
     color: #fff;
+    cursor: inherit;
   }
 `;
 
