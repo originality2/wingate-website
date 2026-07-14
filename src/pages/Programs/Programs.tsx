@@ -59,7 +59,7 @@ export default function Programs() {
 
       <Section id="age-groups" $alt data-reveal="true" data-visible="false">
         <Container>
-          <h2>Seeds, Seedlings & Sprouts</h2>
+          <h2>Seeds, Seedlings, Sprouts + Blossoms</h2>
           <p>
             Wingate provides education and care from 6 weeks onwards, including
             funded 3-year-old and 4-year-old kindergarten pathways within the

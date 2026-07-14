@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <Heading>Visit & Contact</Heading>
+          <Heading>Visit + Contact</Heading>
           <Address>
             <ContactLink
               href={siteContact.mapLink}
