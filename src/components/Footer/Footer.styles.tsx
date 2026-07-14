@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { layoutBreakpoints } from "../../styles/pageLayout.styles";
 
 export const FooterRoot = styled.footer`
-  margin-top: 2rem;
   background: var(--color-primary-dark);
   color: #f5f7f5;
   padding-top: 2rem;
@@ -51,8 +50,7 @@ export const LogoLetter = styled.span`
   border-radius: 0;
 `;
 
-export const LogoName = styled.span`
-`;
+export const LogoName = styled.span``;
 
 export const Tagline = styled.p`
   color: rgba(255, 255, 255, 0.8);
