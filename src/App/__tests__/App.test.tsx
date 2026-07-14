@@ -1,8 +1,14 @@
 import { beforeAll, describe, expect, it, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import App from "../App";
 
 beforeAll(() => {
+  Object.defineProperty(window, "scrollTo", {
+    writable: true,
+    value: vi.fn(),
+  });
+
   Object.defineProperty(window, "matchMedia", {
     writable: true,
     value: vi.fn().mockImplementation((query: string) => ({
@@ -47,5 +53,21 @@ describe("App", () => {
     render(<App />);
 
     expect(screen.getByRole("contentinfo")).toBeInTheDocument();
+  });
+
+  it("scrolls to the top when navigating to another page", async () => {
+    const user = userEvent.setup();
+
+    render(<App />);
+
+    vi.mocked(window.scrollTo).mockClear();
+
+    const navigation = within(
+      screen.getByRole("navigation", { name: /main navigation/i }),
+    );
+
+    await user.click(navigation.getByRole("link", { name: /^about$/i }));
+
+    expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
   });
 });

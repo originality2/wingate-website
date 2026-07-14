@@ -50,6 +50,10 @@ function AppShell() {
   const location = useLocation();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     const shouldReduceMotion = mediaQuery.matches;
 
