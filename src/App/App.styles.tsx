@@ -17,6 +17,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-text: #1e1f16;
     --color-muted: #a39975;
     --color-border: #a0826d;
+    --color-banner: #c5c49b;
     --radius-lg: 0;
     --radius-md: 0;
     --shadow-sm: 0 12px 24px rgba(30, 31, 22, 0.1);
@@ -130,22 +131,24 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   [data-reveal='true'] {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.55s ease, transform 0.55s ease;
-    will-change: opacity, transform;
+    animation: reveal-in 0.55s ease both;
   }
 
-  [data-reveal='true'][data-visible='true'] {
-    opacity: 1;
-    transform: translateY(0);
+  @keyframes reveal-in {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
     [data-reveal='true'] {
-      opacity: 1;
-      transform: none;
-      transition: none;
+      animation: none;
     }
   }
 `;
@@ -198,6 +201,7 @@ export const PrimaryLinkButton = styled.a`
   justify-content: center;
   gap: 0.45rem;
   padding: 0.65rem 1.1rem;
+  border-radius: 45px;
   transition: 0.2s ease;
   border: 0;
   cursor: pointer;

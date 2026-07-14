@@ -60,7 +60,7 @@ export const Tile = styled.div`
   position: relative;
   cursor: pointer;
 
-  @media (max-width: ${layoutBreakpoints.tablet}) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     cursor: default;
   }
 
@@ -119,7 +119,7 @@ export const TileDesktopLink = styled(Link)`
   z-index: 3;
   cursor: pointer;
 
-  @media (max-width: ${layoutBreakpoints.tablet}) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     display: none;
   }
 `;
@@ -131,6 +131,7 @@ export const TileLearnMoreButton = styled(Link)`
   width: fit-content;
   margin-top: 0.6rem;
   padding: 0.55rem 0.95rem;
+  border-radius: 45px;
   background: transparent;
   border: 1px solid #fff;
   color: #fff;
@@ -145,7 +146,7 @@ export const TileLearnMoreButton = styled(Link)`
     color: #332a1e;
   }
 
-  @media (max-width: ${layoutBreakpoints.tablet}) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     display: inline-flex;
   }
 `;

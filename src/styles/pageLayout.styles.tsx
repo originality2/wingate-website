@@ -27,8 +27,15 @@ export const HeroSection = styled.section`
 export const Container = styled.div`
   width: 100%;
   max-width: 1120px;
-  margin-inline: auto;
-  padding: 1.25rem;
+  padding: 1.5rem;
+
+  @media (min-width: ${layoutBreakpoints.tablet}) {
+    padding: 2rem;
+  }
+
+  @media (min-width: ${layoutBreakpoints.large}) {
+    padding: 3rem;
+  }
 `;
 
 export const Eyebrow = styled.p`
@@ -69,12 +76,20 @@ export const ContentGrid = styled.div`
 
 export const TextPanel = styled.div<{ $soft?: boolean }>`
   width: 100%;
-  padding: clamp(1.5rem, 4vw, 4rem);
+  padding: 1.5rem;
   background: ${({ $soft }) =>
     $soft ? "var(--color-soft)" : "var(--color-surface)"};
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (min-width: ${layoutBreakpoints.tablet}) {
+    padding: 2rem;
+  }
+
+  @media (min-width: ${layoutBreakpoints.large}) {
+    padding: 3rem;
+  }
 
   ul {
     list-style: var(--content-list-style);
@@ -131,6 +146,7 @@ const primaryButtonStyles = css`
   justify-content: center;
   gap: 0.45rem;
   padding: 0.65rem 1.1rem;
+  border-radius: 45px;
   transition: 0.2s ease;
   border: 0;
   cursor: pointer;
