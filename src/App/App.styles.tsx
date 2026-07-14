@@ -23,6 +23,25 @@ export const GlobalStyles = createGlobalStyle`
     --shadow-soft: 0 12px 30px rgba(0, 114, 69, 0.1);
     --font-heading: 'Fraunces', serif;
     --font-body: 'DM Sans', sans-serif;
+    --heading-color: var(--color-text);
+    --heading-line-height: 1.2;
+    --heading-h1-size: clamp(2rem, 4vw, 3rem);
+    --heading-h2-size: clamp(1.7rem, 2.8vw, 2.3rem);
+    --heading-h3-size: 1.3rem;
+    --text-body-color: var(--color-muted);
+    --text-body-margin-bottom: 0.85rem;
+    --link-color: inherit;
+    --link-text-decoration: none;
+    --link-hover-color: inherit;
+    --link-hover-text-decoration: none;
+    --list-margin: 0;
+    --list-padding: 0;
+    --list-style: none;
+    --content-list-style: disc;
+    --content-list-padding-left: 1rem;
+    --content-list-color: var(--color-muted);
+    --link-accent-color: var(--color-primary-dark);
+    --link-accent-font-weight: 600;
   }
 
   html,
@@ -52,25 +71,42 @@ export const GlobalStyles = createGlobalStyle`
   h2,
   h3 {
     margin: 0 0 0.75rem;
-    color: var(--color-text);
+    color: var(--heading-color);
     font-family: var(--font-heading);
-    line-height: 1.2;
+    line-height: var(--heading-line-height);
+  }
+
+  h1 {
+    font-size: var(--heading-h1-size);
+  }
+
+  h2 {
+    font-size: var(--heading-h2-size);
+  }
+
+  h3 {
+    font-size: var(--heading-h3-size);
   }
 
   p {
-    margin: 0 0 0.85rem;
-    color: var(--color-muted);
+    margin: 0 0 var(--text-body-margin-bottom);
+    color: var(--text-body-color);
   }
 
   ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    margin: var(--list-margin);
+    padding: var(--list-padding);
+    list-style: var(--list-style);
   }
 
   a {
-    color: inherit;
-    text-decoration: none;
+    color: var(--link-color);
+    text-decoration: var(--link-text-decoration);
+  }
+
+  a:hover {
+    color: var(--link-hover-color);
+    text-decoration: var(--link-hover-text-decoration);
   }
 
   img {
@@ -145,18 +181,14 @@ export const NotFoundInner = styled.div`
   gap: 1rem;
 `;
 
-export const NotFoundEmoji = styled.span`
-  font-size: 5rem;
-`;
+export const NotFoundEmoji = styled.span``;
 
 export const NotFoundTitle = styled.h1`
-  font-size: 2.1rem;
   color: var(--color-text);
 `;
 
 export const NotFoundText = styled.p`
   color: var(--color-muted);
-  font-size: 1.1rem;
   max-width: 400px;
 `;
 
@@ -166,7 +198,6 @@ export const PrimaryLinkButton = styled.a`
   justify-content: center;
   gap: 0.45rem;
   padding: 0.65rem 1.1rem;
-  font-weight: 600;
   transition: 0.2s ease;
   border: 0;
   cursor: pointer;

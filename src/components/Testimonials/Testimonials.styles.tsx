@@ -21,7 +21,6 @@ export const HeaderBlock = styled.div`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: clamp(1.7rem, 2.8vw, 2.3rem);
   margin-bottom: 0.6rem;
 `;
 
@@ -91,7 +90,6 @@ export const QuoteIcon = styled.svg`
 `;
 
 export const QuoteText = styled.p`
-  font-size: 1rem;
   color: var(--color-text);
   line-height: 1.75;
   flex: 1;
@@ -118,8 +116,6 @@ export const Avatar = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 1.1rem;
   flex-shrink: 0;
 `;
 
@@ -127,14 +123,11 @@ export const AuthorMeta = styled.div``;
 
 export const AuthorName = styled.cite`
   display: block;
-  font-weight: 700;
   font-style: normal;
   color: var(--color-text);
-  font-size: 0.9rem;
 `;
 
 export const AuthorTitle = styled.span`
   display: block;
-  font-size: 0.8rem;
   color: var(--color-muted);
 `;

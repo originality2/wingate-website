@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
 export const TextLink = styled.a`
-  color: var(--color-primary-dark);
-  font-weight: 600;
+  color: var(--link-accent-color);
 `;

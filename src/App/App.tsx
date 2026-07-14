@@ -54,6 +54,10 @@ function AppShell() {
       return;
     }
 
+    if (!("fonts" in document) || !document.fonts) {
+      return;
+    }
+
     const logFontDiagnostics = () => {
       const bodyFamily = window.getComputedStyle(document.body).fontFamily;
       const headingElement = document.querySelector("h1, h2, h3");

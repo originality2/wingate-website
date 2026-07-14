@@ -31,8 +31,6 @@ export const FeaturedBadge = styled.span`
   right: 1rem;
   background: linear-gradient(135deg, var(--color-accent) 0%, #ff9267 100%);
   color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.2rem 0.6rem;
@@ -49,7 +47,6 @@ export const IconWrap = styled.div`
 `;
 
 export const Icon = styled.span`
-  font-size: 3rem;
   line-height: 1;
 `;
 
@@ -62,8 +59,6 @@ export const CardBody = styled.div`
 `;
 
 export const Age = styled.p`
-  font-size: 0.8rem;
-  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--color-primary);
@@ -75,15 +70,10 @@ export const Age = styled.p`
 `;
 
 export const Title = styled.h3`
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  color: var(--color-text);
   margin-top: 0.2rem;
-  line-height: 1.25;
 `;
 
 export const Description = styled.p`
-  font-size: 0.9rem;
   color: var(--color-muted);
   line-height: 1.7;
   flex: 1;
@@ -93,9 +83,7 @@ export const LearnMoreLink = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--color-primary-dark);
+  color: var(--link-accent-color);
   margin-top: 0.5rem;
   transition: gap 0.2s ease;
 

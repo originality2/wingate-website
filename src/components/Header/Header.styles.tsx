@@ -183,8 +183,6 @@ export const MainNavLink = styled(NavLink)`
   position: relative;
   padding: 0.35rem 0;
   border-radius: 0;
-  font-weight: 600;
-  font-size: 0.83rem;
   color: var(--color-muted);
   transition: 0.2s ease;
 
@@ -214,7 +212,6 @@ export const MainNavLink = styled(NavLink)`
   @media (max-width: ${layoutBreakpoints.large}) {
     display: inline-block;
     width: auto;
-    font-size: 1.1rem;
     padding: 0.15rem 0;
     color: #ffffff;
     border: 0;
@@ -238,8 +235,6 @@ export const CtaLink = styled(Link)`
   justify-content: center;
   gap: 0.45rem;
   padding: 0.55rem 1rem;
-  font-size: 0.8rem;
-  font-weight: 600;
   transition: 0.2s ease;
   border: 0;
   cursor: pointer;
@@ -254,7 +249,6 @@ export const CtaLink = styled(Link)`
   @media (max-width: ${layoutBreakpoints.large}) {
     margin-top: 0.25rem;
     align-self: flex-start;
-    font-size: 0.9rem;
     padding: 0.7rem 1rem;
     background: #ffffff;
     color: var(--color-primary-dark);
@@ -328,7 +322,6 @@ export const SubnavLink = styled.a`
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 0;
-  font-size: 0.8rem;
   color: var(--color-muted);
   white-space: nowrap;
 

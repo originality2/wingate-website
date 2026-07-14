@@ -24,7 +24,6 @@ export const SimpleForm = styled.form`
 export const FieldLabel = styled.label`
   display: grid;
   gap: 0.35rem;
-  font-weight: 500;
 `;
 
 export const Input = styled.input`
@@ -49,7 +48,6 @@ export const SubmitButton = styled.button`
   justify-content: center;
   gap: 0.45rem;
   padding: 0.65rem 1.1rem;
-  font-weight: 600;
   transition: 0.2s ease;
   border: 0;
   cursor: pointer;

@@ -97,8 +97,6 @@ export const Badge = styled.span`
   border: 1px solid rgba(255, 255, 255, 0.28);
   padding: 0.35rem 1rem;
   border-radius: 1rem 1.6rem 1rem 1.4rem;
-  font-size: 0.8rem;
-  font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -107,7 +105,6 @@ export const Badge = styled.span`
 
 export const Headline = styled.h1`
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
   line-height: 1.15;
   margin-bottom: 1rem;
   color: #fff;
@@ -115,7 +112,6 @@ export const Headline = styled.h1`
 `;
 
 export const Subheading = styled.p`
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.75;
   margin-bottom: 1.5rem;
@@ -143,11 +139,9 @@ export const HeroButtonLink = styled.a`
   justify-content: center;
   gap: 0.45rem;
   padding: 0.65rem 1.1rem;
-  font-weight: 600;
   transition: 0.2s ease;
   border: 0;
   cursor: pointer;
-  font-size: 1rem;
 `;
 
 export const PrimaryHeroButtonLink = styled(HeroButtonLink)`
@@ -235,21 +229,16 @@ export const StatCard = styled.div<{ $accent?: boolean; $green?: boolean }>`
 `;
 
 export const StatIcon = styled.span`
-  font-size: 2rem;
 `;
 
 export const StatValue = styled.span`
-  font-size: 1.75rem;
-  font-weight: 800;
   font-family: var(--font-heading);
   color: #fff;
   line-height: 1;
 `;
 
 export const StatLabel = styled.span`
-  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.75);
-  font-weight: 600;
   letter-spacing: 0.02em;
 `;
 

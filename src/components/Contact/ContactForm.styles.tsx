@@ -24,8 +24,6 @@ export const Field = styled.div`
 `;
 
 export const Label = styled.label`
-  font-size: 0.875rem;
-  font-weight: 800;
   color: var(--color-text);
 
   span {
@@ -37,7 +35,6 @@ const InputBase = `
   padding: 0.75rem 1rem;
   border: 1.5px solid var(--color-border);
   border-radius: 1.2rem 1rem 1.25rem 0.95rem;
-  font-size: 1rem;
   color: var(--color-text);
   background: rgba(255, 255, 255, 0.88);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
@@ -81,7 +78,6 @@ export const SubmitButton = styled.button`
   justify-content: center;
   gap: 0.45rem;
   padding: 0.65rem 1.1rem;
-  font-weight: 600;
   transition: 0.2s ease;
   border: 0;
   cursor: pointer;
@@ -115,7 +111,6 @@ export const ContactFormSuccess = styled.div`
 
   h3 {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
     color: var(--color-primary-dark);
   }
 
@@ -126,5 +121,4 @@ export const ContactFormSuccess = styled.div`
 `;
 
 export const SuccessIcon = styled.span`
-  font-size: 3rem;
 `;

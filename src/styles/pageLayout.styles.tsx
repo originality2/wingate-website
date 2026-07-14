@@ -20,7 +20,6 @@ export const HeroSection = styled.section`
   );
 
   h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
     max-width: 18ch;
   }
 `;
@@ -37,9 +36,7 @@ export const Eyebrow = styled.p`
   margin-bottom: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.75rem;
   color: var(--color-primary-dark);
-  font-weight: 700;
 `;
 
 export const Intro = styled.p`
@@ -80,9 +77,9 @@ export const TextPanel = styled.div<{ $soft?: boolean }>`
   justify-content: center;
 
   ul {
-    list-style: disc;
-    padding-left: 1rem;
-    color: var(--color-muted);
+    list-style: var(--content-list-style);
+    padding-left: var(--content-list-padding-left);
+    color: var(--content-list-color);
   }
 `;
 
@@ -122,9 +119,9 @@ export const SoftCard = styled.article`
   height: 100%;
 
   ul {
-    list-style: disc;
-    padding-left: 1rem;
-    color: var(--color-muted);
+    list-style: var(--content-list-style);
+    padding-left: var(--content-list-padding-left);
+    color: var(--content-list-color);
   }
 `;
 
@@ -134,7 +131,6 @@ const primaryButtonStyles = css`
   justify-content: center;
   gap: 0.45rem;
   padding: 0.65rem 1.1rem;
-  font-weight: 600;
   transition: 0.2s ease;
   border: 0;
   cursor: pointer;

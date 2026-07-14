@@ -38,7 +38,6 @@ export const LogoLink = styled.a`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1rem;
   color: #fff;
   margin-bottom: 0.7rem;
 `;
@@ -53,22 +52,18 @@ export const LogoLetter = styled.span`
 `;
 
 export const LogoName = styled.span`
-  font-weight: 700;
 `;
 
 export const Tagline = styled.p`
-  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
   max-width: 38ch;
 `;
 
 export const Heading = styled.h3`
-  font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 0.55rem;
-  font-weight: 700;
 `;
 
 export const NavList = styled.ul`
@@ -78,7 +73,6 @@ export const NavList = styled.ul`
 `;
 
 export const NavItemLink = styled.a`
-  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.85);
 
   &:hover {
@@ -91,7 +85,6 @@ export const Address = styled.address`
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 0.5rem;
 `;
@@ -105,7 +98,6 @@ export const ContactLink = styled.a`
 `;
 
 export const Hours = styled.p`
-  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.85);
 `;
 
@@ -123,7 +115,6 @@ export const BottomInner = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.82);
   flex-wrap: wrap;
 

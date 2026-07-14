@@ -28,9 +28,7 @@ export const Eyebrow = styled.p`
   margin-bottom: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.75rem;
   color: #fff;
-  font-weight: 700;
 `;
 
 export const HeroTitle = styled.h1`

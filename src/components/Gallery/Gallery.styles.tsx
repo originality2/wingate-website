@@ -57,8 +57,6 @@ export const Caption = styled.figcaption`
   background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
   color: #fff;
   padding: 1.5rem 0.75rem 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 600;
   transform: translateY(100%);
   transition: transform 0.3s ease;
 `;
