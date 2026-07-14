@@ -10,7 +10,7 @@ export const Hero = styled.section`
   min-height: 80vh;
   background-image:
     linear-gradient(rgba(51, 42, 30, 0.45), rgba(51, 42, 30, 0.45)),
-    url("https://d2kvbtvlrloztz.cloudfront.net/img/child_with_bucket.jpg");
+    url("https://d2kvbtvlrloztz.cloudfront.net/img/child_with_bucket.webp");
   background-size: cover;
   background-position: center;
   display: flex;
