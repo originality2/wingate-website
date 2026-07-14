@@ -1,4 +1,8 @@
-import { enrolmentsPage, parentResourceLinks } from "../../content/siteContent";
+import {
+  enrolmentsPage,
+  parentResourceLinks,
+  siteContact,
+} from "../../content/siteContent";
 import {
   Container,
   ContentGrid,
@@ -8,7 +12,6 @@ import {
   Main,
   CardGrid,
   PrimaryButtonAnchor,
-  PrimaryButtonLink,
   Section,
   SoftCard,
   TextPanel,
@@ -107,7 +110,9 @@ export default function Enrolments() {
               include meeting leadership and room educators while observing the
               program indoors and outdoors.
             </p>
-            <PrimaryButtonLink to="/contact">Book a Tour</PrimaryButtonLink>
+            <PrimaryButtonAnchor href={`mailto:${siteContact.email}`}>
+              Book a Tour
+            </PrimaryButtonAnchor>
           </TextPanel>
           <TextPanel $soft>
             <h3>What You&apos;ll See</h3>

@@ -39,14 +39,16 @@ describe("Footer", () => {
     },
   );
 
-  it("renders contact address", () => {
+  it("renders address link to map", () => {
     render(
       <MemoryRouter>
         <Footer />
       </MemoryRouter>,
     );
 
-    expect(screen.getByText(siteContact.address)).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: siteContact.address }),
+    ).toHaveAttribute("href", siteContact.mapLink);
   });
 
   it("renders phone link with tel href", () => {

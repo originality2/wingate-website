@@ -1,6 +1,5 @@
-import { homePage, siteContact } from "../../content/siteContent";
+import { homePage } from "../../content/siteContent";
 import {
-  ContactStrip,
   Eyebrow,
   Hero,
   HeroOverlay,
@@ -43,19 +42,6 @@ export default function Home() {
           </Tile>
         ))}
       </LinksGrid>
-
-      <ContactStrip data-reveal="true" data-visible="false">
-        <div>
-          <h2>Contact Wingate</h2>
-          <p>{siteContact.address}</p>
-        </div>
-        <div>
-          <a href={`tel:${siteContact.phone.replace(/\D/g, "")}`}>
-            {siteContact.phone}
-          </a>
-          <a href={`mailto:${siteContact.email}`}>{siteContact.email}</a>
-        </div>
-      </ContactStrip>
     </Main>
   );
 }

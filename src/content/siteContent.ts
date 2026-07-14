@@ -37,7 +37,6 @@ export const navItems: NavItem[] = [
   { label: "Our People", to: "/our-people" },
   { label: "Gallery", to: "/gallery" },
   { label: "Parent Resources", to: "/parent-resources" },
-  { label: "Contact", to: "/contact" },
 ];
 
 export const siteContact: SiteContact = {
@@ -102,23 +101,12 @@ export const resourcesPage: PageMeta = {
   ],
 };
 
-export const contactPage: PageMeta = {
-  title: "Contact",
-  intro:
-    "Please call or email to discuss enrolments, organise a centre tour, or speak with our team.",
-  sectionLinks: [
-    { id: "details", label: "Contact Details" },
-    { id: "message", label: "Message Us" },
-  ],
-};
-
 export const sectionLinksByPath: Record<string, SectionLink[]> = {
   "/about": aboutPage.sectionLinks,
   "/program": programPage.sectionLinks,
   "/enrolments": enrolmentsPage.sectionLinks,
   "/our-people": peoplePage.sectionLinks,
   "/parent-resources": resourcesPage.sectionLinks,
-  "/contact": contactPage.sectionLinks,
 };
 
 export const homePage: HomePageContent = {
@@ -168,13 +156,6 @@ export const homePage: HomePageContent = {
       image: resources,
       alt: "Parent resources and service information",
     },
-    {
-      title: "Contact",
-      text: "Get in touch for tours, questions, and enrolment support.",
-      to: "/contact",
-      image: people_drawings,
-      alt: "Contact and visit information section",
-    },
   ],
 };
 
@@ -222,13 +203,22 @@ export const galleryImages: LocalGalleryImage[] = [
     src: seedlings_empty_room_2,
     alt: "Room with toys in baskets, child-sized furniture and book corner for early learning",
   },
-  { src: play_corner, alt: "Creative play setup in an early learning environment" },
+  {
+    src: play_corner,
+    alt: "Creative play setup in an early learning environment",
+  },
   { src: table_playdough_setting, alt: "Indoor sensory play with playdough" },
   { src: child_on_playground, alt: "Our outdoor playground area" },
   { src: farmers_market, alt: "Imaginative play at a farmers market" },
-  { src: seeds_empty_room, alt: "Room for our seeds with cots, child-sized furniture and play areas" },
+  {
+    src: seeds_empty_room,
+    alt: "Room for our seeds with cots, child-sized furniture and play areas",
+  },
   { src: tower_of_hanoi, alt: "Warm and inviting learning spaces" },
-  { src: outdoor_play_area, alt: "Outdoor play area with various equipment for children" },
+  {
+    src: outdoor_play_area,
+    alt: "Outdoor play area with various equipment for children",
+  },
 ];
 
 export const programGroups: ProgramGroup[] = [

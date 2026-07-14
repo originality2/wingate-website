@@ -9,7 +9,6 @@ import Enrolments from "../pages/Enrolments";
 import OurPeople from "../pages/OurPeople";
 import GalleryPage from "../pages/GalleryPage";
 import ParentResources from "../pages/ParentResources";
-import Contact from "../pages/Contact";
 import {
   AppContainer,
   GlobalStyles,
@@ -130,7 +129,6 @@ function AppShell() {
           <Route path="/our-people" element={<OurPeople />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/parent-resources" element={<ParentResources />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MainContent>

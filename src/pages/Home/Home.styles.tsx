@@ -145,28 +145,3 @@ export const TileLearnMoreButton = styled(Link)`
     display: inline-flex;
   }
 `;
-
-export const ContactStrip = styled.section`
-  background: var(--color-muted);
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: center;
-  padding: 1.2rem 1.5rem;
-
-  h2,
-  p,
-  a {
-    color: #fff;
-  }
-
-  a {
-    display: block;
-  }
-
-  @media (max-width: ${layoutBreakpoints.mobile}) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-`;
