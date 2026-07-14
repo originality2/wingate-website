@@ -23,7 +23,7 @@ export default function ProgramCard({
   featured = false,
 }: ProgramCardProps) {
   const { title, ageRange, description, icon, color } = program;
-  const cardStyle = { "--card-color": color } as CSSProperties;
+  const cardStyle = { "--color-card": color } as CSSProperties;
 
   return (
     <ProgramCardArticle $featured={featured} style={cardStyle}>

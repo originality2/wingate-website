@@ -79,7 +79,7 @@ export const TextPanel = styled.div<{ $soft?: boolean }>`
   ul {
     list-style: var(--content-list-style);
     padding-left: var(--content-list-padding-left);
-    color: var(--content-list-color);
+    color: var(--color-content-list);
   }
 `;
 
@@ -121,7 +121,7 @@ export const SoftCard = styled.article`
   ul {
     list-style: var(--content-list-style);
     padding-left: var(--content-list-padding-left);
-    color: var(--content-list-color);
+    color: var(--color-content-list);
   }
 `;
 
