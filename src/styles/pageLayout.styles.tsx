@@ -101,8 +101,7 @@ export const RoundedMedia = styled.img`
 export const CardGrid = styled.div<{ $twoCol?: boolean }>`
   display: grid;
   gap: 1rem;
-  grid-template-columns: ${({ $twoCol }) =>
-    $twoCol ? "repeat(2, minmax(0, 1fr))" : "repeat(3, minmax(0, 1fr))"};
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   @media (max-width: ${layoutBreakpoints.tablet}) {
     grid-template-columns: 1fr 1fr;
@@ -115,7 +114,7 @@ export const CardGrid = styled.div<{ $twoCol?: boolean }>`
 
 export const SoftCard = styled.article`
   background: var(--color-surface);
-  border-radius: 0;
+  border-radius: 15px;
   padding: 1.1rem;
   height: 100%;
 
