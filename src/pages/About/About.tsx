@@ -44,6 +44,7 @@ export default function About() {
             <RoundedMedia
               src={galleryImages[0].src}
               alt={galleryImages[0].alt}
+              loading="lazy"
             />
           </ImagePanel>
         </ContentGrid>
@@ -55,6 +56,7 @@ export default function About() {
             <RoundedMedia
               src={galleryImages[3].src}
               alt={galleryImages[3].alt}
+              loading="lazy"
             />
           </ImagePanel>
           <TextPanel>

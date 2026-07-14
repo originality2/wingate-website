@@ -38,6 +38,7 @@ export default function OurPeople() {
                 <TeamImage
                   src={member.image}
                   alt={`${member.name} at Wingate Childcare`}
+                  loading="lazy"
                 />
                 <TeamBody>
                   <h3>{member.name}</h3>

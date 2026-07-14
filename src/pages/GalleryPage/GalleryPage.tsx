@@ -45,7 +45,7 @@ export default function GalleryPage() {
                     key={`${image.alt}-${index}`}
                     aria-label={`Slide ${index + 1} of ${galleryImages.length}: ${image.alt}`}
                   >
-                    <BannerImage src={image.src} alt={image.alt} />
+                    <BannerImage src={image.src} alt={image.alt} loading="lazy" />
                   </CarouselCard>
                 ))}
               </CarouselSlider>

@@ -95,6 +95,7 @@ export const RoundedMedia = styled.img`
   height: 100%;
   object-fit: cover;
   min-height: 100%;
+  display: block;
 `;
 
 export const CardGrid = styled.div<{ $twoCol?: boolean }>`

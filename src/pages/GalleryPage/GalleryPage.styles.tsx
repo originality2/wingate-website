@@ -11,4 +11,5 @@ export const BannerImage = styled.img`
   height: 100%;
   object-fit: cover;
   display: block;
+  aspect-ratio: 16 / 9;
 `;

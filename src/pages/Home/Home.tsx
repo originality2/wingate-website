@@ -33,7 +33,7 @@ export default function Home() {
       <LinksGrid aria-label="Site links">
         {homePage.tiles.map((tile) => (
           <Tile key={tile.to} data-reveal="true" data-visible="false">
-            <TileImage src={tile.image} alt={tile.alt} />
+              <TileImage src={tile.image} alt={tile.alt} loading="eager" decoding="async" />
             <TileOverlay>
               <h2>{tile.title}</h2>
               <p>{tile.text}</p>

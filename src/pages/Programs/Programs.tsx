@@ -51,6 +51,7 @@ export default function Programs() {
             <RoundedMedia
               src={galleryImages[2].src}
               alt={galleryImages[2].alt}
+              loading="lazy"
             />
           </ImagePanel>
         </ContentGrid>
@@ -86,6 +87,7 @@ export default function Programs() {
             <RoundedMedia
               src={galleryImages[4].src}
               alt={galleryImages[4].alt}
+              loading="lazy"
             />
           </ImagePanel>
           <TextPanel>

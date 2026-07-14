@@ -24,7 +24,10 @@ export const TeamCard = styled.article`
 
 export const TeamImage = styled.img`
   aspect-ratio: 4 / 3;
+  width: 100%;
+  height: auto;
   object-fit: cover;
+  display: block;
 `;
 
 export const TeamBody = styled.div`

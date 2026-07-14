@@ -15,6 +15,7 @@ export const Hero = styled.section`
   background-position: center;
   display: flex;
   align-items: flex-end;
+  background-attachment: fixed;
 `;
 
 export const HeroOverlay = styled.div`
@@ -81,6 +82,9 @@ export const TileImage = styled.img`
   overflow: hidden;
   z-index: 1;
   transition: transform 0.35s ease;
+  aspect-ratio: auto;
+  will-change: transform;
+  content-visibility: auto;
 
   ${Tile}:hover & {
     transform: scale(1.06);
