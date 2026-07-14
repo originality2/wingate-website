@@ -5,6 +5,7 @@ import { layoutBreakpoints } from "../../styles/pageLayout.styles";
 export const HeaderRoot = styled.header<{ $scrolled: boolean }>`
   position: sticky;
   top: 0;
+  /* Required so the sticky header remains above page content while scrolling. */
   z-index: 1200;
   background: var(--color-soft);
   border-bottom: 1px solid var(--color-border);
@@ -84,7 +85,6 @@ export const BurgerButton = styled.button<{ $open: boolean }>`
     display: flex;
     grid-column: 1;
     justify-self: start;
-    z-index: 30;
   }
 `;
 
@@ -146,7 +146,6 @@ export const Navigation = styled.nav<{ $open: boolean }>`
     justify-content: flex-start;
     flex-direction: column;
     gap: 1rem;
-    z-index: 1300;
     padding: 1rem 1.5rem calc(1.1rem + env(safe-area-inset-bottom));
     transform: ${({ $open }) =>
       $open ? "translateY(0)" : "translateY(-12px)"};
@@ -180,33 +179,23 @@ export const NavList = styled.ul`
 export const NavItem = styled.li``;
 
 export const MainNavLink = styled(NavLink)`
-  position: relative;
   padding: 0.35rem 0;
   border-radius: 0;
   color: var(--color-muted);
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-dark),
+    var(--color-primary-dark)
+  );
+  background-size: 0 1px;
+  background-repeat: no-repeat;
+  background-position: 0 calc(100% - 0.1rem);
   transition: 0.2s ease;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -0.1rem;
-    height: 1px;
-    background: var(--color-primary-dark);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.2s ease;
-  }
 
   &:hover,
   &[aria-current="page"] {
     color: var(--color-primary-dark);
-  }
-
-  &:hover::after,
-  &[aria-current="page"]::after {
-    transform: scaleX(1);
+    background-size: 100% 1px;
   }
 
   @media (max-width: ${layoutBreakpoints.large}) {
@@ -216,11 +205,8 @@ export const MainNavLink = styled(NavLink)`
     color: #ffffff;
     border: 0;
     letter-spacing: 0.01em;
-
-    &::after {
-      background: #ffffff;
-      bottom: -0.12rem;
-    }
+    background-image: linear-gradient(to right, #ffffff, #ffffff);
+    background-position: 0 calc(100% - 0.12rem);
 
     &:hover,
     &[aria-current="page"] {
@@ -275,7 +261,6 @@ export const Overlay = styled.div`
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.28);
-  z-index: 1250;
   cursor: pointer;
   animation: headerOverlayFade 0.25s ease;
 
@@ -318,31 +303,25 @@ export const SubnavList = styled.ul`
 `;
 
 export const SubnavLink = styled.a`
-  position: relative;
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 0;
   color: var(--color-muted);
   white-space: nowrap;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -0.1rem;
-    height: 1px;
-    background: var(--color-primary-dark);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.2s ease;
-  }
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-dark),
+    var(--color-primary-dark)
+  );
+  background-size: 0 1px;
+  background-repeat: no-repeat;
+  background-position: 0 calc(100% - 0.1rem);
+  transition:
+    color 0.2s ease,
+    background-size 0.2s ease;
 
   &:hover {
     color: var(--color-primary-dark);
-  }
-
-  &:hover::after {
-    transform: scaleX(1);
+    background-size: 100% 1px;
   }
 `;

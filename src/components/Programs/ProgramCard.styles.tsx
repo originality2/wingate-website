@@ -26,16 +26,14 @@ export const ProgramCardArticle = styled.article<{ $featured: boolean }>`
 `;
 
 export const FeaturedBadge = styled.span`
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  align-self: flex-end;
+  margin: 1rem 1rem -0.5rem 0;
   background: linear-gradient(135deg, var(--color-accent) 0%, #ff9267 100%);
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.2rem 0.6rem;
   border-radius: 0.8rem 1rem 0.8rem 1.2rem;
-  z-index: 1;
 `;
 
 export const IconWrap = styled.div`

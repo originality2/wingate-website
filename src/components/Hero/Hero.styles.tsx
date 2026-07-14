@@ -2,49 +2,37 @@ import styled from "styled-components";
 import { layoutBreakpoints } from "../../styles/pageLayout.styles";
 
 export const HeroSection = styled.section`
-  position: relative;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-dark) 0%,
-    var(--color-primary) 58%,
-    #4ebc78 100%
-  );
+  background-image:
+    radial-gradient(
+      circle at calc(100% - 7rem) -4rem,
+      rgba(255, 211, 108, 0.2) 0 10rem,
+      transparent 10rem
+    ),
+    radial-gradient(
+      circle at -5rem calc(100% - 3rem),
+      rgba(255, 111, 169, 0.14) 0 8rem,
+      transparent 8rem
+    ),
+    linear-gradient(
+      135deg,
+      var(--color-primary-dark) 0%,
+      var(--color-primary) 58%,
+      #4ebc78 100%
+    );
   color: #fff;
   padding: 6.5rem 0 3.5rem;
   overflow: hidden;
   min-height: 85vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-  }
-
-  &::before {
-    width: 20rem;
-    height: 20rem;
-    right: -7rem;
-    top: -4rem;
-    background: rgba(255, 211, 108, 0.2);
-  }
-
-  &::after {
-    width: 16rem;
-    height: 16rem;
-    left: -5rem;
-    bottom: 3rem;
-    background: rgba(255, 111, 169, 0.14);
-  }
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  align-items: center;
 `;
 
 export const Backdrop = styled.div`
-  position: absolute;
-  inset: 0;
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
   background-image:
     radial-gradient(
       circle at 18% 20%,
@@ -71,6 +59,7 @@ export const Backdrop = styled.div`
 `;
 
 export const HeroContentGrid = styled.div`
+  grid-area: 1 / 1;
   width: 100%;
   max-width: 1120px;
   margin-inline: auto;
@@ -79,8 +68,6 @@ export const HeroContentGrid = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: center;
-  position: relative;
-  z-index: 1;
 
   @media (max-width: ${layoutBreakpoints.large}) {
     grid-template-columns: 1fr;
@@ -228,8 +215,7 @@ export const StatCard = styled.div<{ $accent?: boolean; $green?: boolean }>`
   }
 `;
 
-export const StatIcon = styled.span`
-`;
+export const StatIcon = styled.span``;
 
 export const StatValue = styled.span`
   font-family: var(--font-heading);
@@ -243,10 +229,9 @@ export const StatLabel = styled.span`
 `;
 
 export const Wave = styled.div`
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
+  grid-area: 2 / 1;
+  width: 100%;
+  margin-top: 2rem;
   line-height: 0;
 
   svg {

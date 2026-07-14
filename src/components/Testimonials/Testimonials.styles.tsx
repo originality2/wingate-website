@@ -38,46 +38,24 @@ export const TestimonialsGrid = styled.div`
 
 export const TestimonialCardRoot = styled.blockquote`
   background: #fff;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-border),
+    var(--color-accent)
+  );
+  background-repeat: no-repeat;
+  background-size: calc(100% - 3rem) 0.4rem;
+  background-position: 1.5rem 0;
   border-radius: 2.2rem 1.7rem 2.25rem 1.55rem;
-  padding: 1.5rem;
+  padding: 1.9rem 1.5rem 1.5rem;
   box-shadow: var(--shadow-soft);
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  position: relative;
   border: 1px solid rgba(240, 223, 196, 0.95);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
-  overflow: visible;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 1.5rem;
-    right: 1.5rem;
-    height: 0.4rem;
-    border-radius: 0 0 999px 999px;
-    background: linear-gradient(
-      90deg,
-      var(--color-border),
-      var(--color-accent)
-    );
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -0.7rem;
-    left: 2rem;
-    width: 1.4rem;
-    height: 1.4rem;
-    background: #fff;
-    border-right: 1px solid rgba(240, 223, 196, 0.95);
-    border-bottom: 1px solid rgba(240, 223, 196, 0.95);
-    transform: rotate(45deg);
-  }
 
   &:hover {
     transform: translateY(-6px) rotate(1deg);

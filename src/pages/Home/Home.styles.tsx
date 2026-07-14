@@ -53,18 +53,19 @@ export const LinksGrid = styled.section`
 `;
 
 export const Tile = styled.article`
-  position: relative;
+  display: grid;
   min-height: 44vh;
 `;
 
 export const TileImage = styled.img`
+  grid-area: 1 / 1;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 `;
 
 export const TileOverlay = styled(Link)`
-  position: absolute;
-  inset: 0;
+  grid-area: 1 / 1;
   background: linear-gradient(rgba(51, 42, 30, 0.15), rgba(51, 42, 30, 0.7));
   display: flex;
   flex-direction: column;

@@ -21,7 +21,7 @@ export const Grid = styled.div<{ $compact: boolean }>`
 `;
 
 export const Item = styled.figure<{ $wide: boolean }>`
-  position: relative;
+  display: grid;
   overflow: hidden;
   border-radius: 1.9rem 1.4rem 2rem 1.3rem;
   cursor: pointer;
@@ -43,6 +43,7 @@ export const Item = styled.figure<{ $wide: boolean }>`
 `;
 
 export const Image = styled.img`
+  grid-area: 1 / 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -50,10 +51,8 @@ export const Image = styled.img`
 `;
 
 export const Caption = styled.figcaption`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  grid-area: 1 / 1;
+  align-self: end;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
   color: #fff;
   padding: 1.5rem 0.75rem 0.5rem;
