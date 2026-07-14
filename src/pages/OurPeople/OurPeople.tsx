@@ -1,17 +1,13 @@
 import { peoplePage, teamMembers } from "../../content/siteContent";
 import {
-  CardEyebrow,
   Container,
   Eyebrow,
   HeroSection,
   Intro,
   Main,
   Section,
-  TeamBody,
-  TeamCard,
-  TeamGrid,
-  TeamImage,
-} from "./OurPeople.styles";
+} from "../../styles/pageLayout.styles";
+import { TeamBody, TeamCard, TeamGrid, TeamImage } from "./OurPeople.styles";
 
 export default function OurPeople() {
   return (
@@ -45,7 +41,7 @@ export default function OurPeople() {
                 />
                 <TeamBody>
                   <h3>{member.name}</h3>
-                  <CardEyebrow>{member.role}</CardEyebrow>
+                  <Eyebrow>{member.role}</Eyebrow>
                   <p>{member.bio}</p>
                 </TeamBody>
               </TeamCard>

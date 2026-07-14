@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Main = styled.main`
   flex: 1;
@@ -55,13 +55,20 @@ export const ContentGrid = styled.div`
   }
 `;
 
-export const TextPanel = styled.div`
+export const TextPanel = styled.div<{ $soft?: boolean }>`
   width: 100%;
   padding: clamp(1.5rem, 4vw, 4rem);
-  background: var(--color-surface);
+  background: ${({ $soft }) =>
+    $soft ? "var(--color-soft)" : "var(--color-surface)"};
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  ul {
+    list-style: disc;
+    padding-left: 1rem;
+    color: var(--color-muted);
+  }
 `;
 
 export const ImagePanel = styled.div`
@@ -78,10 +85,11 @@ export const RoundedMedia = styled.img`
   min-height: 100%;
 `;
 
-export const CardGrid = styled.div`
+export const CardGrid = styled.div<{ $twoCol?: boolean }>`
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: ${({ $twoCol }) =>
+    $twoCol ? "repeat(2, minmax(0, 1fr))" : "repeat(3, minmax(0, 1fr))"};
 
   @media (max-width: 960px) {
     grid-template-columns: 1fr 1fr;
@@ -97,19 +105,15 @@ export const SoftCard = styled.article`
   border-radius: 0;
   padding: 1.1rem;
   height: 100%;
+
+  ul {
+    list-style: disc;
+    padding-left: 1rem;
+    color: var(--color-muted);
+  }
 `;
 
-export const CardEyebrow = styled.p`
-  display: inline-block;
-  margin-bottom: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  color: var(--color-primary-dark);
-  font-weight: 700;
-`;
-
-export const PrimaryLinkButton = styled(Link)`
+const primaryButtonStyles = css`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -121,8 +125,22 @@ export const PrimaryLinkButton = styled(Link)`
   cursor: pointer;
   background: var(--color-primary);
   color: #fff;
+  width: fit-content;
+  margin-top: 0.5rem;
 
   &:hover {
     background: var(--color-primary-dark);
   }
+`;
+
+export const PrimaryButtonLink = styled(Link)`
+  ${primaryButtonStyles}
+`;
+
+export const PrimaryButtonAnchor = styled.a`
+  ${primaryButtonStyles}
+`;
+
+export const PrimaryButton = styled.button`
+  ${primaryButtonStyles}
 `;

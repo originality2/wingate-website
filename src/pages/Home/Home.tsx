@@ -8,11 +8,11 @@ import {
   HeroTitle,
   LinksGrid,
   Main,
-  PrimaryButtonLink,
   Tile,
   TileImage,
   TileOverlay,
 } from "./Home.styles";
+import { PrimaryButtonLink } from "../../styles/pageLayout.styles";
 
 export default function Home() {
   return (

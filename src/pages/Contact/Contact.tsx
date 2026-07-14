@@ -2,17 +2,19 @@ import { contactPage, siteContact } from "../../content/siteContent";
 import {
   Container,
   Eyebrow,
-  FieldLabel,
   HeroSection,
-  Input,
   Intro,
   Main,
-  MessageCard,
-  PrimaryLinkButton,
   Section,
-  SimpleForm,
+  PrimaryButtonAnchor,
   SoftCard,
+} from "../../styles/pageLayout.styles";
+import {
+  FieldLabel,
+  Input,
+  MessageCard,
   SubmitButton,
+  SimpleForm,
   Textarea,
   TwoColGrid,
 } from "./Contact.styles";
@@ -57,13 +59,13 @@ export default function Contact() {
                 Book a tour to see the rooms, meet educators, and ask questions
                 about enrolment availability.
               </p>
-              <PrimaryLinkButton
+              <PrimaryButtonAnchor
                 href={siteContact.mapLink}
                 target="_blank"
                 rel="noreferrer"
               >
                 Open Map
-              </PrimaryLinkButton>
+              </PrimaryButtonAnchor>
             </SoftCard>
           </TwoColGrid>
         </Container>

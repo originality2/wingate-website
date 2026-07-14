@@ -4,7 +4,6 @@ import {
   programPage,
 } from "../../content/siteContent";
 import {
-  CardEyebrow,
   CardGrid,
   Container,
   ContentGrid,
@@ -13,12 +12,12 @@ import {
   ImagePanel,
   Intro,
   Main,
-  PrimaryLinkButton,
-  RoundedMedia,
+  PrimaryButtonLink,
   Section,
   SoftCard,
   TextPanel,
-} from "./Programs.styles";
+  RoundedMedia,
+} from "../../styles/pageLayout.styles";
 
 export default function Programs() {
   return (
@@ -72,7 +71,7 @@ export default function Programs() {
                 data-reveal="true"
                 data-visible="false"
               >
-                <CardEyebrow>{group.ages}</CardEyebrow>
+                <Eyebrow>{group.ages}</Eyebrow>
                 <h3>{group.name}</h3>
                 <p>{group.summary}</p>
               </SoftCard>
@@ -100,9 +99,9 @@ export default function Programs() {
               Wingate also supplies nappies, wipes, sunscreen, and
               children&apos;s bedding as part of the daily program.
             </p>
-            <PrimaryLinkButton to="/parent-resources">
+            <PrimaryButtonLink to="/parent-resources">
               View Sample Menu
-            </PrimaryLinkButton>
+            </PrimaryButtonLink>
           </TextPanel>
         </ContentGrid>
       </Section>

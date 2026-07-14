@@ -1,16 +1,16 @@
 import { aboutPage, galleryImages } from "../../content/siteContent";
 import {
   Container,
-  ContentGrid,
   Eyebrow,
   HeroSection,
-  ImagePanel,
   Intro,
   Main,
+  ContentGrid,
+  ImagePanel,
   RoundedMedia,
   Section,
   TextPanel,
-} from "./About.styles";
+} from "../../styles/pageLayout.styles";
 
 export default function About() {
   return (

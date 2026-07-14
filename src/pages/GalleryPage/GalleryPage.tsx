@@ -2,14 +2,12 @@ import { galleryImages } from "../../content/siteContent";
 import {
   Container,
   Eyebrow,
-  GalleryCard,
-  GalleryGrid,
   HeroSection,
-  Image,
   Intro,
   Main,
   Section,
-} from "./GalleryPage.styles";
+} from "../../styles/pageLayout.styles";
+import { GalleryCard, GalleryGrid, Image } from "./GalleryPage.styles";
 
 export default function GalleryPage() {
   return (

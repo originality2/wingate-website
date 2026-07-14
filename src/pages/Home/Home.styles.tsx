@@ -40,24 +40,6 @@ export const HeroSubtitle = styled.p`
   color: #fff;
 `;
 
-export const PrimaryButtonLink = styled(Link)`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  padding: 0.65rem 1.1rem;
-  font-weight: 600;
-  transition: 0.2s ease;
-  border: 0;
-  cursor: pointer;
-  background: var(--color-primary);
-  color: #fff;
-
-  &:hover {
-    background: var(--color-primary-dark);
-  }
-`;
-
 export const LinksGrid = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;

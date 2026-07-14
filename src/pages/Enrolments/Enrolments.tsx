@@ -1,18 +1,18 @@
 import { enrolmentsPage, parentResourceLinks } from "../../content/siteContent";
 import {
-  CardGrid,
   Container,
   ContentGrid,
   Eyebrow,
   HeroSection,
   Intro,
   Main,
+  CardGrid,
+  PrimaryButtonAnchor,
   PrimaryButtonLink,
-  PrimaryRouterButton,
   Section,
   SoftCard,
   TextPanel,
-} from "./Enrolments.styles";
+} from "../../styles/pageLayout.styles";
 
 export default function Enrolments() {
   return (
@@ -40,20 +40,20 @@ export default function Enrolments() {
               notice, availability can shift quickly. Offers are also made in
               line with the Priority of Access policy.
             </p>
-            <PrimaryButtonLink
+            <PrimaryButtonAnchor
               href={parentResourceLinks.documents[0].href}
               target="_blank"
               rel="noreferrer"
             >
               Open Family Handbook
-            </PrimaryButtonLink>
-            <PrimaryButtonLink
+            </PrimaryButtonAnchor>
+            <PrimaryButtonAnchor
               href="https://prodadmin.myxplor.com/enrollment/index/dllrYUJ1THpWSGlCT2luRVlIM0NqZz09"
               target="_blank"
               rel="noreferrer"
             >
               Add to Waitlist
-            </PrimaryButtonLink>
+            </PrimaryButtonAnchor>
           </TextPanel>
           <TextPanel $soft>
             <h3>What to Prepare</h3>
@@ -107,7 +107,7 @@ export default function Enrolments() {
               include meeting leadership and room educators while observing the
               program indoors and outdoors.
             </p>
-            <PrimaryRouterButton to="/contact">Book a Tour</PrimaryRouterButton>
+            <PrimaryButtonLink to="/contact">Book a Tour</PrimaryButtonLink>
           </TextPanel>
           <TextPanel $soft>
             <h3>What You&apos;ll See</h3>

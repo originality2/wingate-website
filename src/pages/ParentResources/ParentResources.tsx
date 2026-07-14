@@ -8,8 +8,8 @@ import {
   Main,
   Section,
   SoftCard,
-  TextLink,
-} from "./ParentResources.styles";
+} from "../../styles/pageLayout.styles";
+import { TextLink } from "./ParentResources.styles";
 
 export default function ParentResources() {
   return (
