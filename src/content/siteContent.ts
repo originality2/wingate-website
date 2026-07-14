@@ -1,5 +1,18 @@
-import photo1 from "../../tmp-photos/photo-1.jpeg";
-import photo2 from "../../tmp-photos/photo-2.jpg";
+import child_with_bucket from "../img/child_with_bucket.jpg";
+import people_drawings from "../img/people_drawings.jpg";
+import child_with_sand from "../img/child_with_sand.jpg";
+import farmers_market from "../img/farmers_market.jpg";
+import play_corner from "../img/play_corner.jpg";
+import table_playdough_setting from "../img/table_playdough_setting.jpg";
+import seeds_empty_room from "../img/seeds_empty_room.jpg";
+import seedlings_empty_room from "../img/seedlings_empty_room.jpg";
+import seedlings_empty_room_2 from "../img/seedlings_empty_room_2.jpg";
+import child_gardening from "../img/child_gardening.jpg";
+import child_on_playground from "../img/child_on_playground.jpg";
+import resources from "../img/resources.jpg";
+import many_people_drawing from "../img/many_people_drawing.jpg";
+import outdoor_play_area from "../img/outdoor_play_area.jpg";
+import tower_of_hanoi from "../img/tower_of_hanoi.jpg";
 import photo3 from "../../tmp-photos/photo-3.jpg";
 import photo4 from "../../tmp-photos/photo-4.jpg";
 import type {
@@ -115,49 +128,49 @@ export const homePage: HomePageContent = {
       title: "About",
       text: "History, philosophy, and how our co-operative is governed.",
       to: "/about",
-      image: photo1,
+      image: table_playdough_setting,
       alt: "Children and educators in a learning space",
     },
     {
       title: "Program",
       text: "Pedagogy, age groups, and meals across the day.",
       to: "/program",
-      image: photo2,
+      image: seedlings_empty_room,
       alt: "Program activities in an early learning room",
     },
     {
       title: "Enrolments",
       text: "Waitlist, fees, tours, and orientation information.",
       to: "/enrolments",
-      image: photo3,
+      image: child_gardening,
       alt: "Welcoming childcare environment for families",
     },
     {
       title: "Our People",
       text: "Meet our leadership and educator team.",
       to: "/our-people",
-      image: photo4,
-      alt: "Educator engaging with children",
+      image: many_people_drawing,
+      alt: "Drawing of children and educators in a learning space",
     },
     {
       title: "Gallery",
       text: "A visual look at our spaces, routines, and learning moments.",
       to: "/gallery",
-      image: photo1,
+      image: child_on_playground,
       alt: "Gallery style view of childcare spaces",
     },
     {
       title: "Parent Resources",
       text: "Family handbook, policies, and useful links in one place.",
       to: "/parent-resources",
-      image: photo2,
+      image: resources,
       alt: "Parent resources and service information",
     },
     {
       title: "Contact",
       text: "Get in touch for tours, questions, and enrolment support.",
       to: "/contact",
-      image: photo3,
+      image: people_drawings,
       alt: "Contact and visit information section",
     },
   ],
@@ -168,13 +181,13 @@ export const teamMembers: TeamMember[] = [
     name: "Jandan Basaran",
     role: "Centre Director / Educational Leader",
     bio: "Leads day-to-day operations, mentors educators, and oversees teaching and learning quality.",
-    image: photo1,
+    image: photo4,
   },
   {
     name: "Aditya Panchakshari",
     role: "Curriculum Leader",
     bio: "Supports curriculum design, documentation, and reflective practice across age groups.",
-    image: photo2,
+    image: photo4,
   },
   {
     name: "Christine Mengato",
@@ -192,28 +205,28 @@ export const teamMembers: TeamMember[] = [
     name: "Natalia",
     role: "Room Leader - Seedlings",
     bio: "Leads play-based learning that supports language, wellbeing, and growing independence.",
-    image: photo1,
+    image: photo4,
   },
   {
     name: "Mira & Jules",
     role: "Kindergarten Teachers",
     bio: "Deliver funded kinder programs focused on school readiness, inclusion, and emotional wellbeing.",
-    image: photo2,
+    image: photo4,
   },
 ];
 
 export const galleryImages: LocalGalleryImage[] = [
   {
-    src: photo1,
-    alt: "Children and educators sharing a calm classroom moment",
+    src: seedlings_empty_room_2,
+    alt: "Room with toys in baskets, child-sized furniture and book corner for early learning",
   },
-  { src: photo2, alt: "Creative play setup in an early learning environment" },
-  { src: photo3, alt: "Outdoor learning and movement activity" },
-  { src: photo4, alt: "Cozy reading and rest area for children" },
-  { src: photo2, alt: "Hands-on sensory exploration at childcare" },
-  { src: photo3, alt: "Children collaborating in group play" },
-  { src: photo4, alt: "Warm and inviting learning spaces" },
-  { src: photo1, alt: "Educator-led storytelling and discussion" },
+  { src: play_corner, alt: "Creative play setup in an early learning environment" },
+  { src: table_playdough_setting, alt: "Indoor sensory play with playdough" },
+  { src: child_on_playground, alt: "Our outdoor playground area" },
+  { src: farmers_market, alt: "Imaginative play at a farmers market" },
+  { src: seeds_empty_room, alt: "Room for our seeds with cots, child-sized furniture and play areas" },
+  { src: tower_of_hanoi, alt: "Warm and inviting learning spaces" },
+  { src: outdoor_play_area, alt: "Outdoor play area with various equipment for children" },
 ];
 
 export const programGroups: ProgramGroup[] = [

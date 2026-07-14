@@ -1,3 +1,14 @@
+import {
+  Carousel,
+  CarouselCard,
+  CarouselNav,
+  CarouselNavButton,
+  CarouselNavContainer,
+  CarouselSlider,
+  CarouselViewport,
+  FluentProvider,
+  webLightTheme,
+} from "@fluentui/react-components";
 import { galleryImages } from "../../content/siteContent";
 import {
   Container,
@@ -7,7 +18,7 @@ import {
   Main,
   Section,
 } from "../../styles/pageLayout.styles";
-import { GalleryCard, GalleryGrid, Image } from "./GalleryPage.styles";
+import { BannerImage, CarouselWrapper } from "./GalleryPage.styles";
 
 export default function GalleryPage() {
   return (
@@ -24,19 +35,35 @@ export default function GalleryPage() {
       </HeroSection>
 
       <Section data-reveal="true" data-visible="false">
-        <Container>
-          <GalleryGrid aria-label="Photo gallery">
-            {galleryImages.map((image, index) => (
-              <GalleryCard
-                key={`${image.alt}-${index}`}
-                data-reveal="true"
-                data-visible="false"
+        <CarouselWrapper>
+          <FluentProvider theme={webLightTheme}>
+            <Carousel groupSize={1} circular aria-label="Photo gallery">
+              <CarouselViewport>
+              <CarouselSlider>
+                {galleryImages.map((image, index) => (
+                  <CarouselCard
+                    key={`${image.alt}-${index}`}
+                    aria-label={`Slide ${index + 1} of ${galleryImages.length}: ${image.alt}`}
+                  >
+                    <BannerImage src={image.src} alt={image.alt} />
+                  </CarouselCard>
+                ))}
+              </CarouselSlider>
+              </CarouselViewport>
+              <CarouselNavContainer
+                layout="overlay-expanded"
+                next={{ "aria-label": "Next photo" }}
+                prev={{ "aria-label": "Previous photo" }}
               >
-                <Image src={image.src} alt={image.alt} loading="lazy" />
-              </GalleryCard>
-            ))}
-          </GalleryGrid>
-        </Container>
+                <CarouselNav>
+                  {(index) => (
+                    <CarouselNavButton aria-label={`Go to slide ${index + 1}`} />
+                  )}
+                </CarouselNav>
+              </CarouselNavContainer>
+            </Carousel>
+          </FluentProvider>
+        </CarouselWrapper>
       </Section>
     </Main>
   );
