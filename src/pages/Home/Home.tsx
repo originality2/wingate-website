@@ -9,7 +9,9 @@ import {
   LinksGrid,
   Main,
   Tile,
+  TileDesktopLink,
   TileImage,
+  TileLearnMoreButton,
   TileOverlay,
 } from "./Home.styles";
 import { PrimaryButtonLink } from "../../styles/pageLayout.styles";
@@ -32,11 +34,12 @@ export default function Home() {
         {homePage.tiles.map((tile) => (
           <Tile key={tile.to} data-reveal="true" data-visible="false">
             <TileImage src={tile.image} alt={tile.alt} />
-            <TileOverlay to={tile.to}>
+            <TileOverlay>
               <h2>{tile.title}</h2>
               <p>{tile.text}</p>
-              <span>View page</span>
+              <TileLearnMoreButton to={tile.to}>Learn more</TileLearnMoreButton>
             </TileOverlay>
+            <TileDesktopLink to={tile.to} aria-label={`View ${tile.title}`} />
           </Tile>
         ))}
       </LinksGrid>

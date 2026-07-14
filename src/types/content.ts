@@ -28,45 +28,6 @@ export type PageMeta = {
   sectionLinks: SectionLink[];
 };
 
-export type HeroCta = {
-  label: string;
-  href: string;
-};
-
-export type HeroContent = {
-  headline: string;
-  subheading: string;
-  primaryCta: HeroCta;
-  secondaryCta: HeroCta;
-};
-
-export type Program = {
-  id?: string;
-  title: string;
-  ageRange: string;
-  description: string;
-  icon: string;
-  color: string;
-};
-
-export type Testimonial = {
-  id?: string;
-  sys?: { id?: string };
-  quote: string;
-  authorName: string;
-  authorTitle: string;
-};
-
-export type GalleryItem = {
-  id?: string;
-  sys?: { id?: string };
-  title?: string;
-  description?: string;
-  imageUrl?: string;
-  image?: { file?: { url?: string } };
-  file?: { url?: string };
-};
-
 export type LocalGalleryImage = {
   src: string;
   alt: string;

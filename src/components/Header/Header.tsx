@@ -54,6 +54,8 @@ export default function Header() {
 
   return (
     <HeaderRoot $scrolled={scrolled} role="banner">
+      {menuOpen && <Overlay aria-hidden="true" onClick={closeMenu} />}
+
       <HeaderInner>
         <BurgerButton
           $open={menuOpen}
@@ -95,8 +97,6 @@ export default function Header() {
 
         <MobileSpacer aria-hidden="true" />
       </HeaderInner>
-
-      {menuOpen && <Overlay aria-hidden="true" onClick={closeMenu} />}
 
       {sectionLinks.length > 0 && (
         <SubnavWrap>
