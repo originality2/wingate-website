@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { layoutBreakpoints } from "../../styles/pageLayout.styles";
 
 export const HeroSection = styled.section`
   position: relative;
@@ -81,7 +82,7 @@ export const HeroContentGrid = styled.div`
   position: relative;
   z-index: 1;
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     grid-template-columns: 1fr;
     gap: 2.5rem;
     text-align: center;
@@ -120,7 +121,7 @@ export const Subheading = styled.p`
   margin-bottom: 1.5rem;
   max-width: 520px;
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     margin-left: auto;
     margin-right: auto;
   }
@@ -131,7 +132,7 @@ export const HeroActions = styled.div`
   gap: 0.75rem;
   flex-wrap: wrap;
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     justify-content: center;
   }
 `;
@@ -174,12 +175,12 @@ export const CardsGrid = styled.div`
   gap: 0.75rem;
   align-self: stretch;
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     max-width: 360px;
     margin: 0 auto;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: ${layoutBreakpoints.mobile}) {
     grid-template-columns: 1fr 1fr;
     max-width: 280px;
   }
@@ -224,7 +225,7 @@ export const StatCard = styled.div<{ $accent?: boolean; $green?: boolean }>`
     box-shadow: 0 22px 42px rgba(0, 0, 0, 0.18);
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     transform: none;
 
     &:hover {

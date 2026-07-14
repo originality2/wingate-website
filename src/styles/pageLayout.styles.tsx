@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const layoutBreakpoints = {
-  mobile: "720px",
-  tablet: "960px",
-  desktop: "1120px",
+  mobile: "31.3125rem",
+  tablet: "48rem",
+  large: "62.5rem",
 } as const;
 
 export const Main = styled.main`
@@ -12,8 +12,17 @@ export const Main = styled.main`
 `;
 
 export const HeroSection = styled.section`
-  padding: 2rem 0 2rem;
-  background: linear-gradient(135deg, #dbffe8 0%, #e6fbff 100%);
+  padding: 4rem 0 2rem;
+  background: linear-gradient(
+    135deg,
+    var(--color-soft) 0%,
+    var(--color-surface) 100%
+  );
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    max-width: 18ch;
+  }
 `;
 
 export const Container = styled.div`
@@ -41,7 +50,7 @@ export const Intro = styled.p`
 export const Section = styled.section<{ $alt?: boolean }>`
   padding: 0;
   scroll-margin-top: 6rem;
-  background: ${({ $alt }) => ($alt ? "#dcffe9" : "transparent")};
+  background: ${({ $alt }) => ($alt ? "#e5d9cc" : "transparent")};
 `;
 
 export const ContentGrid = styled.div`

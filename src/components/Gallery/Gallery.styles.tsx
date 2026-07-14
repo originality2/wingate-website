@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { layoutBreakpoints } from "../../styles/pageLayout.styles";
 
 export const GalleryRoot = styled.div``;
 
@@ -8,12 +9,12 @@ export const Grid = styled.div<{ $compact: boolean }>`
   grid-auto-rows: ${({ $compact }) => ($compact ? "200px" : "220px")};
   gap: 0.75rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${layoutBreakpoints.tablet}) {
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 180px;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: ${layoutBreakpoints.mobile}) {
     grid-template-columns: 1fr;
     grid-auto-rows: 200px;
   }
@@ -36,7 +37,7 @@ export const Item = styled.figure<{ $wide: boolean }>`
     transform: translateY(0);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${layoutBreakpoints.tablet}) {
     grid-column: span 1;
   }
 `;

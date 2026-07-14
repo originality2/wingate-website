@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { layoutBreakpoints } from "../../styles/pageLayout.styles";
 
 export const Main = styled.main`
-  background: #f7fff7;
+  background: #f5f1ed;
 `;
 
 export const Hero = styled.section`
   min-height: 80vh;
   background-image:
-    linear-gradient(rgba(0, 28, 18, 0.45), rgba(0, 28, 18, 0.45)),
+    linear-gradient(rgba(51, 42, 30, 0.45), rgba(51, 42, 30, 0.45)),
     url("../../tmp-photos/photo-1.jpeg");
   background-size: cover;
   background-position: center;
@@ -44,11 +45,11 @@ export const LinksGrid = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  @media (max-width: 960px) {
+  @media (max-width: ${layoutBreakpoints.tablet}) {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: ${layoutBreakpoints.mobile}) {
     grid-template-columns: 1fr;
   }
 `;
@@ -66,7 +67,7 @@ export const TileImage = styled.img`
 export const TileOverlay = styled(Link)`
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0, 30, 20, 0.15), rgba(0, 30, 20, 0.7));
+  background: linear-gradient(rgba(51, 42, 30, 0.15), rgba(51, 42, 30, 0.7));
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -81,7 +82,7 @@ export const TileOverlay = styled(Link)`
 `;
 
 export const ContactStrip = styled.section`
-  background: #008f5a;
+  background: var(--color-muted);
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -99,7 +100,7 @@ export const ContactStrip = styled.section`
     display: block;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: ${layoutBreakpoints.mobile}) {
     flex-direction: column;
     align-items: flex-start;
   }

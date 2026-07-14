@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { layoutBreakpoints } from "../../styles/pageLayout.styles";
 
 export const ContactFormRoot = styled.form`
   display: flex;
@@ -11,7 +12,7 @@ export const FormRow = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${layoutBreakpoints.mobile}) {
     grid-template-columns: 1fr;
   }
 `;

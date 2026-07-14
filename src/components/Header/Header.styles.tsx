@@ -1,11 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
+import { layoutBreakpoints } from "../../styles/pageLayout.styles";
 
 export const HeaderRoot = styled.header<{ $scrolled: boolean }>`
   position: sticky;
   top: 0;
   z-index: 1200;
-  background: rgba(247, 255, 247, 0.95);
+  background: var(--color-soft);
   border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(6px);
   transition: box-shadow 0.2s ease;
@@ -28,7 +29,7 @@ export const HeaderInner = styled.div`
   gap: 1.2rem;
   min-height: 74px;
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     display: grid;
     grid-template-columns: 36px 1fr 36px;
     align-items: center;
@@ -79,7 +80,7 @@ export const BurgerButton = styled.button<{ $open: boolean }>`
       $open ? "translateY(-6px) rotate(-45deg)" : "none"};
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     display: flex;
     grid-column: 1;
     justify-self: start;
@@ -90,49 +91,35 @@ export const BurgerButton = styled.button<{ $open: boolean }>`
 export const LogoLink = styled(Link)`
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   flex-shrink: 0;
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     grid-column: 2;
     justify-self: center;
     margin: 0;
   }
 `;
 
-export const LogoIcon = styled.span`
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  background: var(--color-primary);
-  color: #fff;
-  border-radius: 0;
-  font-weight: 700;
-`;
+export const LogoImage = styled.img`
+  height: 80px;
+  width: auto;
+  object-fit: contain;
 
-export const LogoText = styled.span`
-  display: flex;
-  flex-direction: column;
-  line-height: 1.05;
-
-  @media (max-width: 900px) {
-    align-items: center;
-    text-align: center;
+  @media (max-width: ${layoutBreakpoints.large}) {
+    display: none;
   }
 `;
 
-export const LogoName = styled.span`
-  font-size: 1rem;
-  font-weight: 700;
-`;
+export const LogoIconImage = styled.img`
+  display: none;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 
-export const LogoTagline = styled.span`
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-muted);
-  font-weight: 600;
+  @media (max-width: ${layoutBreakpoints.large}) {
+    display: block;
+  }
 `;
 
 export const Navigation = styled.nav<{ $open: boolean }>`
@@ -142,7 +129,7 @@ export const Navigation = styled.nav<{ $open: boolean }>`
   flex: 1;
   justify-content: flex-end;
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     display: flex;
     position: fixed;
     top: 68px;
@@ -152,8 +139,8 @@ export const Navigation = styled.nav<{ $open: boolean }>`
     max-height: calc(100dvh - 68px);
     background: linear-gradient(
       165deg,
-      rgb(0, 143, 90) 0%,
-      rgb(0, 165, 207) 100%
+      var(--color-accent-dark) 0%,
+      var(--color-accent) 100%
     );
     align-items: flex-start;
     justify-content: flex-start;
@@ -180,7 +167,7 @@ export const NavList = styled.ul`
   flex-wrap: wrap;
   justify-content: flex-end;
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -224,7 +211,7 @@ export const MainNavLink = styled(NavLink)`
     transform: scaleX(1);
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     display: inline-block;
     width: auto;
     font-size: 1.1rem;
@@ -264,7 +251,7 @@ export const CtaLink = styled(Link)`
     background: var(--color-primary-dark);
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     margin-top: 0.25rem;
     align-self: flex-start;
     font-size: 0.9rem;
@@ -282,7 +269,7 @@ export const CtaLink = styled(Link)`
 export const MobileSpacer = styled.span`
   display: none;
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     display: block;
     width: 36px;
     height: 36px;
@@ -313,7 +300,7 @@ export const SubnavWrap = styled.div`
   border-bottom: 1px solid rgba(122, 207, 166, 0.45);
   background: rgba(255, 255, 255, 0.65);
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     display: none;
   }
 `;

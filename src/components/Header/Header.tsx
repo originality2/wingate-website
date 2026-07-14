@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { navItems, sectionLinksByPath } from "../../content/siteContent";
+import logo from "../../assets/logo.png";
+import logoIcon from "../../assets/logo_icon.png";
 import {
   BurgerButton,
   CtaLink,
   HeaderInner,
   HeaderRoot,
-  LogoIcon,
+  LogoIconImage,
+  LogoImage,
   LogoLink,
-  LogoName,
-  LogoTagline,
-  LogoText,
   MainNavLink,
   MobileSpacer,
   Navigation,
@@ -37,10 +37,16 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
     document.body.setAttribute("data-menu-open", menuOpen ? "true" : "false");
+    document.body.classList.toggle("header-menu-open", menuOpen);
 
     return () => {
       document.body.removeAttribute("data-menu-open");
+      document.body.classList.remove("header-menu-open");
     };
   }, [menuOpen]);
 
@@ -68,11 +74,8 @@ export default function Header() {
           onClick={closeMenu}
           aria-label="Wingate Childcare Home"
         >
-          <LogoIcon aria-hidden="true">W</LogoIcon>
-          <LogoText>
-            <LogoName>Wingate Childcare</LogoName>
-            <LogoTagline>Community Co-op</LogoTagline>
-          </LogoText>
+          <LogoImage src={logo} alt="Wingate Childcare" />
+          <LogoIconImage src={logoIcon} alt="" aria-hidden="true" />
         </LogoLink>
 
         <Navigation $open={menuOpen} aria-label="Main navigation">

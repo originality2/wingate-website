@@ -1,24 +1,25 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap');
-
   * {
     box-sizing: border-box;
   }
 
   :root {
-    --color-bg: #f6fff7;
-    --color-surface: #ffffff;
-    --color-soft: #e9fff0;
-    --color-primary: #008f5a;
-    --color-primary-dark: #007245;
-    --color-accent: #00a5cf;
-    --color-text: #102319;
-    --color-muted: #2b5a48;
-    --color-border: #7acfa6;
+    --color-bg: #d4c4b0;
+    --color-surface: #f5f1ed;
+    --color-soft: #e8dfd5;
+    --color-primary: #6b8e23;
+    --color-primary-dark: #556b2f;
+    --color-primary-light: #9cb86a;
+    --color-accent: #8b7355;
+    --color-accent-dark: #70553b;
+    --color-text: #1e1f16;
+    --color-muted: #a39975;
+    --color-border: #a0826d;
     --radius-lg: 0;
     --radius-md: 0;
+    --shadow-sm: 0 12px 24px rgba(30, 31, 22, 0.1);
     --shadow-soft: 0 12px 30px rgba(0, 114, 69, 0.1);
     --font-heading: 'Fraunces', serif;
     --font-body: 'DM Sans', sans-serif;
@@ -42,7 +43,8 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1.6;
   }
 
-  body[data-menu-open='true'] {
+  body[data-menu-open='true'],
+  body.header-menu-open {
     overflow: hidden;
   }
 

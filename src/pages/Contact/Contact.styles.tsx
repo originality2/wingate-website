@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-import { SoftCard } from "../../styles/pageLayout.styles";
+import { SoftCard, layoutBreakpoints } from "../../styles/pageLayout.styles";
 
 export const TwoColGrid = styled.div`
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  @media (max-width: 720px) {
+  @media (max-width: ${layoutBreakpoints.mobile}) {
     grid-template-columns: 1fr;
   }
 `;

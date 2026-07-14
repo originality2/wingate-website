@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { layoutBreakpoints } from "../../styles/pageLayout.styles";
 
 export const FooterRoot = styled.footer`
   margin-top: 2rem;
@@ -16,19 +17,19 @@ export const FooterInner = styled.div`
   grid-template-columns: 1.4fr 1fr 1fr;
   gap: 1.25rem;
 
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: ${layoutBreakpoints.mobile}) {
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
 `;
 
 export const Brand = styled.div`
-  @media (max-width: 900px) {
+  @media (max-width: ${layoutBreakpoints.large}) {
     grid-column: 1 / -1;
   }
 `;
@@ -126,7 +127,7 @@ export const BottomInner = styled.div`
   color: rgba(255, 255, 255, 0.82);
   flex-wrap: wrap;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${layoutBreakpoints.mobile}) {
     flex-direction: column;
     text-align: center;
   }

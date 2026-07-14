@@ -50,6 +50,31 @@ function AppShell() {
   const location = useLocation();
 
   useEffect(() => {
+    if (!import.meta.env.DEV) {
+      return;
+    }
+
+    const logFontDiagnostics = () => {
+      const bodyFamily = window.getComputedStyle(document.body).fontFamily;
+      const headingElement = document.querySelector("h1, h2, h3");
+      const headingFamily = headingElement
+        ? window.getComputedStyle(headingElement).fontFamily
+        : "<no heading found>";
+      const dmSansLoaded = document.fonts.check("16px 'DM Sans'");
+      const frauncesLoaded = document.fonts.check("16px 'Fraunces'");
+
+      console.info("[font-diagnostics]", {
+        dmSansLoaded,
+        frauncesLoaded,
+        bodyFamily,
+        headingFamily,
+      });
+    };
+
+    void document.fonts.ready.then(logFontDiagnostics);
+  }, []);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
