@@ -147,6 +147,7 @@ const primaryButtonStyles = css`
   justify-content: center;
   gap: 0.45rem;
   padding: 0.65rem 1.1rem;
+  border-radius: 45px;
   transition: 0.2s ease;
   border: 0;
   cursor: pointer;

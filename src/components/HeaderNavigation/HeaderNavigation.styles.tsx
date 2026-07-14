@@ -67,6 +67,7 @@ export const NavCloseButton = styled.button`
     height: 36px;
     align-items: center;
     justify-content: center;
+    border-radius: 45px;
     border: 0;
     background: transparent;
     cursor: pointer;
@@ -152,6 +153,7 @@ export const CtaLink = styled(Link)`
   justify-content: center;
   gap: 0.45rem;
   padding: 0.55rem 1rem;
+  border-radius: 45px;
   transition: 0.2s ease;
   border: 0;
   cursor: pointer;

@@ -53,7 +53,7 @@ export const BurgerButton = styled.button<{ $open: boolean }>`
   height: 36px;
   align-items: center;
   justify-content: center;
-  border-radius: 0;
+  border-radius: 45px;
   border: 0;
   background: transparent;
   transition: background 0.2s ease;
