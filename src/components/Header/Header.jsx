@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { navItems, sectionLinksByPath } from '../../content/siteContent';
+import logo from '../../assets/logo.png';
+import logoIcon from '../../assets/logo_icon.png';
 import './Header.css';
 
 export default function Header() {
@@ -43,13 +45,10 @@ export default function Header() {
           <span />
           <span />
         </button>
-
+        
         <Link to="/" className="header__logo" onClick={closeMenu} aria-label="Wingate Childcare Home">
-          <span className="header__logo-icon" aria-hidden="true">W</span>
-          <span className="header__logo-text">
-            <span className="header__logo-name">Wingate Childcare</span>
-            <span className="header__logo-tagline">Community Co-op</span>
-          </span>
+          <img className="header__logo-image" src={logo} alt="Wingate Childcare" />
+          <img className="header__logo-icon-image" src={logoIcon} alt="" aria-hidden="true" />
         </Link>
 
         <nav className={`header__nav${menuOpen ? ' header__nav--open' : ''}`} aria-label="Main navigation">

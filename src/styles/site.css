@@ -4,7 +4,7 @@
 
 .page-hero {
   padding: 4rem 0 2rem;
-  background: linear-gradient(135deg, #dbffe8 0%, #e6fbff 100%);
+  background: linear-gradient(135deg, var(--color-soft) 0%, var(--color-surface) 100%);
 }
 
 .page-eyebrow,
@@ -49,7 +49,7 @@
 }
 
 .page-section--alt {
-  background: #dcffe9;
+  background: #E5D9CC;
 }
 
 .content-grid {
@@ -178,12 +178,12 @@
 }
 
 .home-page {
-  background: #f7fff7;
+  background: #F5F1ED;
 }
 
 .home-hero {
   min-height: 80vh;
-  background-image: linear-gradient(rgba(0, 28, 18, 0.45), rgba(0, 28, 18, 0.45)), url('../../tmp-photos/photo-1.jpeg');
+  background-image: linear-gradient(rgba(51, 42, 30, 0.45), rgba(51, 42, 30, 0.45)), url('../../tmp-photos/photo-1.jpeg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -220,7 +220,7 @@
 .home-tile__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0, 30, 20, 0.15), rgba(0, 30, 20, 0.7));
+  background: linear-gradient(rgba(51, 42, 30, 0.15), rgba(51, 42, 30, 0.7));
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -235,7 +235,7 @@
 }
 
 .home-contact-strip {
-  background: #008f5a;
+  background: var(--color-muted);
   color: #fff;
   display: flex;
   justify-content: space-between;
