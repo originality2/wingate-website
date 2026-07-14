@@ -59,6 +59,10 @@ export const Tile = styled.div`
   position: relative;
   cursor: pointer;
 
+  @media (max-width: ${layoutBreakpoints.tablet}) {
+    cursor: default;
+  }
+
   &:nth-child(3n) {
     grid-column: 1 / -1;
   }
@@ -83,7 +87,7 @@ export const TileImage = styled.img`
   }
 `;
 
-export const TileOverlay = styled(Link)`
+export const TileOverlay = styled.div`
   position: absolute;
   inset: 0;
   background: linear-gradient(rgba(51, 42, 30, 0.15), rgba(51, 42, 30, 0.7));
@@ -93,7 +97,6 @@ export const TileOverlay = styled(Link)`
   padding: 1.5rem;
   color: #fff;
   z-index: 2;
-  cursor: pointer;
   transition: background 0.35s ease;
 
   ${Tile}:hover & {
@@ -101,10 +104,45 @@ export const TileOverlay = styled(Link)`
   }
 
   h2,
-  p,
-  span {
+  p {
     color: #fff;
-    cursor: inherit;
+  }
+`;
+
+export const TileDesktopLink = styled(Link)`
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  cursor: pointer;
+
+  @media (max-width: ${layoutBreakpoints.tablet}) {
+    display: none;
+  }
+`;
+
+export const TileLearnMoreButton = styled(Link)`
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 0.6rem;
+  padding: 0.55rem 0.95rem;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    background: #fff;
+    color: #332a1e;
+  }
+
+  @media (max-width: ${layoutBreakpoints.tablet}) {
+    display: inline-flex;
   }
 `;
 
