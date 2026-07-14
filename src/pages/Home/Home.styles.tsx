@@ -16,6 +16,10 @@ export const Hero = styled.section`
   display: flex;
   align-items: flex-end;
   background-attachment: fixed;
+
+  @media (max-width: ${layoutBreakpoints.mobile}) {
+    background-attachment: unset;
+  }
 `;
 
 export const HeroOverlay = styled.div`
