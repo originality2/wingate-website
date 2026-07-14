@@ -130,22 +130,24 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   [data-reveal='true'] {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.55s ease, transform 0.55s ease;
-    will-change: opacity, transform;
+    animation: reveal-in 0.55s ease both;
   }
 
-  [data-reveal='true'][data-visible='true'] {
-    opacity: 1;
-    transform: translateY(0);
+  @keyframes reveal-in {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
     [data-reveal='true'] {
-      opacity: 1;
-      transform: none;
-      transition: none;
+      animation: none;
     }
   }
 `;

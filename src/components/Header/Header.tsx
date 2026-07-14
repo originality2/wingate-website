@@ -1,28 +1,23 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { navItems, sectionLinksByPath } from "../../content/siteContent";
+import { sectionLinksByPath } from "../../content/siteContent";
 import logo from "../../assets/logo.png";
 import logoIcon from "../../assets/logo_icon.png";
 import {
   BurgerButton,
-  CtaLink,
   HeaderInner,
   HeaderRoot,
   LogoIconImage,
   LogoImage,
   LogoLink,
-  MainNavLink,
   MobileSpacer,
-  Navigation,
-  NavItem,
-  NavList,
-  Overlay,
   Subnav,
   SubnavContainer,
   SubnavLink,
   SubnavList,
   SubnavWrap,
 } from "./Header.styles";
+import HeaderNavigation from "../HeaderNavigation";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -54,8 +49,6 @@ export default function Header() {
 
   return (
     <HeaderRoot $scrolled={scrolled} role="banner">
-      {menuOpen && <Overlay aria-hidden="true" onClick={closeMenu} />}
-
       <HeaderInner>
         <BurgerButton
           $open={menuOpen}
@@ -64,7 +57,7 @@ export default function Header() {
           }
           aria-expanded={menuOpen}
           aria-controls="main-navigation"
-          onClick={() => setMenuOpen((o) => !o)}
+          onClick={() => setMenuOpen((open) => !open)}
         >
           <span />
           <span />
@@ -80,20 +73,7 @@ export default function Header() {
           <LogoIconImage src={logoIcon} alt="" aria-hidden="true" />
         </LogoLink>
 
-        <Navigation $open={menuOpen} aria-label="Main navigation">
-          <NavList id="main-navigation">
-            {navItems.map(({ label, to }) => (
-              <NavItem key={to}>
-                <MainNavLink to={to} onClick={closeMenu}>
-                  {label}
-                </MainNavLink>
-              </NavItem>
-            ))}
-          </NavList>
-          <CtaLink to="/enrolments" onClick={closeMenu}>
-            Enrol Now
-          </CtaLink>
-        </Navigation>
+        <HeaderNavigation menuOpen={menuOpen} onCloseMenu={closeMenu} />
 
         <MobileSpacer aria-hidden="true" />
       </HeaderInner>
