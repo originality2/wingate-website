@@ -35,7 +35,7 @@ export const navItems: NavItem[] = [
   { label: "Program", to: "/program" },
   { label: "Enrolments", to: "/enrolments" },
   { label: "Our People", to: "/our-people" },
-  { label: "Gallery", to: "/gallery" },
+  { label: "Our Spaces", to: "/gallery" },
   { label: "Parent Resources", to: "/parent-resources" },
 ];
 
@@ -143,7 +143,7 @@ export const homePage: HomePageContent = {
       alt: "Drawing of children and educators in a learning space",
     },
     {
-      title: "Gallery",
+      title: "Our Spaces",
       text: "A visual look at our spaces, routines, and learning moments.",
       to: "/gallery",
       image: child_on_playground,

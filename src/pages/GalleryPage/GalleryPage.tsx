@@ -26,10 +26,9 @@ export default function GalleryPage() {
       <HeroSection aria-label="Gallery page header">
         <Container>
           <Eyebrow>Wingate Childcare Co-operative</Eyebrow>
-          <h1>Gallery</h1>
+          <h1>Our Spaces</h1>
           <Intro>
-            Temporary photos are in place to give the site a warm, lived-in feel
-            while final photography is being prepared.
+            We pride ourselves on providing safe, welcoming and engaging spaces for our children to learn and grow. Our spaces are designed to support a play-based, emergent curriculum that is responsive to children's interests and needs.
           </Intro>
         </Container>
       </HeroSection>
