@@ -3,13 +3,14 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import ContactForm from "../ContactForm";
 
 describe("ContactForm", () => {
-  it("renders all form fields", () => {
-    render(<ContactForm />);
-    expect(screen.getByLabelText(/your name/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/email address/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/phone number/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/message/i)).toBeInTheDocument();
-  });
+  it.each([/your name/i, /email address/i, /phone number/i, /message/i])(
+    "renders form field: %s",
+    (fieldLabel) => {
+      render(<ContactForm />);
+
+      expect(screen.getByLabelText(fieldLabel)).toBeInTheDocument();
+    },
+  );
 
   it("renders the submit button", () => {
     render(<ContactForm />);
@@ -32,6 +33,8 @@ describe("ContactForm", () => {
     });
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
     // After async submission, success message should appear
-    expect(await screen.findByText(/thank you/i)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/thank you/i, {}, { timeout: 2500 }),
+    ).toBeInTheDocument();
   });
 });

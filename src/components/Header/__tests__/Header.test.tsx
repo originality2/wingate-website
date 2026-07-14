@@ -15,24 +15,22 @@ describe("Header", () => {
     ).toBeInTheDocument();
   });
 
-  it("renders all navigation links", () => {
+  it.each([
+    "About",
+    "Program",
+    "Enrolments",
+    "Our People",
+    "Gallery",
+    "Parent Resources",
+    "Contact",
+  ])("renders navigation link: %s", (link) => {
     render(
       <MemoryRouter>
         <Header />
       </MemoryRouter>,
     );
-    const navLinks = [
-      "About",
-      "Program",
-      "Enrolments",
-      "Our People",
-      "Gallery",
-      "Parent Resources",
-      "Contact",
-    ];
-    navLinks.forEach((link) => {
-      expect(screen.getByRole("link", { name: link })).toBeInTheDocument();
-    });
+
+    expect(screen.getByRole("link", { name: link })).toBeInTheDocument();
   });
 
   it("renders the Enrol Now CTA", () => {

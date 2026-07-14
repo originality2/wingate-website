@@ -6,11 +6,26 @@ import { mockTestimonials } from "../../../lib/mockData";
 describe("Testimonials", () => {
   it("renders all testimonials", () => {
     render(<Testimonials testimonials={mockTestimonials} />);
-    mockTestimonials.forEach((t) => {
-      expect(screen.getByText(t.quote)).toBeInTheDocument();
-      expect(screen.getByText(t.authorName)).toBeInTheDocument();
-    });
+    expect(screen.getByText(/what parents say/i)).toBeInTheDocument();
   });
+
+  it.each(mockTestimonials)(
+    "renders testimonial quote for: $authorName",
+    (testimonial) => {
+      render(<Testimonials testimonials={mockTestimonials} />);
+
+      expect(screen.getByText(testimonial.quote)).toBeInTheDocument();
+    },
+  );
+
+  it.each(mockTestimonials)(
+    "renders testimonial author for: $authorName",
+    (testimonial) => {
+      render(<Testimonials testimonials={mockTestimonials} />);
+
+      expect(screen.getByText(testimonial.authorName)).toBeInTheDocument();
+    },
+  );
 
   it("renders nothing when testimonials list is empty", () => {
     const { container } = render(<Testimonials testimonials={[]} />);
