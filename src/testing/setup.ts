@@ -1,8 +1,8 @@
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 
 // embla-carousel (used by @fluentui/react-components Carousel) calls window.matchMedia
 // and IntersectionObserver which jsdom does not implement — provide minimal stubs.
-Object.defineProperty(window, 'matchMedia', {
+Object.defineProperty(window, "matchMedia", {
   writable: true,
   value: (query: string) => ({
     matches: false,
@@ -21,7 +21,17 @@ class IntersectionObserverStub {
   unobserve() {}
   disconnect() {}
 }
-Object.defineProperty(window, 'IntersectionObserver', {
+Object.defineProperty(window, "IntersectionObserver", {
   writable: true,
   value: IntersectionObserverStub,
+});
+
+class ResizeObserverStub {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+Object.defineProperty(window, "ResizeObserver", {
+  writable: true,
+  value: ResizeObserverStub,
 });

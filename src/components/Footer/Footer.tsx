@@ -52,7 +52,13 @@ export default function Footer() {
         <div>
           <Heading>Visit & Contact</Heading>
           <Address>
-            <p>{siteContact.address}</p>
+            <ContactLink
+              href={siteContact.mapLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {siteContact.address}
+            </ContactLink>
             <ContactLink href={`tel:${siteContact.phone.replace(/\D/g, "")}`}>
               {siteContact.phone}
             </ContactLink>

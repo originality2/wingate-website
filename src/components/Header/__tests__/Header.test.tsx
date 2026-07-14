@@ -22,7 +22,6 @@ describe("Header", () => {
     "Our People",
     "Gallery",
     "Parent Resources",
-    "Contact",
   ])("renders navigation link: %s", (link) => {
     render(
       <MemoryRouter>

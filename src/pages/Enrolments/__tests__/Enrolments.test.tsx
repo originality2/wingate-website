@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Enrolments from "../Enrolments";
-import { enrolmentsPage } from "../../../content/siteContent";
+import { enrolmentsPage, siteContact } from "../../../content/siteContent";
 
 describe("Enrolments", () => {
   it("renders the enrolments heading", () => {
@@ -29,4 +29,17 @@ describe("Enrolments", () => {
       expect(screen.getByRole("link", { name: label })).toBeInTheDocument();
     },
   );
+
+  it("uses email link for book a tour", () => {
+    render(
+      <MemoryRouter>
+        <Enrolments />
+      </MemoryRouter>,
+    );
+
+    expect(screen.getByRole("link", { name: /book a tour/i })).toHaveAttribute(
+      "href",
+      `mailto:${siteContact.email}`,
+    );
+  });
 });
