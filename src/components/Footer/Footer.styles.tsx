@@ -36,21 +36,17 @@ export const Brand = styled.div`
 export const LogoLink = styled.a`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   color: #fff;
   margin-bottom: 0.7rem;
 `;
 
-export const LogoLetter = styled.span`
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  background: rgba(255, 255, 255, 0.16);
-  border-radius: 0;
+export const LogoImage = styled.img`
+  display: block;
+  height: 96px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
 `;
-
-export const LogoName = styled.span``;
 
 export const Tagline = styled.p`
   color: rgba(255, 255, 255, 0.8);

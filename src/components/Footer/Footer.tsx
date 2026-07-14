@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoLight from "../../assets/logo_light.png";
 import { navItems, siteContact } from "../../content/siteContent";
 import {
   Address,
@@ -11,9 +12,8 @@ import {
   FooterRoot,
   Heading,
   Hours,
-  LogoLetter,
+  LogoImage,
   LogoLink,
-  LogoName,
   NavItemLink,
   NavList,
   Tagline,
@@ -27,8 +27,7 @@ export default function Footer() {
       <FooterInner>
         <Brand>
           <LogoLink as={Link} to="/about" aria-label="Wingate Childcare Home">
-            <LogoLetter aria-hidden="true">W</LogoLetter>
-            <LogoName>Wingate Childcare Co-operative</LogoName>
+            <LogoImage src={logoLight} alt="Wingate Childcare Co-operative" />
           </LogoLink>
           <Tagline>
             A warm early learning environment where children, educators, and
