@@ -59,14 +59,15 @@ Open <http://localhost:5173> in your browser.
 
 ## 📦 Available Scripts
 
-| Script | Description |
-|---|---|
-| `npm run dev` | Start the Vite development server |
-| `npm run build` | Build for production (output to `dist/`) |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint |
-| `npm test` | Run the test suite once |
-| `npm run test:watch` | Run tests in watch mode |
+| Script               | Description                              |
+| -------------------- | ---------------------------------------- |
+| `npm run dev`        | Start the Vite development server        |
+| `npm run build`      | Build for production (output to `dist/`) |
+| `npm run preview`    | Preview the production build locally     |
+| `npm run lint`       | Run ESLint                               |
+| `npm run typecheck`  | Run TypeScript compile checks            |
+| `npm test`           | Run the test suite once                  |
+| `npm run test:watch` | Run tests in watch mode                  |
 
 ---
 
@@ -83,16 +84,16 @@ src/
 │   ├── Gallery/         # Photo gallery grid
 │   └── Contact/         # Contact enquiry form
 ├── hooks/
-│   └── useContentful.js # Custom hook for Contentful data fetching
+│   └── useContentful.ts # Custom hook for Contentful data fetching
 ├── lib/
-│   ├── contentful.js    # Contentful client and fetch helpers
-│   └── mockData.js      # Fallback content used when CMS is not configured
+│   ├── contentful.ts    # Contentful client and fetch helpers
+│   └── mockData.ts      # Fallback content used when CMS is not configured
 ├── pages/
-│   ├── Home.jsx         # Home page
-│   ├── About.jsx        # About page
-│   ├── Programs.jsx     # Programs page
-│   ├── GalleryPage.jsx  # Gallery page
-│   └── Contact.jsx      # Contact page
+│   ├── Home.tsx         # Home page
+│   ├── About.tsx        # About page
+│   ├── Programs.tsx     # Programs page
+│   ├── GalleryPage.tsx  # Gallery page
+│   └── Contact.tsx      # Contact page
 ├── styles/
 │   └── global.css       # Design tokens and global styles
 └── test/                # Vitest unit tests
@@ -105,27 +106,30 @@ src/
 To use real CMS content, create the following content types in your Contentful space:
 
 ### `program`
-| Field | Type | Description |
-|---|---|---|
-| `title` | Short text | Program name (e.g. "Toddler Program") |
-| `ageRange` | Short text | Age range (e.g. "1 – 3 years") |
-| `description` | Long text | Program description |
-| `icon` | Short text | Emoji icon |
-| `color` | Short text | CSS hex colour for the card background |
+
+| Field         | Type       | Description                            |
+| ------------- | ---------- | -------------------------------------- |
+| `title`       | Short text | Program name (e.g. "Toddler Program")  |
+| `ageRange`    | Short text | Age range (e.g. "1 – 3 years")         |
+| `description` | Long text  | Program description                    |
+| `icon`        | Short text | Emoji icon                             |
+| `color`       | Short text | CSS hex colour for the card background |
 
 ### `testimonial`
-| Field | Type | Description |
-|---|---|---|
-| `quote` | Long text | Parent quote |
-| `authorName` | Short text | Parent name |
+
+| Field         | Type       | Description                   |
+| ------------- | ---------- | ----------------------------- |
+| `quote`       | Long text  | Parent quote                  |
+| `authorName`  | Short text | Parent name                   |
 | `authorTitle` | Short text | e.g. "Parent of a 2-year-old" |
 
 ### `galleryImage`
-| Field | Type | Description |
-|---|---|---|
-| `title` | Short text | Image title |
-| `description` | Short text | Alt text / caption |
-| `imageUrl` | Short text | URL of the image (or use a Contentful Media Asset field) |
+
+| Field         | Type       | Description                                              |
+| ------------- | ---------- | -------------------------------------------------------- |
+| `title`       | Short text | Image title                                              |
+| `description` | Short text | Alt text / caption                                       |
+| `imageUrl`    | Short text | URL of the image (or use a Contentful Media Asset field) |
 
 ---
 
@@ -148,14 +152,14 @@ The test suite covers:
 
 ## 🛠️ Tech Stack
 
-| Tool | Purpose |
-|---|---|
-| [Vite](https://vite.dev/) | Build tool & dev server |
-| [React 19](https://react.dev/) | UI framework |
-| [React Router 7](https://reactrouter.com/) | Client-side routing |
-| [Contentful JS SDK](https://www.contentful.com/developers/docs/javascript/) | Headless CMS client |
-| [Vitest](https://vitest.dev/) | Unit testing |
-| [Testing Library](https://testing-library.com/) | Component testing utilities |
+| Tool                                                                        | Purpose                     |
+| --------------------------------------------------------------------------- | --------------------------- |
+| [Vite](https://vite.dev/)                                                   | Build tool & dev server     |
+| [React 19](https://react.dev/)                                              | UI framework                |
+| [React Router 7](https://reactrouter.com/)                                  | Client-side routing         |
+| [Contentful JS SDK](https://www.contentful.com/developers/docs/javascript/) | Headless CMS client         |
+| [Vitest](https://vitest.dev/)                                               | Unit testing                |
+| [Testing Library](https://testing-library.com/)                             | Component testing utilities |
 
 ---
 
