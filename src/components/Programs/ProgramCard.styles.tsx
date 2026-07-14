@@ -39,7 +39,7 @@ export const FeaturedBadge = styled.span`
 `;
 
 export const IconWrap = styled.div`
-  background: var(--card-color, #e8f5e9);
+  background: var(--color-card, #e8f5e9);
   padding: 1.75rem;
   display: flex;
   align-items: center;
@@ -83,7 +83,7 @@ export const LearnMoreLink = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  color: var(--link-accent-color);
+  color: var(--color-link-accent);
   margin-top: 0.5rem;
   transition: gap 0.2s ease;
 

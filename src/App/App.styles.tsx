@@ -23,24 +23,24 @@ export const GlobalStyles = createGlobalStyle`
     --shadow-soft: 0 12px 30px rgba(0, 114, 69, 0.1);
     --font-heading: 'Fraunces', serif;
     --font-body: 'DM Sans', sans-serif;
-    --heading-color: var(--color-text);
+    --color-heading: var(--color-text);
     --heading-line-height: 1.2;
     --heading-h1-size: clamp(2rem, 4vw, 3rem);
     --heading-h2-size: clamp(1.7rem, 2.8vw, 2.3rem);
     --heading-h3-size: 1.3rem;
-    --text-body-color: var(--color-muted);
+    --color-text-body: var(--color-muted);
     --text-body-margin-bottom: 0.85rem;
-    --link-color: inherit;
+    --color-link: inherit;
     --link-text-decoration: none;
-    --link-hover-color: inherit;
+    --color-link-hover: inherit;
     --link-hover-text-decoration: none;
     --list-margin: 0;
     --list-padding: 0;
     --list-style: none;
     --content-list-style: disc;
     --content-list-padding-left: 1rem;
-    --content-list-color: var(--color-muted);
-    --link-accent-color: var(--color-primary-dark);
+    --color-content-list: var(--color-muted);
+    --color-link-accent: var(--color-primary-dark);
     --link-accent-font-weight: 600;
   }
 
@@ -71,7 +71,7 @@ export const GlobalStyles = createGlobalStyle`
   h2,
   h3 {
     margin: 0 0 0.75rem;
-    color: var(--heading-color);
+    color: var(--color-heading);
     font-family: var(--font-heading);
     line-height: var(--heading-line-height);
   }
@@ -90,7 +90,7 @@ export const GlobalStyles = createGlobalStyle`
 
   p {
     margin: 0 0 var(--text-body-margin-bottom);
-    color: var(--text-body-color);
+    color: var(--color-text-body);
   }
 
   ul {
@@ -100,12 +100,12 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   a {
-    color: var(--link-color);
+    color: var(--color-link);
     text-decoration: var(--link-text-decoration);
   }
 
   a:hover {
-    color: var(--link-hover-color);
+    color: var(--color-link-hover);
     text-decoration: var(--link-hover-text-decoration);
   }
 
