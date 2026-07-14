@@ -1,43 +1,61 @@
-import { Link } from 'react-router-dom';
-import { enrolmentsPage, parentResourceLinks } from '../content/siteContent';
+import { enrolmentsPage, parentResourceLinks } from "../content/siteContent";
+import {
+  CardGrid,
+  Container,
+  ContentGrid,
+  Eyebrow,
+  HeroSection,
+  Intro,
+  Main,
+  PrimaryButtonLink,
+  PrimaryRouterButton,
+  Section,
+  SoftCard,
+  TextPanel,
+} from "./Enrolments.styles";
 
 export default function Enrolments() {
   return (
-    <main className="page-shell">
-      <section className="page-hero" aria-label="Enrolments page header">
-        <div className="container">
-          <p className="page-eyebrow">Wingate Childcare Co-operative</p>
+    <Main>
+      <HeroSection aria-label="Enrolments page header">
+        <Container>
+          <Eyebrow>Wingate Childcare Co-operative</Eyebrow>
           <h1>{enrolmentsPage.title}</h1>
-          <p className="page-intro">{enrolmentsPage.intro}</p>
-        </div>
-      </section>
+          <Intro>{enrolmentsPage.intro}</Intro>
+        </Container>
+      </HeroSection>
 
-      <section id="info" className="page-section">
-        <div className="content-grid">
-          <div className="text-panel">
+      <Section id="info" data-reveal="true" data-visible="false">
+        <ContentGrid>
+          <TextPanel>
             <h2>Enrolment Information & Availability</h2>
             <p>
-              Families are encouraged to join the waitlist as early as possible. Places are offered based on
-              availability across the year, with most offers made at the beginning of each year when children
+              Families are encouraged to join the waitlist as early as possible.
+              Places are offered based on availability across the year, with
+              most offers made at the beginning of each year when children
               transition to school.
             </p>
             <p>
-              As day changes and withdrawals require only two weeks&apos; notice, availability can shift quickly.
-              Offers are also made in line with the Priority of Access policy.
+              As day changes and withdrawals require only two weeks&apos;
+              notice, availability can shift quickly. Offers are also made in
+              line with the Priority of Access policy.
             </p>
-            <a className="btn btn-primary" href={parentResourceLinks.documents[0].href} target="_blank" rel="noreferrer">
+            <PrimaryButtonLink
+              href={parentResourceLinks.documents[0].href}
+              target="_blank"
+              rel="noreferrer"
+            >
               Open Family Handbook
-            </a>
-            <a
-              className="btn btn-primary"
+            </PrimaryButtonLink>
+            <PrimaryButtonLink
               href="https://prodadmin.myxplor.com/enrollment/index/dllrYUJ1THpWSGlCT2luRVlIM0NqZz09"
               target="_blank"
               rel="noreferrer"
             >
               Add to Waitlist
-            </a>
-          </div>
-          <div className="text-panel text-panel--soft">
+            </PrimaryButtonLink>
+          </TextPanel>
+          <TextPanel $soft>
             <h3>What to Prepare</h3>
             <ul>
               <li>Child and family contact details</li>
@@ -47,41 +65,51 @@ export default function Enrolments() {
               <li>Emergency contacts</li>
               <li>Authorised collection identification details</li>
             </ul>
-          </div>
-        </div>
-      </section>
+          </TextPanel>
+        </ContentGrid>
+      </Section>
 
-      <section id="fees" className="page-section page-section--alt">
-        <div className="container">
+      <Section id="fees" $alt data-reveal="true" data-visible="false">
+        <Container>
           <h2>Fees</h2>
-          <div className="card-grid">
-            <article className="soft-card">
+          <CardGrid>
+            <SoftCard data-reveal="true" data-visible="false">
               <h3>Daily Fees</h3>
-              <p>Current fees: Daily $161, Weekly $785. Fees are set by the Committee of Management and reviewed annually.</p>
-            </article>
-            <article className="soft-card">
+              <p>
+                Current fees: Daily $161, Weekly $785. Fees are set by the
+                Committee of Management and reviewed annually.
+              </p>
+            </SoftCard>
+            <SoftCard data-reveal="true" data-visible="false">
               <h3>Child Care Subsidy</h3>
-              <p>Out-of-pocket costs depend on CCS and ACCS eligibility. CCS is based on the centre&apos;s 11-hour operating day.</p>
-            </article>
-            <article className="soft-card">
+              <p>
+                Out-of-pocket costs depend on CCS and ACCS eligibility. CCS is
+                based on the centre&apos;s 11-hour operating day.
+              </p>
+            </SoftCard>
+            <SoftCard data-reveal="true" data-visible="false">
               <h3>Inclusions</h3>
-              <p>First one-hour orientation is free; half-day orientations are charged at half the daily rate.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+              <p>
+                First one-hour orientation is free; half-day orientations are
+                charged at half the daily rate.
+              </p>
+            </SoftCard>
+          </CardGrid>
+        </Container>
+      </Section>
 
-      <section id="tours" className="page-section">
-        <div className="content-grid">
-          <div className="text-panel text-panel--soft">
+      <Section id="tours" data-reveal="true" data-visible="false">
+        <ContentGrid>
+          <TextPanel $soft>
             <h2>Tours</h2>
             <p>
-              Please call or email to book a tour. Tours are by appointment and include meeting leadership and room
-              educators while observing the program indoors and outdoors.
+              Please call or email to book a tour. Tours are by appointment and
+              include meeting leadership and room educators while observing the
+              program indoors and outdoors.
             </p>
-            <Link to="/contact" className="btn btn-primary">Book a Tour</Link>
-          </div>
-          <div className="text-panel text-panel--soft">
+            <PrimaryRouterButton to="/contact">Book a Tour</PrimaryRouterButton>
+          </TextPanel>
+          <TextPanel $soft>
             <h3>What You&apos;ll See</h3>
             <ul>
               <li>Each room and outdoor spaces</li>
@@ -90,9 +118,9 @@ export default function Enrolments() {
               <li>Current enrolment timelines</li>
               <li>What to bring and what the centre provides</li>
             </ul>
-          </div>
-        </div>
-      </section>
-    </main>
+          </TextPanel>
+        </ContentGrid>
+      </Section>
+    </Main>
   );
 }

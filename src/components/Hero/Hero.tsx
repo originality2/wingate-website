@@ -1,6 +1,23 @@
 import { Link } from "react-router-dom";
 import type { HeroContent } from "../../types/content";
-import "./Hero.css";
+import {
+  Backdrop,
+  Badge,
+  CardsGrid,
+  Headline,
+  HeroActions,
+  HeroContentGrid,
+  HeroSection,
+  HeroText,
+  PrimaryHeroButtonLink,
+  SecondaryHeroButtonLink,
+  StatCard,
+  StatIcon,
+  StatLabel,
+  StatValue,
+  Subheading,
+  Wave,
+} from "./Hero.styles";
 
 type HeroProps = {
   content: HeroContent;
@@ -10,22 +27,22 @@ export default function Hero({ content }: HeroProps) {
   const { headline, subheading, primaryCta, secondaryCta } = content;
 
   return (
-    <section className="hero" aria-label="Welcome to Wingate Childcare">
-      <div className="hero__backdrop" aria-hidden="true" />
-      <div className="container hero__content">
-        <div className="hero__text">
-          <span className="hero__badge">Nurturing Futures Since 2004</span>
-          <h1 className="hero__headline">
+    <HeroSection aria-label="Welcome to Wingate Childcare">
+      <Backdrop aria-hidden="true" />
+      <HeroContentGrid>
+        <HeroText>
+          <Badge>Nurturing Futures Since 2004</Badge>
+          <Headline>
             {headline.split("\n").map((line, i) => (
               <span key={i}>
                 {i > 0 && <br />}
                 {line}
               </span>
             ))}
-          </h1>
-          <p className="hero__subheading">{subheading}</p>
-          <div className="hero__actions">
-            <Link to={primaryCta.href} className="btn btn-primary hero__btn">
+          </Headline>
+          <Subheading>{subheading}</Subheading>
+          <HeroActions>
+            <PrimaryHeroButtonLink as={Link} to={primaryCta.href}>
               {primaryCta.label}
               <svg
                 viewBox="0 0 20 20"
@@ -40,48 +57,45 @@ export default function Hero({ content }: HeroProps) {
                   clipRule="evenodd"
                 />
               </svg>
-            </Link>
-            <Link
-              to={secondaryCta.href}
-              className="btn btn-outline-white hero__btn"
-            >
+            </PrimaryHeroButtonLink>
+            <SecondaryHeroButtonLink as={Link} to={secondaryCta.href}>
               {secondaryCta.label}
-            </Link>
-          </div>
-        </div>
+            </SecondaryHeroButtonLink>
+          </HeroActions>
+        </HeroText>
 
-        <div className="hero__cards" aria-hidden="true">
-          <div className="hero__stat-card">
-            <span className="hero__stat-icon">👶</span>
-            <span className="hero__stat-value">6 wks+</span>
-            <span className="hero__stat-label">Age from</span>
-          </div>
-          <div className="hero__stat-card hero__stat-card--accent">
-            <span className="hero__stat-icon">⭐</span>
-            <span className="hero__stat-value">5-Star</span>
-            <span className="hero__stat-label">Rated</span>
-          </div>
-          <div className="hero__stat-card">
-            <span className="hero__stat-icon">🏫</span>
-            <span className="hero__stat-value">4</span>
-            <span className="hero__stat-label">Programs</span>
-          </div>
-          <div className="hero__stat-card hero__stat-card--green">
-            <span className="hero__stat-icon">❤️</span>
-            <span className="hero__stat-value">150+</span>
-            <span className="hero__stat-label">Families</span>
-          </div>
-        </div>
-      </div>
+        <CardsGrid aria-hidden="true">
+          <StatCard>
+            <StatIcon>👶</StatIcon>
+            <StatValue>6 wks+</StatValue>
+            <StatLabel>Age from</StatLabel>
+          </StatCard>
+          <StatCard $accent>
+            <StatIcon>⭐</StatIcon>
+            <StatValue>5-Star</StatValue>
+            <StatLabel>Rated</StatLabel>
+          </StatCard>
+          <StatCard>
+            <StatIcon>🏫</StatIcon>
+            <StatValue>4</StatValue>
+            <StatLabel>Programs</StatLabel>
+          </StatCard>
+          <StatCard $green>
+            <StatIcon>❤️</StatIcon>
+            <StatValue>150+</StatValue>
+            <StatLabel>Families</StatLabel>
+          </StatCard>
+        </CardsGrid>
+      </HeroContentGrid>
 
-      <div className="hero__wave" aria-hidden="true">
+      <Wave aria-hidden="true">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
           <path
             d="M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z"
             fill="var(--color-bg)"
           />
         </svg>
-      </div>
-    </section>
+      </Wave>
+    </HeroSection>
   );
 }

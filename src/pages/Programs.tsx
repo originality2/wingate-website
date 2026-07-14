@@ -1,77 +1,111 @@
-import { Link } from 'react-router-dom';
-import { galleryImages, programGroups, programPage } from '../content/siteContent';
+import {
+  galleryImages,
+  programGroups,
+  programPage,
+} from "../content/siteContent";
+import {
+  CardEyebrow,
+  CardGrid,
+  Container,
+  ContentGrid,
+  Eyebrow,
+  HeroSection,
+  ImagePanel,
+  Intro,
+  Main,
+  PrimaryLinkButton,
+  RoundedMedia,
+  Section,
+  SoftCard,
+  TextPanel,
+} from "./Programs.styles";
 
 export default function Programs() {
   return (
-    <main className="page-shell">
-      <section className="page-hero" aria-label="Program page header">
-        <div className="container">
-          <p className="page-eyebrow">Wingate Childcare Co-operative</p>
+    <Main>
+      <HeroSection aria-label="Program page header">
+        <Container>
+          <Eyebrow>Wingate Childcare Co-operative</Eyebrow>
           <h1>{programPage.title}</h1>
-          <p className="page-intro">{programPage.intro}</p>
-        </div>
-      </section>
+          <Intro>{programPage.intro}</Intro>
+        </Container>
+      </HeroSection>
 
-      <section id="pedagogy" className="page-section">
-        <div className="content-grid">
-          <div className="text-panel">
+      <Section id="pedagogy" data-reveal="true" data-visible="false">
+        <ContentGrid>
+          <TextPanel>
             <h2>Pedagogy</h2>
             <p>
-              We aim for a balance between adult-led, child-initiated, and shared learning experiences.
-              Intentional teaching at Wingate is deliberate, purposeful, and responsive to children&apos;s emerging
+              We aim for a balance between adult-led, child-initiated, and
+              shared learning experiences. Intentional teaching at Wingate is
+              deliberate, purposeful, and responsive to children&apos;s emerging
               interests.
             </p>
             <p>
-              Our emergent curriculum is shaped through observation, documentation, family input, and community
-              context. Programs are play-based, informed by Reggio Emilia, and aligned with the Victorian Early
-              Years Learning Framework.
+              Our emergent curriculum is shaped through observation,
+              documentation, family input, and community context. Programs are
+              play-based, informed by Reggio Emilia, and aligned with the
+              Victorian Early Years Learning Framework.
             </p>
-          </div>
-          <div className="image-panel">
-            <img src={galleryImages[2].src} alt={galleryImages[2].alt} className="rounded-media" />
-          </div>
-        </div>
-      </section>
+          </TextPanel>
+          <ImagePanel>
+            <RoundedMedia
+              src={galleryImages[2].src}
+              alt={galleryImages[2].alt}
+            />
+          </ImagePanel>
+        </ContentGrid>
+      </Section>
 
-      <section id="age-groups" className="page-section page-section--alt">
-        <div className="container">
+      <Section id="age-groups" $alt data-reveal="true" data-visible="false">
+        <Container>
           <h2>Seeds, Seedlings & Sprouts</h2>
           <p>
-            Wingate provides education and care from 6 weeks onwards, including funded 3-year-old and 4-year-old
-            kindergarten pathways within the curriculum.
+            Wingate provides education and care from 6 weeks onwards, including
+            funded 3-year-old and 4-year-old kindergarten pathways within the
+            curriculum.
           </p>
-          <div className="card-grid">
+          <CardGrid>
             {programGroups.map((group) => (
-              <article key={group.name} className="soft-card">
-                <p className="card-eyebrow">{group.ages}</p>
+              <SoftCard
+                key={group.name}
+                data-reveal="true"
+                data-visible="false"
+              >
+                <CardEyebrow>{group.ages}</CardEyebrow>
                 <h3>{group.name}</h3>
                 <p>{group.summary}</p>
-              </article>
+              </SoftCard>
             ))}
-          </div>
-        </div>
-      </section>
+          </CardGrid>
+        </Container>
+      </Section>
 
-      <section id="meals" className="page-section">
-        <div className="content-grid">
-          <div className="image-panel">
-            <img src={galleryImages[4].src} alt={galleryImages[4].alt} className="rounded-media" />
-          </div>
-          <div className="text-panel">
+      <Section id="meals" data-reveal="true" data-visible="false">
+        <ContentGrid>
+          <ImagePanel>
+            <RoundedMedia
+              src={galleryImages[4].src}
+              alt={galleryImages[4].alt}
+            />
+          </ImagePanel>
+          <TextPanel>
             <h2>Meals & Nutrition</h2>
             <p>
-              The centre provides a breakfast program (until 8am), morning tea, lunch, afternoon tea, and a late
-              snack. Menus support children&apos;s wellbeing and dietary requirements.
+              The centre provides a breakfast program (until 8am), morning tea,
+              lunch, afternoon tea, and a late snack. Menus support
+              children&apos;s wellbeing and dietary requirements.
             </p>
             <p>
-              Wingate also supplies nappies, wipes, sunscreen, and children&apos;s bedding as part of the daily program.
+              Wingate also supplies nappies, wipes, sunscreen, and
+              children&apos;s bedding as part of the daily program.
             </p>
-            <Link className="btn btn-primary" to="/parent-resources">
+            <PrimaryLinkButton to="/parent-resources">
               View Sample Menu
-            </Link>
-          </div>
-        </div>
-      </section>
-    </main>
+            </PrimaryLinkButton>
+          </TextPanel>
+        </ContentGrid>
+      </Section>
+    </Main>
   );
 }

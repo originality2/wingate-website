@@ -1,69 +1,93 @@
-import { parentResourceLinks, resourcesPage } from '../content/siteContent';
+import { parentResourceLinks, resourcesPage } from "../content/siteContent";
+import {
+  CardGrid,
+  Container,
+  Eyebrow,
+  HeroSection,
+  Intro,
+  Main,
+  Section,
+  SoftCard,
+  TextLink,
+} from "./ParentResources.styles";
 
 export default function ParentResources() {
   return (
-    <main className="page-shell">
-      <section className="page-hero" aria-label="Parent Resources page header">
-        <div className="container">
-          <p className="page-eyebrow">Wingate Childcare Co-operative</p>
+    <Main>
+      <HeroSection aria-label="Parent Resources page header">
+        <Container>
+          <Eyebrow>Wingate Childcare Co-operative</Eyebrow>
           <h1>{resourcesPage.title}</h1>
-          <p className="page-intro">{resourcesPage.intro}</p>
-        </div>
-      </section>
+          <Intro>{resourcesPage.intro}</Intro>
+        </Container>
+      </HeroSection>
 
-      <section id="documents" className="page-section">
-        <div className="container">
+      <Section id="documents" data-reveal="true" data-visible="false">
+        <Container>
           <h2>Documents</h2>
-          <div className="card-grid">
+          <CardGrid>
             {parentResourceLinks.documents.map((resource) => (
-              <article key={resource.label} className="soft-card">
+              <SoftCard
+                key={resource.label}
+                data-reveal="true"
+                data-visible="false"
+              >
                 <h3>{resource.label}</h3>
-                <a href={resource.href} target="_blank" rel="noreferrer" className="text-link">
+                <TextLink href={resource.href} target="_blank" rel="noreferrer">
                   Open Resource
-                </a>
-              </article>
+                </TextLink>
+              </SoftCard>
             ))}
-          </div>
-        </div>
-      </section>
+          </CardGrid>
+        </Container>
+      </Section>
 
-      <section id="daily" className="page-section page-section--alt">
-        <div className="container card-grid two-col">
-          <article className="soft-card">
-            <h2>Daily Information</h2>
-            <ul>
-              <li>Drop-off and collection routines</li>
-              <li>Clearly labelled bag and spare clothing each day</li>
-              <li>Water bottle, comfort item, and weather-appropriate clothing</li>
-              <li>Sun-safe hat requirements from September to April</li>
-              <li>Communication and updates from educators</li>
-            </ul>
-          </article>
-          <article className="soft-card">
-            <h2>Communication</h2>
-            <p>
-              Families are supported through enrolment and orientation with open communication between management,
-              educators, and families. Personal information is handled respectfully and confidentially.
-            </p>
-          </article>
-        </div>
-      </section>
+      <Section id="daily" $alt data-reveal="true" data-visible="false">
+        <Container>
+          <CardGrid $twoCol>
+            <SoftCard data-reveal="true" data-visible="false">
+              <h2>Daily Information</h2>
+              <ul>
+                <li>Drop-off and collection routines</li>
+                <li>Clearly labelled bag and spare clothing each day</li>
+                <li>
+                  Water bottle, comfort item, and weather-appropriate clothing
+                </li>
+                <li>Sun-safe hat requirements from September to April</li>
+                <li>Communication and updates from educators</li>
+              </ul>
+            </SoftCard>
+            <SoftCard data-reveal="true" data-visible="false">
+              <h2>Communication</h2>
+              <p>
+                Families are supported through enrolment and orientation with
+                open communication between management, educators, and families.
+                Personal information is handled respectfully and confidentially.
+              </p>
+            </SoftCard>
+          </CardGrid>
+        </Container>
+      </Section>
 
-      <section id="policies" className="page-section">
-        <div className="container">
+      <Section id="policies" data-reveal="true" data-visible="false">
+        <Container>
           <h2>Policies</h2>
-          <div className="card-grid">
+          <CardGrid>
             {parentResourceLinks.policies.map((policy) => (
-              <article key={policy.label} className="soft-card">
+              <SoftCard
+                key={policy.label}
+                data-reveal="true"
+                data-visible="false"
+              >
                 <h3>{policy.label}</h3>
-                <a href={policy.href} target="_blank" rel="noreferrer" className="text-link">
+                <TextLink href={policy.href} target="_blank" rel="noreferrer">
                   View Policy
-                </a>
-              </article>
+                </TextLink>
+              </SoftCard>
             ))}
-          </div>
-        </div>
-      </section>
-    </main>
+          </CardGrid>
+        </Container>
+      </Section>
+    </Main>
   );
 }

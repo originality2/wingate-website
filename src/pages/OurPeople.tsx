@@ -1,37 +1,58 @@
-import { peoplePage, teamMembers } from '../content/siteContent';
+import { peoplePage, teamMembers } from "../content/siteContent";
+import {
+  CardEyebrow,
+  Container,
+  Eyebrow,
+  HeroSection,
+  Intro,
+  Main,
+  Section,
+  TeamBody,
+  TeamCard,
+  TeamGrid,
+  TeamImage,
+} from "./OurPeople.styles";
 
 export default function OurPeople() {
   return (
-    <main className="page-shell">
-      <section className="page-hero" aria-label="Our People page header">
-        <div className="container">
-          <p className="page-eyebrow">Wingate Childcare Co-operative</p>
+    <Main>
+      <HeroSection aria-label="Our People page header">
+        <Container>
+          <Eyebrow>Wingate Childcare Co-operative</Eyebrow>
           <h1>{peoplePage.title}</h1>
-          <p className="page-intro">{peoplePage.intro}</p>
-        </div>
-      </section>
+          <Intro>{peoplePage.intro}</Intro>
+        </Container>
+      </HeroSection>
 
-      <section id="team" className="page-section">
-        <div className="container">
+      <Section id="team" data-reveal="true" data-visible="false">
+        <Container>
           <h2>Team</h2>
           <p>
-            Wingate&apos;s management structure includes the Committee of Management, Centre Director,
-            Administrator/Educational Leader, room leaders, and centre teams working collaboratively.
+            Wingate&apos;s management structure includes the Committee of
+            Management, Centre Director, Administrator/Educational Leader, room
+            leaders, and centre teams working collaboratively.
           </p>
-          <div className="team-grid">
+          <TeamGrid>
             {teamMembers.map((member) => (
-              <article key={`${member.name}-${member.role}`} className="team-card">
-                <img src={member.image} alt={`${member.name} at Wingate Childcare`} />
-                <div className="team-card__body">
+              <TeamCard
+                key={`${member.name}-${member.role}`}
+                data-reveal="true"
+                data-visible="false"
+              >
+                <TeamImage
+                  src={member.image}
+                  alt={`${member.name} at Wingate Childcare`}
+                />
+                <TeamBody>
                   <h3>{member.name}</h3>
-                  <p className="card-eyebrow">{member.role}</p>
+                  <CardEyebrow>{member.role}</CardEyebrow>
                   <p>{member.bio}</p>
-                </div>
-              </article>
+                </TeamBody>
+              </TeamCard>
             ))}
-          </div>
-        </div>
-      </section>
-    </main>
+          </TeamGrid>
+        </Container>
+      </Section>
+    </Main>
   );
 }

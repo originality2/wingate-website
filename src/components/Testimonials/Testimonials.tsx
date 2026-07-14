@@ -1,5 +1,20 @@
-import "./Testimonials.css";
 import type { Testimonial } from "../../types/content";
+import {
+  Author,
+  AuthorMeta,
+  AuthorName,
+  AuthorTitle,
+  Avatar,
+  Container,
+  HeaderBlock,
+  QuoteIcon,
+  QuoteText,
+  SectionSubtitle,
+  SectionTitle,
+  TestimonialCardRoot,
+  TestimonialsGrid,
+  TestimonialsSection,
+} from "./Testimonials.styles";
 
 type TestimonialCardProps = {
   testimonial: Testimonial;
@@ -12,9 +27,8 @@ type TestimonialsProps = {
 function TestimonialCard({ testimonial }: TestimonialCardProps) {
   const { quote, authorName, authorTitle } = testimonial;
   return (
-    <blockquote className="testimonial-card">
-      <svg
-        className="testimonial-card__quote-icon"
+    <TestimonialCardRoot>
+      <QuoteIcon
         viewBox="0 0 40 40"
         width="40"
         height="40"
@@ -31,18 +45,16 @@ function TestimonialCard({ testimonial }: TestimonialCardProps) {
         >
           "
         </text>
-      </svg>
-      <p className="testimonial-card__text">{quote}</p>
-      <footer className="testimonial-card__author">
-        <div className="testimonial-card__avatar" aria-hidden="true">
-          {authorName.charAt(0)}
-        </div>
-        <div>
-          <cite className="testimonial-card__name">{authorName}</cite>
-          <span className="testimonial-card__title">{authorTitle}</span>
-        </div>
-      </footer>
-    </blockquote>
+      </QuoteIcon>
+      <QuoteText>{quote}</QuoteText>
+      <Author>
+        <Avatar aria-hidden="true">{authorName.charAt(0)}</Avatar>
+        <AuthorMeta>
+          <AuthorName>{authorName}</AuthorName>
+          <AuthorTitle>{authorTitle}</AuthorTitle>
+        </AuthorMeta>
+      </Author>
+    </TestimonialCardRoot>
   );
 }
 
@@ -50,25 +62,25 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
   if (!testimonials || testimonials.length === 0) return null;
 
   return (
-    <section className="testimonials section" aria-label="Parent testimonials">
-      <div className="container">
-        <div className="text-center">
-          <h2 className="section-title">What Parents Say</h2>
-          <p className="section-subtitle">
+    <TestimonialsSection aria-label="Parent testimonials">
+      <Container>
+        <HeaderBlock>
+          <SectionTitle>What Parents Say</SectionTitle>
+          <SectionSubtitle>
             Don&apos;t just take our word for it – hear from the families who
             trust us with their most precious ones.
-          </p>
-        </div>
+          </SectionSubtitle>
+        </HeaderBlock>
 
-        <div className="testimonials__grid">
+        <TestimonialsGrid>
           {testimonials.map((t) => (
             <TestimonialCard
               key={t.id || t.sys?.id || t.authorName}
               testimonial={t}
             />
           ))}
-        </div>
-      </div>
-    </section>
+        </TestimonialsGrid>
+      </Container>
+    </TestimonialsSection>
   );
 }

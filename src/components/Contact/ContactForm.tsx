@@ -1,6 +1,17 @@
 import { useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
-import "./ContactForm.css";
+import {
+  ContactFormRoot,
+  ContactFormSuccess,
+  Field,
+  FormRow,
+  Input,
+  Label,
+  Select,
+  SubmitButton,
+  SuccessIcon,
+  Textarea,
+} from "./ContactForm.styles";
 
 const INITIAL_FORM = {
   name: "",
@@ -52,30 +63,28 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="contact-form__success" role="status" aria-live="polite">
-        <span className="contact-form__success-icon" aria-hidden="true">
-          🎉
-        </span>
+      <ContactFormSuccess role="status" aria-live="polite">
+        <SuccessIcon aria-hidden="true">🎉</SuccessIcon>
         <h3>Thank you, we&apos;ll be in touch soon!</h3>
         <p>
           We usually respond within one business day. We look forward to meeting
           you and your family.
         </p>
-        <button className="btn btn-primary" onClick={() => setStatus("idle")}>
+        <SubmitButton type="button" onClick={() => setStatus("idle")}>
           Send another message
-        </button>
-      </div>
+        </SubmitButton>
+      </ContactFormSuccess>
     );
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} noValidate>
-      <div className="contact-form__row">
-        <div className="contact-form__field">
-          <label className="contact-form__label" htmlFor="cf-name">
+    <ContactFormRoot onSubmit={handleSubmit} noValidate>
+      <FormRow>
+        <Field>
+          <Label htmlFor="cf-name">
             Your Name <span aria-hidden="true">*</span>
-          </label>
-          <input
+          </Label>
+          <Input
             id="cf-name"
             type="text"
             name="name"
@@ -83,15 +92,14 @@ export default function ContactForm() {
             onChange={handleChange}
             placeholder="Jane Smith"
             required
-            className="contact-form__input"
             autoComplete="name"
           />
-        </div>
-        <div className="contact-form__field">
-          <label className="contact-form__label" htmlFor="cf-email">
+        </Field>
+        <Field>
+          <Label htmlFor="cf-email">
             Email Address <span aria-hidden="true">*</span>
-          </label>
-          <input
+          </Label>
+          <Input
             id="cf-email"
             type="email"
             name="email"
@@ -99,54 +107,44 @@ export default function ContactForm() {
             onChange={handleChange}
             placeholder="jane@example.com"
             required
-            className="contact-form__input"
             autoComplete="email"
           />
-        </div>
-      </div>
+        </Field>
+      </FormRow>
 
-      <div className="contact-form__row">
-        <div className="contact-form__field">
-          <label className="contact-form__label" htmlFor="cf-phone">
-            Phone Number
-          </label>
-          <input
+      <FormRow>
+        <Field>
+          <Label htmlFor="cf-phone">Phone Number</Label>
+          <Input
             id="cf-phone"
             type="tel"
             name="phone"
             value={form.phone}
             onChange={handleChange}
             placeholder="(555) 123-4567"
-            className="contact-form__input"
             autoComplete="tel"
           />
-        </div>
-        <div className="contact-form__field">
-          <label className="contact-form__label" htmlFor="cf-childAge">
-            Child&apos;s Age
-          </label>
-          <input
+        </Field>
+        <Field>
+          <Label htmlFor="cf-childAge">Child&apos;s Age</Label>
+          <Input
             id="cf-childAge"
             type="text"
             name="childAge"
             value={form.childAge}
             onChange={handleChange}
             placeholder="e.g. 18 months"
-            className="contact-form__input"
           />
-        </div>
-      </div>
+        </Field>
+      </FormRow>
 
-      <div className="contact-form__field">
-        <label className="contact-form__label" htmlFor="cf-program">
-          Program Interest
-        </label>
-        <select
+      <Field>
+        <Label htmlFor="cf-program">Program Interest</Label>
+        <Select
           id="cf-program"
           name="program"
           value={form.program}
           onChange={handleChange}
-          className="contact-form__input contact-form__select"
         >
           <option value="">Select a program…</option>
           {PROGRAM_OPTIONS.map((opt) => (
@@ -154,14 +152,14 @@ export default function ContactForm() {
               {opt}
             </option>
           ))}
-        </select>
-      </div>
+        </Select>
+      </Field>
 
-      <div className="contact-form__field">
-        <label className="contact-form__label" htmlFor="cf-message">
+      <Field>
+        <Label htmlFor="cf-message">
           Message <span aria-hidden="true">*</span>
-        </label>
-        <textarea
+        </Label>
+        <Textarea
           id="cf-message"
           name="message"
           value={form.message}
@@ -169,15 +167,10 @@ export default function ContactForm() {
           placeholder="Tell us a little about your child and any questions you have…"
           required
           rows={5}
-          className="contact-form__input contact-form__textarea"
         />
-      </div>
+      </Field>
 
-      <button
-        type="submit"
-        className="btn btn-primary contact-form__submit"
-        disabled={status === "submitting"}
-      >
+      <SubmitButton type="submit" disabled={status === "submitting"}>
         {status === "submitting" ? "Sending…" : "Send Message"}
         {status !== "submitting" && (
           <svg
@@ -190,7 +183,7 @@ export default function ContactForm() {
             <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
           </svg>
         )}
-      </button>
-    </form>
+      </SubmitButton>
+    </ContactFormRoot>
   );
 }

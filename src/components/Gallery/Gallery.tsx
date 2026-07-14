@@ -1,5 +1,5 @@
-import "./Gallery.css";
 import type { GalleryItem } from "../../types/content";
+import { Caption, GalleryRoot, Grid, Image, Item } from "./Gallery.styles";
 
 type GalleryProps = {
   images: GalleryItem[];
@@ -12,28 +12,23 @@ export default function Gallery({ images, compact = false }: GalleryProps) {
   const displayImages = compact ? images.slice(0, 6) : images;
 
   return (
-    <div className={`gallery${compact ? " gallery--compact" : ""}`}>
-      <div className="gallery__grid">
+    <GalleryRoot>
+      <Grid $compact={compact}>
         {displayImages.map((item, index) => {
           const imageUrl =
             item.imageUrl || item.image?.file?.url || item.file?.url;
           const altText = item.description || item.title || "Gallery image";
           return (
-            <figure
+            <Item
               key={item.id || item.sys?.id || `${item.title}-${index}`}
-              className={`gallery__item gallery__item--${(index % 3) + 1}`}
+              $wide={index === 3}
             >
-              <img
-                src={imageUrl}
-                alt={altText}
-                className="gallery__image"
-                loading="lazy"
-              />
-              <figcaption className="gallery__caption">{item.title}</figcaption>
-            </figure>
+              <Image src={imageUrl} alt={altText} loading="lazy" />
+              <Caption>{item.title}</Caption>
+            </Item>
           );
         })}
-      </div>
-    </div>
+      </Grid>
+    </GalleryRoot>
   );
 }

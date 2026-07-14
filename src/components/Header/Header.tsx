@@ -1,9 +1,28 @@
 import { useState, useEffect } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { navItems, sectionLinksByPath } from "../../content/siteContent";
-import logo from "../../assets/logo.png";
-import logoIcon from "../../assets/logo_icon.png";
-import "./Header.css";
+import {
+  BurgerButton,
+  CtaLink,
+  HeaderInner,
+  HeaderRoot,
+  LogoIcon,
+  LogoLink,
+  LogoName,
+  LogoTagline,
+  LogoText,
+  MainNavLink,
+  MobileSpacer,
+  Navigation,
+  NavItem,
+  NavList,
+  Overlay,
+  Subnav,
+  SubnavContainer,
+  SubnavLink,
+  SubnavList,
+  SubnavWrap,
+} from "./Header.styles";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,27 +37,20 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
-
-  useEffect(() => {
-    document.body.classList.toggle("header-menu-open", menuOpen);
+    document.body.setAttribute("data-menu-open", menuOpen ? "true" : "false");
 
     return () => {
-      document.body.classList.remove("header-menu-open");
+      document.body.removeAttribute("data-menu-open");
     };
   }, [menuOpen]);
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header
-      className={`header${scrolled ? " header--scrolled" : ""}`}
-      role="banner"
-    >
-      <div className="container header__inner">
-        <button
-          className={`header__burger${menuOpen ? " header__burger--open" : ""}`}
+    <HeaderRoot $scrolled={scrolled} role="banner">
+      <HeaderInner>
+        <BurgerButton
+          $open={menuOpen}
           aria-label={
             menuOpen ? "Close navigation menu" : "Open navigation menu"
           }
@@ -49,86 +61,60 @@ export default function Header() {
           <span />
           <span />
           <span />
-        </button>
-        <Link
+        </BurgerButton>
+
+        <LogoLink
           to="/"
-          className="header__logo"
           onClick={closeMenu}
           aria-label="Wingate Childcare Home"
         >
-          <img
-            className="header__logo-image"
-            src={logo}
-            alt="Wingate Childcare"
-          />
-          <img
-            className="header__logo-icon-image"
-            src={logoIcon}
-            alt=""
-            aria-hidden="true"
-          />
-        </Link>
+          <LogoIcon aria-hidden="true">W</LogoIcon>
+          <LogoText>
+            <LogoName>Wingate Childcare</LogoName>
+            <LogoTagline>Community Co-op</LogoTagline>
+          </LogoText>
+        </LogoLink>
 
-        <nav
-          className={`header__nav${menuOpen ? " header__nav--open" : ""}`}
-          aria-label="Main navigation"
-        >
-          <ul id="main-navigation" className="header__nav-list">
+        <Navigation $open={menuOpen} aria-label="Main navigation">
+          <NavList id="main-navigation">
             {navItems.map(({ label, to }) => (
-              <li key={to} className="header__nav-item">
-                <NavLink
-                  to={to}
-                  className={({ isActive }) =>
-                    `header__nav-link${isActive ? " header__nav-link--active" : ""}`
-                  }
-                  onClick={closeMenu}
-                >
+              <NavItem key={to}>
+                <MainNavLink to={to} onClick={closeMenu}>
                   {label}
-                </NavLink>
-              </li>
+                </MainNavLink>
+              </NavItem>
             ))}
-          </ul>
-          <Link
-            to="/enrolments"
-            className="btn btn-primary header__cta"
-            onClick={closeMenu}
-          >
+          </NavList>
+          <CtaLink to="/enrolments" onClick={closeMenu}>
             Enrol Now
-          </Link>
-        </nav>
+          </CtaLink>
+        </Navigation>
 
-        <span className="header__mobile-spacer" aria-hidden="true" />
-      </div>
+        <MobileSpacer aria-hidden="true" />
+      </HeaderInner>
 
-      {menuOpen && (
-        <div
-          className="header__overlay"
-          aria-hidden="true"
-          onClick={closeMenu}
-        />
-      )}
+      {menuOpen && <Overlay aria-hidden="true" onClick={closeMenu} />}
 
       {sectionLinks.length > 0 && (
-        <div className="header__subnav-wrap">
-          <div className="container">
-            <nav className="header__subnav" aria-label="Section navigation">
-              <ul className="header__subnav-list">
+        <SubnavWrap>
+          <SubnavContainer>
+            <Subnav aria-label="Section navigation">
+              <SubnavList>
                 {sectionLinks.map((section) => (
                   <li key={section.id}>
-                    <a
-                      className="header__subnav-link"
+                    <SubnavLink
                       href={`${location.pathname}#${section.id}`}
                       onClick={closeMenu}
                     >
                       {section.label}
-                    </a>
+                    </SubnavLink>
                   </li>
                 ))}
-              </ul>
-            </nav>
-          </div>
-        </div>
+              </SubnavList>
+            </Subnav>
+          </SubnavContainer>
+        </SubnavWrap>
       )}
-    </header>
+    </HeaderRoot>
   );
 }

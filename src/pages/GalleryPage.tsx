@@ -1,29 +1,45 @@
-import { galleryImages } from '../content/siteContent';
+import { galleryImages } from "../content/siteContent";
+import {
+  Container,
+  Eyebrow,
+  GalleryCard,
+  GalleryGrid,
+  HeroSection,
+  Image,
+  Intro,
+  Main,
+  Section,
+} from "./GalleryPage.styles";
 
 export default function GalleryPage() {
   return (
-    <main className="page-shell">
-      <section className="page-hero" aria-label="Gallery page header">
-        <div className="container">
-          <p className="page-eyebrow">Wingate Childcare Co-operative</p>
+    <Main>
+      <HeroSection aria-label="Gallery page header">
+        <Container>
+          <Eyebrow>Wingate Childcare Co-operative</Eyebrow>
           <h1>Gallery</h1>
-          <p className="page-intro">
-            Temporary photos are in place to give the site a warm, lived-in feel while final photography is being prepared.
-          </p>
-        </div>
-      </section>
+          <Intro>
+            Temporary photos are in place to give the site a warm, lived-in feel
+            while final photography is being prepared.
+          </Intro>
+        </Container>
+      </HeroSection>
 
-      <section className="page-section">
-        <div className="container">
-          <div className="gallery-grid" aria-label="Photo gallery">
+      <Section data-reveal="true" data-visible="false">
+        <Container>
+          <GalleryGrid aria-label="Photo gallery">
             {galleryImages.map((image, index) => (
-              <figure key={`${image.alt}-${index}`} className="gallery-card">
-                <img src={image.src} alt={image.alt} loading="lazy" />
-              </figure>
+              <GalleryCard
+                key={`${image.alt}-${index}`}
+                data-reveal="true"
+                data-visible="false"
+              >
+                <Image src={image.src} alt={image.alt} loading="lazy" />
+              </GalleryCard>
             ))}
-          </div>
-        </div>
-      </section>
-    </main>
+          </GalleryGrid>
+        </Container>
+      </Section>
+    </Main>
   );
 }

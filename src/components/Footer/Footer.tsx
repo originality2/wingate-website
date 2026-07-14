@@ -1,61 +1,85 @@
-import { Link } from 'react-router-dom';
-import { navItems, siteContact } from '../../content/siteContent';
-import './Footer.css';
+import { Link } from "react-router-dom";
+import { navItems, siteContact } from "../../content/siteContent";
+import {
+  Address,
+  BottomBar,
+  BottomInner,
+  BottomLink,
+  Brand,
+  ContactLink,
+  FooterInner,
+  FooterRoot,
+  Heading,
+  Hours,
+  LogoLetter,
+  LogoLink,
+  LogoName,
+  NavItemLink,
+  NavList,
+  Tagline,
+} from "./Footer.styles";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="footer" role="contentinfo">
-      <div className="container footer__inner">
+    <FooterRoot role="contentinfo">
+      <FooterInner>
+        <Brand>
+          <LogoLink as={Link} to="/about" aria-label="Wingate Childcare Home">
+            <LogoLetter aria-hidden="true">W</LogoLetter>
+            <LogoName>Wingate Childcare Co-operative</LogoName>
+          </LogoLink>
+          <Tagline>
+            A warm early learning environment where children, educators, and
+            families grow together.
+          </Tagline>
+        </Brand>
 
-        <div className="footer__brand">
-          <Link to="/about" className="footer__logo" aria-label="Wingate Childcare Home">
-            <span aria-hidden="true">W</span>
-            <span className="footer__logo-name">Wingate Childcare Co-operative</span>
-          </Link>
-          <p className="footer__tagline">
-            A warm early learning environment where children, educators, and families grow together.
-          </p>
-        </div>
-
-        <div className="footer__links">
-          <h3 className="footer__heading">Quick Links</h3>
-          <ul className="footer__nav-list">
+        <div>
+          <Heading>Quick Links</Heading>
+          <NavList>
             {navItems.map(({ label, to }) => (
               <li key={to}>
-                <Link to={to} className="footer__nav-link">{label}</Link>
+                <NavItemLink as={Link} to={to}>
+                  {label}
+                </NavItemLink>
               </li>
             ))}
-          </ul>
+          </NavList>
         </div>
 
-        <div className="footer__contact">
-          <h3 className="footer__heading">Visit & Contact</h3>
-          <address className="footer__address">
+        <div>
+          <Heading>Visit & Contact</Heading>
+          <Address>
             <p>{siteContact.address}</p>
-            <a href={`tel:${siteContact.phone.replace(/\D/g, '')}`} className="footer__contact-link">
+            <ContactLink href={`tel:${siteContact.phone.replace(/\D/g, "")}`}>
               {siteContact.phone}
-            </a>
-            <a href={`mailto:${siteContact.email}`} className="footer__contact-link">
+            </ContactLink>
+            <ContactLink href={`mailto:${siteContact.email}`}>
               {siteContact.email}
-            </a>
-          </address>
-          <p className="footer__hours"><strong>Hours:</strong> Monday to Friday, 7:00am – 6:00pm</p>
+            </ContactLink>
+          </Address>
+          <Hours>
+            <strong>Hours:</strong> Monday to Friday, 7:00am – 6:00pm
+          </Hours>
         </div>
+      </FooterInner>
 
-      </div>
-
-      <div className="footer__bottom">
-        <div className="container">
+      <BottomBar>
+        <BottomInner>
           <p>© {year} Wingate Childcare Co-operative.</p>
           <p>
-            <Link to="/parent-resources" className="footer__bottom-link">Parent Resources</Link>
-            {' · '}
-            <Link to="/enrolments" className="footer__bottom-link">Enrolments</Link>
+            <BottomLink as={Link} to="/parent-resources">
+              Parent Resources
+            </BottomLink>
+            {" · "}
+            <BottomLink as={Link} to="/enrolments">
+              Enrolments
+            </BottomLink>
           </p>
-        </div>
-      </div>
-    </footer>
+        </BottomInner>
+      </BottomBar>
+    </FooterRoot>
   );
 }
