@@ -2,25 +2,17 @@ import { parentResourceLinks, resourcesPage } from "../../content/siteContent";
 import {
   CardGrid,
   Container,
-  Eyebrow,
-  HeroSection,
-  Intro,
   Main,
   Section,
   SoftCard,
 } from "../../styles/pageLayout.styles";
+import PageHero from "../../components/PageHero";
 import { TextLink } from "./ParentResources.styles";
 
 export default function ParentResources() {
   return (
     <Main>
-      <HeroSection aria-label="Parent Resources page header">
-        <Container>
-          <Eyebrow>Wingate Childcare Co-operative</Eyebrow>
-          <h1>{resourcesPage.title}</h1>
-          <Intro>{resourcesPage.intro}</Intro>
-        </Container>
-      </HeroSection>
+      <PageHero title={resourcesPage.title} intro={resourcesPage.intro} />
 
       <Section id="documents" data-reveal="true" data-visible="false">
         <Container>

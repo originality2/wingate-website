@@ -1,9 +1,5 @@
 import { aboutPage, galleryImages } from "../../content/siteContent";
 import {
-  Container,
-  Eyebrow,
-  HeroSection,
-  Intro,
   Main,
   ContentGrid,
   ImagePanel,
@@ -11,17 +7,12 @@ import {
   Section,
   TextPanel,
 } from "../../styles/pageLayout.styles";
+import PageHero from "../../components/PageHero";
 
 export default function About() {
   return (
     <Main>
-      <HeroSection aria-label="About page header">
-        <Container>
-          <Eyebrow>Wingate Childcare Co-operative</Eyebrow>
-          <h1>{aboutPage.title}</h1>
-          <Intro>{aboutPage.intro}</Intro>
-        </Container>
-      </HeroSection>
+      <PageHero title={aboutPage.title} intro={aboutPage.intro} />
 
       <Section id="history" data-reveal="true" data-visible="false">
         <ContentGrid>

@@ -8,12 +8,9 @@ import {
 } from "../../content/siteContent";
 import {
   CardGrid,
-  Container,
   ContentGrid,
   Eyebrow,
-  HeroSection,
   ImagePanel,
-  Intro,
   Main,
   PrimaryButtonLink,
   Section,
@@ -21,17 +18,12 @@ import {
   TextPanel,
   RoundedMedia,
 } from "../../styles/pageLayout.styles";
+import PageHero from "../../components/PageHero";
 
 export default function Programs() {
   return (
     <Main>
-      <HeroSection aria-label="Program page header">
-        <Container>
-          <Eyebrow>Wingate Childcare Co-operative</Eyebrow>
-          <h1>{programPage.title}</h1>
-          <Intro>{programPage.intro}</Intro>
-        </Container>
-      </HeroSection>
+      <PageHero title={programPage.title} intro={programPage.intro} />
 
       <Section id="learning-approach" data-reveal="true" data-visible="false">
         <ContentGrid>
@@ -249,9 +241,9 @@ export default function Programs() {
           <TextPanel>
             <h2>Meals & Nutrition</h2>
             <p>
-              The centre provides a breakfast program (until 8am), morning tea,
-              lunch, afternoon tea, and a late snack. Menus support
-              children&apos;s wellbeing and dietary requirements.
+              The centre provides a breakfast program, morning tea, lunch,
+              afternoon tea, and a late snack. Menus support children&apos;s
+              wellbeing and dietary requirements.
             </p>
             <p>
               Wingate also supplies nappies, wipes, sunscreen, and
