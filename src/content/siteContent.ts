@@ -24,7 +24,6 @@ import type {
   PageMeta,
   ParentResourceLinks,
   ProgramGroup,
-  SectionLink,
   SiteContact,
   TeamMember,
 } from "../types/content";
@@ -54,59 +53,31 @@ export const siteContact: SiteContact = {
 export const aboutPage: PageMeta = {
   title: "About",
   intro:
-    "Wingate Avenue Children’s Co-Operative is a not-for-profit, community-led early learning service focused on high-quality care, relationships, and inclusion.",
-  sectionLinks: [
-    { id: "history", label: "History" },
-    { id: "philosophy", label: "Philosophy" },
-  ],
+    "Welcome to Wingate Avenue Children's Co-operative - a safe place where children, families and community have belonged for over 50 years.",
 };
 
 export const programPage: PageMeta = {
   title: "Program",
   intro:
     "Our program is play-based and emergent, informed by Reggio Emilia principles and the Victorian Early Years Learning Framework.",
-  sectionLinks: [
-    { id: "pedagogy", label: "Pedagogy" },
-    { id: "age-groups", label: "Age Groups" },
-    { id: "meals", label: "Meals & Nutrition" },
-  ],
 };
 
 export const enrolmentsPage: PageMeta = {
   title: "Enrolments",
   intro:
     "Families are encouraged to join the waitlist early. Offers are made throughout the year based on availability and Priority of Access.",
-  sectionLinks: [
-    { id: "info", label: "Enrolment Information" },
-    { id: "fees", label: "Fees" },
-    { id: "tours", label: "Tours" },
-  ],
 };
 
 export const peoplePage: PageMeta = {
   title: "Our People",
   intro:
     "Our educators, leaders, and support team create inclusive, diverse partnerships with children and community.",
-  sectionLinks: [{ id: "team", label: "Team" }],
 };
 
 export const resourcesPage: PageMeta = {
   title: "Parent Resources",
   intro:
     "Important family documents, policy links, and day-to-day information are grouped here for quick access.",
-  sectionLinks: [
-    { id: "documents", label: "Documents" },
-    { id: "daily", label: "Daily Information" },
-    { id: "policies", label: "Policies" },
-  ],
-};
-
-export const sectionLinksByPath: Record<string, SectionLink[]> = {
-  "/about": aboutPage.sectionLinks,
-  "/program": programPage.sectionLinks,
-  "/enrolments": enrolmentsPage.sectionLinks,
-  "/our-people": peoplePage.sectionLinks,
-  "/parent-resources": resourcesPage.sectionLinks,
 };
 
 export const homePage: HomePageContent = {
@@ -221,24 +192,100 @@ export const galleryImages: LocalGalleryImage[] = [
   },
 ];
 
-export const programGroups: ProgramGroup[] = [
+export const toddlerClassroomGroups: ProgramGroup[] = [
   {
     name: "Seeds",
-    ages: "6 weeks to 18 months",
-    summary:
-      "Responsive care, consistent routines, and sensory-rich experiences for our youngest children.",
+    ages: "6 weeks to 12 months",
+    summary: "Capacity 10 children per day.",
   },
   {
     name: "Seedlings",
-    ages: "18 months to 3 years",
-    summary:
-      "Language-rich, play-based learning with a focus on confidence, curiosity, and social development.",
+    ages: "12 months to 24 months",
+    summary: "Capacity 12 children per day.",
   },
   {
     name: "Sprouts",
-    ages: "3 years to 6 years",
-    summary:
-      "Project-based exploration, funded kindergarten pathways, and school-readiness foundations.",
+    ages: "2 years to 3 years",
+    summary: "Capacity 12 children per day.",
+  },
+];
+
+export const kindergartenClassroomGroups: ProgramGroup[] = [
+  {
+    name: "Stalks",
+    ages: "3 to 4 years",
+    summary: "Capacity 16 children per day.",
+  },
+  {
+    name: "Blossoms",
+    ages: "4 years to 5 years",
+    summary: "Capacity 20 children per day.",
+  },
+];
+
+export const toddlerSupportFocusAreas = [
+  {
+    title: "Building children's confidence",
+    description:
+      "Through small class sizes and consistent daily rhythms, children are given the time and space to try, explore and grow at their own pace.",
+  },
+  {
+    title: "Active listening to children's voice and expressions",
+    description:
+      "Educators tune in to every coo, gesture and word, responding with warmth so children feel truly heard.",
+  },
+  {
+    title: "Nurturing safety and belonging",
+    description:
+      "Strong, trusting relationships with educators help children feel secure enough to explore the world around them.",
+  },
+  {
+    title: "Encouraging independence",
+    description:
+      'Everyday moments become opportunities for children to develop self-confidence and a sense of "I can do it."',
+  },
+  {
+    title: "Fostering natural curiosity",
+    description:
+      "Children are seen as capable investigators, and educators walk alongside them as they test, taste, and discover.",
+  },
+];
+
+export const kindergartenSupportFocusAreas = [
+  {
+    title: "Preparing for school and beyond",
+    description:
+      "Building skills that set children up not just for primary school, but for life.",
+  },
+  {
+    title: "Strong language development",
+    description:
+      "Growing confident communicators through rich, everyday conversation and experiences.",
+  },
+  {
+    title: "Self-regulation and emotional growth",
+    description:
+      "Supporting children to understand and manage their emotions with confidence.",
+  },
+  {
+    title: "Social skills and respectful communication",
+    description:
+      "Nurturing meaningful friendships and strong, respectful relationships with peers and educators.",
+  },
+  {
+    title: "Pre-literacy and pre-numeracy foundations",
+    description:
+      "Introducing early concepts in a natural, engaging and hands-on way.",
+  },
+  {
+    title: "A responsive, curiosity-driven classroom",
+    description:
+      "Teachers scaffold learning around each child's interests, encouraging sustained attention and deeper thinking.",
+  },
+  {
+    title: 'Exploring multiple "languages" of expression',
+    description:
+      "Through art, construction, clay, open-ended materials and imaginative play, children discover new ways to understand and express themselves.",
   },
 ];
 

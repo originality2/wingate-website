@@ -28,16 +28,21 @@ export default function About() {
           <TextPanel>
             <h2>History</h2>
             <p>
-              Wingate Avenue Children&apos;s Co-Operative first opened in 1975
-              and has provided education and care for local families ever since.
-              The service is a 70-place, not-for-profit long day care centre for
-              children aged 6 weeks to 6 years.
+              Since 1975, Wingate has been more than an early childhood service
+              - it's been a <b>true community</b>. We've always believed{" "}
+              <b>it takes a village to raise a child</b>, and that belief still
+              shapes everything we do today. We're so grateful for the chance to
+              keep building a place where children and families feel genuinely
+              supported, deeply connected, and truly valued.
             </p>
             <p>
-              As a community co-operative, Wingate is governed by a volunteer
-              Committee of Management alongside centre leadership. This
-              structure helps maintain strong family voice, community access,
-              and quality investment in educators and learning environments.
+              As a co-operative, community isn't just part of what we do - it's
+              at the very heart of it. We're committed to giving every child and
+              family access to high-quality early learning and care, with a
+              special focus on supporting families in our local housing
+              community. These connections are what make us who we are, and by
+              nurturing them, we continue to be a place where community,
+              belonging and relationship shine as our greatest strengths.
             </p>
           </TextPanel>
           <ImagePanel>
@@ -50,7 +55,7 @@ export default function About() {
         </ContentGrid>
       </Section>
 
-      <Section id="philosophy" $alt data-reveal="true" data-visible="false">
+      <Section id="philosophy" data-reveal="true" data-visible="false">
         <ContentGrid>
           <ImagePanel>
             <RoundedMedia

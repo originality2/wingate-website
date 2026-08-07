@@ -58,7 +58,7 @@ export default function Enrolments() {
               Add to Waitlist
             </PrimaryButtonAnchor>
           </TextPanel>
-          <TextPanel $soft>
+          <TextPanel $contrastPanel>
             <h3>What to Prepare</h3>
             <ul>
               <li>Child and family contact details</li>
@@ -72,7 +72,7 @@ export default function Enrolments() {
         </ContentGrid>
       </Section>
 
-      <Section id="fees" $alt data-reveal="true" data-visible="false">
+      <Section id="fees" data-reveal="true" data-visible="false">
         <Container>
           <h2>Fees</h2>
           <CardGrid>
@@ -103,7 +103,7 @@ export default function Enrolments() {
 
       <Section id="tours" data-reveal="true" data-visible="false">
         <ContentGrid>
-          <TextPanel $soft>
+          <TextPanel $contrastPanel>
             <h2>Tours</h2>
             <p>
               Please call or email to book a tour. Tours are by appointment and
@@ -114,7 +114,7 @@ export default function Enrolments() {
               Book a Tour
             </PrimaryButtonAnchor>
           </TextPanel>
-          <TextPanel $soft>
+          <TextPanel $contrastPanel>
             <h3>What You&apos;ll See</h3>
             <ul>
               <li>Each room and outdoor spaces</li>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { sectionLinksByPath } from "../../content/siteContent";
 import logo from "../../assets/logo.png";
 import logoIcon from "../../assets/logo_icon.png";
 import {
@@ -23,7 +22,6 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const sectionLinks = sectionLinksByPath[location.pathname] ?? [];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);

@@ -42,7 +42,7 @@ export default function ParentResources() {
         </Container>
       </Section>
 
-      <Section id="daily" $alt data-reveal="true" data-visible="false">
+      <Section id="daily" data-reveal="true" data-visible="false">
         <Container>
           <CardGrid $twoCol>
             <SoftCard data-reveal="true" data-visible="false">

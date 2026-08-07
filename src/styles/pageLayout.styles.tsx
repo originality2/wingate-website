@@ -12,7 +12,6 @@ export const Main = styled.main`
 `;
 
 export const HeroSection = styled.section`
-  padding: 4rem 0 2rem;
   background: linear-gradient(
     135deg,
     var(--color-soft) 0%,
@@ -51,37 +50,90 @@ export const Intro = styled.p`
   margin-bottom: 1rem;
 `;
 
-export const Section = styled.section<{ $alt?: boolean }>`
+export const Section = styled.section`
   padding: 0;
   scroll-margin-top: 6rem;
-  background: ${({ $alt }) => ($alt ? "#e5d9cc" : "transparent")};
-`;
+  background: transparent;
+  --panel-bg: var(--color-surface);
+  --panel-bg-contrast: var(--color-soft);
+  --soft-card-bg: var(--panel-bg-contrast);
 
-export const ContentGrid = styled.div`
-  display: flex;
-  align-items: stretch;
-  min-height: clamp(420px, 56vh, 760px);
-
-  > * {
-    flex: 1 1 50%;
-    min-width: 0;
-    display: flex;
-  }
-
-  @media (max-width: ${layoutBreakpoints.mobile}) {
-    flex-direction: column;
-    min-height: 0;
+  &:nth-of-type(odd) {
+    background: #e5d9cc;
+    --panel-bg: var(--color-soft);
+    --panel-bg-contrast: var(--color-surface);
+    --soft-card-bg: var(--panel-bg-contrast);
   }
 `;
 
-export const TextPanel = styled.div<{ $soft?: boolean }>`
+const getFlippedVirtualParity = (
+  virtualParity?: "odd" | "even",
+): "odd" | "even" | undefined => {
+  if (virtualParity === "odd") return "even";
+  if (virtualParity === "even") return "odd";
+  return undefined;
+};
+
+const getTextPanelBackground = (
+  virtualParity: "odd" | "even" | undefined,
+  contrastPanel: boolean | undefined,
+) => {
+  if (virtualParity === "odd") return "var(--color-soft)";
+  if (virtualParity === "even") return "var(--color-surface)";
+  return contrastPanel
+    ? "var(--panel-bg-contrast, var(--color-soft))"
+    : "var(--panel-bg, var(--color-surface))";
+};
+
+const getTextPanelSoftCardBackground = (
+  virtualParity: "odd" | "even" | undefined,
+  contrastPanel: boolean | undefined,
+) => {
+  if (virtualParity === "odd") return "var(--color-surface)";
+  if (virtualParity === "even") return "var(--color-soft)";
+  return contrastPanel
+    ? "var(--panel-bg, var(--color-surface))"
+    : "var(--panel-bg-contrast, var(--color-soft))";
+};
+
+export const TextPanel = styled.div<{
+  $contrastPanel?: boolean;
+  $virtualParity?: "odd" | "even";
+  $flipVirtualParityResponsiveness?: boolean;
+}>`
   width: 100%;
   padding: 1.5rem;
-  background: ${({ $soft }) =>
-    $soft ? "var(--color-soft)" : "var(--color-surface)"};
+  background: ${({ $virtualParity, $contrastPanel }) =>
+    getTextPanelBackground($virtualParity, $contrastPanel)};
+  --soft-card-bg: ${({ $virtualParity, $contrastPanel }) =>
+    getTextPanelSoftCardBackground($virtualParity, $contrastPanel)};
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
+  @media (max-width: ${layoutBreakpoints.large}) {
+    background: ${({
+      $flipVirtualParityResponsiveness,
+      $virtualParity,
+      $contrastPanel,
+    }) =>
+      getTextPanelBackground(
+        $flipVirtualParityResponsiveness
+          ? getFlippedVirtualParity($virtualParity)
+          : $virtualParity,
+        $contrastPanel,
+      )};
+    --soft-card-bg: ${({
+      $flipVirtualParityResponsiveness,
+      $virtualParity,
+      $contrastPanel,
+    }) =>
+      getTextPanelSoftCardBackground(
+        $flipVirtualParityResponsiveness
+          ? getFlippedVirtualParity($virtualParity)
+          : $virtualParity,
+        $contrastPanel,
+      )};
+  }
 
   @media (min-width: ${layoutBreakpoints.tablet}) {
     padding: 2rem;
@@ -102,6 +154,32 @@ export const ImagePanel = styled.div`
   display: flex;
   align-self: stretch;
   overflow: hidden;
+`;
+
+export const ContentGrid = styled.div<{ $stackAtTablet?: boolean }>`
+  display: flex;
+  align-items: stretch;
+  min-height: clamp(420px, 56vh, 760px);
+
+  > * {
+    flex: 1 1 50%;
+    min-width: 0;
+    display: flex;
+  }
+
+  @media (max-width: ${({ $stackAtTablet }) =>
+      $stackAtTablet ? layoutBreakpoints.large : layoutBreakpoints.mobile}) {
+    flex-direction: column;
+    min-height: 0;
+
+    > ${TextPanel} {
+      order: 0;
+    }
+
+    > ${ImagePanel} {
+      order: 1;
+    }
+  }
 `;
 
 export const RoundedMedia = styled.img`
@@ -125,10 +203,11 @@ export const CardGrid = styled.div<{ $twoCol?: boolean }>`
   @media (max-width: ${layoutBreakpoints.mobile}) {
     grid-template-columns: 1fr;
   }
+  padding-bottom: 1rem;
 `;
 
 export const SoftCard = styled.article`
-  background: var(--color-surface);
+  background: var(--soft-card-bg, var(--color-soft));
   border-radius: 15px;
   padding: 1.1rem;
   height: 100%;
