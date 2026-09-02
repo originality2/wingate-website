@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { layoutBreakpoints } from "../../styles/pageLayout.styles";
 
@@ -143,38 +143,6 @@ export const MainNavLink = styled(NavLink)`
     &:hover,
     &[aria-current="page"] {
       color: #ffffff;
-    }
-  }
-`;
-
-export const CtaLink = styled(Link)`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  padding: 0.55rem 1rem;
-  border-radius: 45px;
-  transition: 0.2s ease;
-  border: 0;
-  cursor: pointer;
-  background: var(--color-primary);
-  color: #fff;
-  flex-shrink: 0;
-
-  &:hover {
-    background: var(--color-primary-dark);
-  }
-
-  @media (max-width: ${layoutBreakpoints.large}) {
-    margin-top: 0.25rem;
-    align-self: flex-start;
-    padding: 0.7rem 1rem;
-    background: #ffffff;
-    color: var(--color-primary-dark);
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--color-primary-dark);
     }
   }
 `;

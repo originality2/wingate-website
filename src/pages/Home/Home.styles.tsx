@@ -8,9 +8,7 @@ export const Main = styled.main`
 
 export const Hero = styled.section`
   min-height: 80vh;
-  background-image:
-    linear-gradient(rgba(51, 42, 30, 0.45), rgba(51, 42, 30, 0.45)),
-    url("https://d2kvbtvlrloztz.cloudfront.net/img/child_with_bucket.webp");
+  background-image: url("https://d2kvbtvlrloztz.cloudfront.net/img/child_with_bucket.webp");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -98,7 +96,6 @@ export const TileImage = styled.img`
 export const TileOverlay = styled.div`
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(51, 42, 30, 0.15), rgba(51, 42, 30, 0.7));
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

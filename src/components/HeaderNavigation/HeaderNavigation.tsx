@@ -1,6 +1,5 @@
 import { navItems } from "../../content/siteContent";
 import {
-  CtaLink,
   MainNavLink,
   NavCloseButton,
   Navigation,
@@ -47,10 +46,6 @@ export default function HeaderNavigation({
             </NavItem>
           ))}
         </NavList>
-
-        <CtaLink to="/enrolments" onClick={onCloseMenu}>
-          Enrol Now
-        </CtaLink>
       </Navigation>
     </>
   );

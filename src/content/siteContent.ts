@@ -373,7 +373,7 @@ export const teamMemberGroups: TeamMemberGroup[] = [
     members: membersByName(["Mau", "Sara", "Alessia", "Jasmin"]),
   },
   {
-    title: "Kitchen",
+    title: "Our Chefs",
     members: membersByName(["Einat", "Fay"]),
   },
 ];

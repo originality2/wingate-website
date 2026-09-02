@@ -14,9 +14,7 @@ describe("HeaderNavigation", () => {
     );
 
     expect(screen.getByRole("link", { name: "About" })).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", { name: /enrol now/i }),
-    ).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /enrol now/i })).toBeNull();
   });
 
   it("closes when overlay is clicked", () => {

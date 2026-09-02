@@ -32,14 +32,12 @@ describe("Header", () => {
     expect(screen.getByRole("link", { name: link })).toBeInTheDocument();
   });
 
-  it("renders the Enrol Now CTA", () => {
+  it("does not render the Enrol Now CTA", () => {
     render(
       <MemoryRouter>
         <Header />
       </MemoryRouter>,
     );
-    expect(
-      screen.getByRole("link", { name: /enrol now/i }),
-    ).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /enrol now/i })).toBeNull();
   });
 });
