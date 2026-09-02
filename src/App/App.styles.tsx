@@ -162,6 +162,8 @@ export const AppContainer = styled.div`
 
 export const MainContent = styled.main`
   flex: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const NotFoundMain = styled.main`
@@ -170,6 +172,7 @@ export const NotFoundMain = styled.main`
   align-items: center;
   justify-content: center;
   padding: 3rem 0;
+  background: var(--color-soft);
 `;
 
 export const NotFoundInner = styled.div`

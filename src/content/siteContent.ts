@@ -133,6 +133,13 @@ export const homePage: HomePageContent = {
       alt: "Welcoming childcare environment for families",
     },
     {
+      title: "Child Safe Practice",
+      text: "Wingate Avenue Children's Co-operative is committed to a child-safe culture where every child feels safe, respected, heard, and empowered.",
+      to: "/child-safe-practice",
+      image: child_with_sand,
+      alt: "Welcoming childcare environment for families",
+    },
+    {
       title: "Our People",
       text: "Meet our leadership and educator team.",
       to: "/our-people",
