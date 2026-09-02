@@ -22,7 +22,7 @@ export const GlobalStyles = createGlobalStyle`
     --radius-md: 0;
     --shadow-sm: 0 12px 24px rgba(30, 31, 22, 0.1);
     --shadow-soft: 0 12px 30px rgba(0, 114, 69, 0.1);
-    --font-heading: 'Cabin Sketch', sans-serif;
+    --font-heading: "Playwrite HU", cursive;
     --font-body: 'Nunito', sans-serif;
     --color-heading: var(--color-text);
     --heading-line-height: 1.2;
