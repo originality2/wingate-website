@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Programs from "../pages/Programs";
 import Enrolments from "../pages/Enrolments";
+import ChildSafePractice from "../pages/ChildSafePractice";
 import OurPeople from "../pages/OurPeople";
 import GalleryPage from "../pages/GalleryPage";
 import ParentResources from "../pages/ParentResources";
@@ -90,9 +91,9 @@ function AppShell() {
           <Route path="/about" element={<About />} />
           <Route path="/program" element={<Programs />} />
           <Route path="/enrolments" element={<Enrolments />} />
+          <Route path="/child-safe-practice" element={<ChildSafePractice />} />
           <Route path="/our-people" element={<OurPeople />} />
           <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/parent-resources" element={<ParentResources />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MainContent>

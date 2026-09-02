@@ -11,18 +11,6 @@ export const Main = styled.main`
   flex: 1;
 `;
 
-export const HeroSection = styled.section`
-  background: linear-gradient(
-    135deg,
-    var(--color-soft) 0%,
-    var(--color-surface) 100%
-  );
-
-  h1 {
-    max-width: 18ch;
-  }
-`;
-
 export const Container = styled.div`
   width: 100%;
   max-width: 1120px;
@@ -43,11 +31,6 @@ export const Eyebrow = styled.p`
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-primary-dark);
-`;
-
-export const Intro = styled.p`
-  max-width: 65ch;
-  margin-bottom: 1rem;
 `;
 
 export const Section = styled.section`
@@ -159,7 +142,7 @@ export const ImagePanel = styled.div`
 export const ContentGrid = styled.div<{ $stackAtTablet?: boolean }>`
   display: flex;
   align-items: stretch;
-  min-height: clamp(420px, 56vh, 760px);
+  // min-height: clamp(420px, 56vh, 760px);
 
   > * {
     flex: 1 1 50%;
@@ -186,8 +169,8 @@ export const RoundedMedia = styled.img`
   flex: 1 1 auto;
   width: 100%;
   height: 100%;
+  max-height: 100%;
   object-fit: cover;
-  min-height: 100%;
   display: block;
 `;
 
@@ -240,13 +223,5 @@ const primaryButtonStyles = css`
 `;
 
 export const PrimaryButtonLink = styled(Link)`
-  ${primaryButtonStyles}
-`;
-
-export const PrimaryButtonAnchor = styled.a`
-  ${primaryButtonStyles}
-`;
-
-export const PrimaryButton = styled.button`
   ${primaryButtonStyles}
 `;
