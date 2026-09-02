@@ -1,9 +1,9 @@
 import { peoplePage, teamMembers } from "../../content/siteContent";
 import {
-  Container,
   Eyebrow,
   Main,
   Section,
+  TextPanel,
 } from "../../styles/pageLayout.styles";
 import PageHero from "../../components/PageHero";
 import { TeamBody, TeamCard, TeamGrid, TeamImage } from "./OurPeople.styles";
@@ -14,13 +14,33 @@ export default function OurPeople() {
       <PageHero title={peoplePage.title} intro={peoplePage.intro} />
 
       <Section id="team" data-reveal="true" data-visible="false">
-        <Container>
+        <TextPanel>
           <h2>Team</h2>
           <p>
-            Wingate&apos;s management structure includes the Committee of
-            Management, Centre Director, Administrator/Educational Leader, room
-            leaders, and centre teams working collaboratively.
+            Our educators are the heart of Wingate. Many members of our team
+            have been part of our community for more than a decade, bringing
+            with them a wealth of knowledge, experience and strong relationships
+            with children and families.
           </p>
+          <p>
+            We are also excited to welcome new educators who bring fresh ideas,
+            passion and enthusiasm, continuing to strengthen our team and our
+            community.
+          </p>
+          <p>
+            Our highly qualified team includes five Early Childhood Teachers,
+            with 90% of our educators holding Diploma qualifications or higher.
+            We are proud of the professional knowledge, dedication and
+            commitment our educators bring every day.
+          </p>
+          <p>
+            Our leadership team provides consistent support for children,
+            families and educators, including a full-time Centre Director,
+            Educational Leader and Service Administrator who work together to
+            ensure the service continues to grow while maintaining the strong
+            values that have guided Wingate since 1975.
+          </p>
+
           <TeamGrid>
             {teamMembers.map((member) => (
               <TeamCard
@@ -36,12 +56,12 @@ export default function OurPeople() {
                 <TeamBody>
                   <h3>{member.name}</h3>
                   <Eyebrow>{member.role}</Eyebrow>
-                  <p>{member.bio}</p>
+                  {member.bio && <p>{member.bio}</p>}
                 </TeamBody>
               </TeamCard>
             ))}
           </TeamGrid>
-        </Container>
+        </TextPanel>
       </Section>
     </Main>
   );

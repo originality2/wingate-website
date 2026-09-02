@@ -17,6 +17,35 @@ const outdoor_play_area = `${cloudfrontImgBase}/outdoor_play_area.webp`;
 const tower_of_hanoi = `${cloudfrontImgBase}/tower_of_hanoi.webp`;
 import photo3 from "../../tmp-photos/photo-3.jpg";
 import photo4 from "../../tmp-photos/photo-4.jpg";
+import supportEducatorMau from "../assets/staff/Support-Educator-Mau.webp";
+import sproutsCoEducatorCourtney from "../assets/staff/Sprouts Co-educator Courtney .webp";
+import seedsLeadEducatorPricila from "../assets/staff/Seeds Lead Educator - Pricila .webp";
+import sproutsLeadEducatorKenna from "../assets/staff/Sprouts - Lead Educator Kenna .webp";
+import supportEducatorJasmin from "../assets/staff/Support-Educator-Jasmin.webp";
+import blossomEarlyChildhoodTeacherView from "../assets/staff/Blossom Early Childhood Teacher - View .webp";
+import centreDirectorJandan from "../assets/staff/Centre Director Jandan.webp";
+import einatCook from "../assets/staff/Einat -Cook .webp";
+import blossomCoEducatorMaus from "../assets/staff/Blossom Co-educator Maus.webp";
+import seedlingsCoEducatorGreta from "../assets/staff/Seedlings Co-educator Greta .webp";
+import seedsCoEducatorRashika from "../assets/staff/Seeds Co-educator Rashika .webp";
+import stalksCoEducatorCody from "../assets/staff/Stalks Co-educator Cody .webp";
+import sproutsCoEducatorNgoc from "../assets/staff/Sprouts Co-educator Ngoc .webp";
+import sproutsCoEducatorRachel from "../assets/staff/Sprouts Co Educator Rachel .webp";
+import stalksCoEducatorGayatri from "../assets/staff/Stalks-Co-educator-Gayatri.webp";
+import seedlingsCoEducatorLambrini from "../assets/staff/Seedlings Co-Educator Lambrini .webp";
+import seedsCoEducatorSellam from "../assets/staff/Seeds Co-educator Sellam.webp";
+import educationalLeaderAdi from "../assets/staff/Educational Leader - Adi.webp";
+import supportEducatorNasteha from "../assets/staff/Support-Educator-Nasteha.webp";
+import fayCook from "../assets/staff/Fay -Cook.webp";
+import stalksEarlyChildhoodTeacherMiro from "../assets/staff/Stalks-Early-Childood-Teacher-Miro-.webp";
+import blossomEarlyChildhoodTeacherJules from "../assets/staff/Blossom Early Childhood Teacher Jules .webp";
+import seedlingsCoLeadEducatorTania from "../assets/staff/Seedlings Co-Lead Educator Tania .webp";
+import seedsCoEducatorTarryn from "../assets/staff/Seeds Co-Educator Tarryn.webp";
+import seedlingsLeadEducatorNatalia from "../assets/staff/Seedlings Lead educator Natalia .webp";
+import adminChristine from "../assets/staff/Admin Christine .webp";
+import supportEducatorSara from "../assets/staff/Support-Educator-Sara.webp";
+import sproutsCoEducatorAntonia from "../assets/staff/Sprouts Co-Educator Antonia .webp";
+import supportEducatorAlessia from "../assets/staff/Support-educator-Alessia-.webp";
 import type {
   HomePageContent,
   LocalGalleryImage,
@@ -138,41 +167,159 @@ export const homePage: HomePageContent = {
 
 export const teamMembers: TeamMember[] = [
   {
-    name: "Jandan Basaran",
-    role: "Centre Director / Educational Leader",
-    bio: "Leads day-to-day operations, mentors educators, and oversees teaching and learning quality.",
-    image: photo4,
+    name: "Jandan",
+    role: "Centre Director",
+    bio: "",
+    image: centreDirectorJandan,
   },
   {
-    name: "Aditya Panchakshari",
-    role: "Curriculum Leader",
-    bio: "Supports curriculum design, documentation, and reflective practice across age groups.",
-    image: photo4,
+    name: "Adi",
+    role: "Educational Leader",
+    bio: "",
+    image: educationalLeaderAdi,
+  },
+  { name: "Christine", role: "Administrator", bio: "", image: adminChristine },
+  {
+    name: "Pricila",
+    role: "Seeds Lead Educator",
+    bio: "",
+    image: seedsLeadEducatorPricila,
   },
   {
-    name: "Christine Mengato",
-    role: "Centre Administrator",
-    bio: "Coordinates family communication, enrolment administration, and orientation logistics.",
-    image: photo3,
+    name: "Rashika",
+    role: "Seeds Co-educator",
+    bio: "",
+    image: seedsCoEducatorRashika,
   },
   {
-    name: "Priscilla",
-    role: "Lead Educator - Seeds",
-    bio: "Supports the youngest children to build secure attachments through responsive routines and care.",
-    image: photo4,
+    name: "Sellam",
+    role: "Seeds Co-educator",
+    bio: "",
+    image: seedsCoEducatorSellam,
+  },
+  {
+    name: "Tarryn",
+    role: "Seeds Co-educator",
+    bio: "",
+    image: seedsCoEducatorTarryn,
   },
   {
     name: "Natalia",
-    role: "Room Leader - Seedlings",
-    bio: "Leads play-based learning that supports language, wellbeing, and growing independence.",
-    image: photo4,
+    role: "Seedlings Lead Educator",
+    bio: "",
+    image: seedlingsLeadEducatorNatalia,
   },
   {
-    name: "Mira & Jules",
-    role: "Kindergarten Teachers",
-    bio: "Deliver funded kinder programs focused on school readiness, inclusion, and emotional wellbeing.",
-    image: photo4,
+    name: "Tania",
+    role: "Seedlings Co-Lead Educator",
+    bio: "",
+    image: seedlingsCoLeadEducatorTania,
   },
+  {
+    name: "Greta",
+    role: "Seedlings Co-educator",
+    bio: "",
+    image: seedlingsCoEducatorGreta,
+  },
+  {
+    name: "Lambrini",
+    role: "Seedlings Co-educator",
+    bio: "",
+    image: seedlingsCoEducatorLambrini,
+  },
+  {
+    name: "Kenna",
+    role: "Sprouts Lead Educator",
+    bio: "",
+    image: sproutsLeadEducatorKenna,
+  },
+  {
+    name: "Antonia",
+    role: "Sprouts Co-educator",
+    bio: "",
+    image: sproutsCoEducatorAntonia,
+  },
+  {
+    name: "Courtney",
+    role: "Sprouts Co-educator",
+    bio: "",
+    image: sproutsCoEducatorCourtney,
+  },
+  {
+    name: "Ngoc",
+    role: "Sprouts Co-educator",
+    bio: "",
+    image: sproutsCoEducatorNgoc,
+  },
+  {
+    name: "Rachel",
+    role: "Sprouts Co-educator",
+    bio: "",
+    image: sproutsCoEducatorRachel,
+  },
+  {
+    name: "Miro",
+    role: "Stalks Early Childhood Teacher",
+    bio: "",
+    image: stalksEarlyChildhoodTeacherMiro,
+  },
+  {
+    name: "Cody",
+    role: "Stalks Co-educator",
+    bio: "",
+    image: stalksCoEducatorCody,
+  },
+  {
+    name: "Gayatri",
+    role: "Stalks Co-educator",
+    bio: "",
+    image: stalksCoEducatorGayatri,
+  },
+  {
+    name: "View",
+    role: "Blossom Early Childhood Teacher",
+    bio: "",
+    image: blossomEarlyChildhoodTeacherView,
+  },
+  {
+    name: "Jules",
+    role: "Blossom Early Childhood Teacher",
+    bio: "",
+    image: blossomEarlyChildhoodTeacherJules,
+  },
+  {
+    name: "Maus",
+    role: "Blossom Co-educator",
+    bio: "",
+    image: blossomCoEducatorMaus,
+  },
+  {
+    name: "Alessia",
+    role: "Support Educator",
+    bio: "",
+    image: supportEducatorAlessia,
+  },
+  {
+    name: "Jasmin",
+    role: "Support Educator",
+    bio: "",
+    image: supportEducatorJasmin,
+  },
+  { name: "Mau", role: "Support Educator", bio: "", image: supportEducatorMau },
+  {
+    name: "Nasteha",
+    role: "Support Educator",
+    bio: "",
+    image: supportEducatorNasteha,
+  },
+  {
+    name: "Sara",
+    role: "Support Educator",
+    bio: "",
+    image: supportEducatorSara,
+  },
+  { name: "Einat", role: "Cook", bio: "", image: einatCook },
+  { name: "Fay", role: "Cook", bio: "", image: fayCook },
 ];
 
 export const galleryImages: LocalGalleryImage[] = [

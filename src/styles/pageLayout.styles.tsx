@@ -142,7 +142,6 @@ export const ImagePanel = styled.div`
 export const ContentGrid = styled.div<{ $stackAtTablet?: boolean }>`
   display: flex;
   align-items: stretch;
-  // min-height: clamp(420px, 56vh, 760px);
 
   > * {
     flex: 1 1 50%;

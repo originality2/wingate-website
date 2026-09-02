@@ -4,7 +4,7 @@ import { layoutBreakpoints } from "../../styles/pageLayout.styles";
 export const TeamGrid = styled.div`
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 
   @media (max-width: ${layoutBreakpoints.tablet}) {
     grid-template-columns: 1fr 1fr;
@@ -23,7 +23,7 @@ export const TeamCard = styled.article`
 `;
 
 export const TeamImage = styled.img`
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   width: 100%;
   height: auto;
   object-fit: cover;

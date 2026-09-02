@@ -23,6 +23,6 @@ describe("OurPeople", () => {
   it.each(teamMembers)("renders team member role: $name", (member) => {
     render(<OurPeople />);
 
-    expect(screen.getByText(member.role)).toBeInTheDocument();
+    expect(screen.getAllByText(member.role).length).toBeGreaterThan(0);
   });
 });
