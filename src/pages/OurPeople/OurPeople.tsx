@@ -2,23 +2,16 @@ import { peoplePage, teamMembers } from "../../content/siteContent";
 import {
   Container,
   Eyebrow,
-  HeroSection,
-  Intro,
   Main,
   Section,
 } from "../../styles/pageLayout.styles";
+import PageHero from "../../components/PageHero";
 import { TeamBody, TeamCard, TeamGrid, TeamImage } from "./OurPeople.styles";
 
 export default function OurPeople() {
   return (
     <Main>
-      <HeroSection aria-label="Our People page header">
-        <Container>
-          <Eyebrow>Wingate Childcare Co-operative</Eyebrow>
-          <h1>{peoplePage.title}</h1>
-          <Intro>{peoplePage.intro}</Intro>
-        </Container>
-      </HeroSection>
+      <PageHero title={peoplePage.title} intro={peoplePage.intro} />
 
       <Section id="team" data-reveal="true" data-visible="false">
         <Container>

@@ -2,10 +2,9 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Enrolments from "../Enrolments";
-import { enrolmentsPage, siteContact } from "../../../content/siteContent";
 
 describe("Enrolments", () => {
-  it("renders the enrolments heading", () => {
+  it("renders the updated enrolments heading", () => {
     render(
       <MemoryRouter>
         <Enrolments />
@@ -13,33 +12,35 @@ describe("Enrolments", () => {
     );
 
     expect(
-      screen.getByRole("heading", { name: enrolmentsPage.title }),
+      screen.getByRole("heading", {
+        name: /begin your journey with wingate avenue children's co-operative/i,
+      }),
     ).toBeInTheDocument();
   });
 
-  it.each([/open family handbook/i, /add to waitlist/i, /book a tour/i])(
-    "renders action link: %s",
-    (label) => {
-      render(
-        <MemoryRouter>
-          <Enrolments />
-        </MemoryRouter>,
-      );
-
-      expect(screen.getByRole("link", { name: label })).toBeInTheDocument();
-    },
-  );
-
-  it("uses email link for book a tour", () => {
+  it("renders updated fee information", () => {
     render(
       <MemoryRouter>
         <Enrolments />
       </MemoryRouter>,
     );
 
-    expect(screen.getByRole("link", { name: /book a tour/i })).toHaveAttribute(
+    expect(screen.getByText(/daily fee: \$167\.70/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /child care subsidy \(ccs\)/i }),
+    ).toBeInTheDocument();
+  });
+
+  it("renders ACCS information link", () => {
+    render(
+      <MemoryRouter>
+        <Enrolments />
+      </MemoryRouter>,
+    );
+
+    expect(screen.getByRole("link", { name: /click here/i })).toHaveAttribute(
       "href",
-      `mailto:${siteContact.email}`,
+      "https://www.servicesaustralia.gov.au/how-to-apply-for-additional-child-care-subsidy?context=41866",
     );
   });
 });

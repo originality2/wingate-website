@@ -17,20 +17,19 @@ describe("Programs", () => {
     ).toBeInTheDocument();
   });
 
-  it.each([/pedagogy/i, /meals & nutrition/i])(
-    "renders program section heading: %s",
-    (heading) => {
-      render(
-        <MemoryRouter>
-          <Programs />
-        </MemoryRouter>,
-      );
+  it.each([
+    /our learning approach/i,
+    /expression, inquiry and environment/i,
+    /meals & nutrition/i,
+  ])("renders program section heading: %s", (heading) => {
+    render(
+      <MemoryRouter>
+        <Programs />
+      </MemoryRouter>,
+    );
 
-      expect(
-        screen.getByRole("heading", { name: heading }),
-      ).toBeInTheDocument();
-    },
-  );
+    expect(screen.getByRole("heading", { name: heading })).toBeInTheDocument();
+  });
 
   it("renders sample menu link", () => {
     render(

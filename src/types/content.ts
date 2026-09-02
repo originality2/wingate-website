@@ -1,8 +1,3 @@
-export type SectionLink = {
-  id: string;
-  label: string;
-};
-
 export type NavItem = {
   label: string;
   to: string;
@@ -25,7 +20,6 @@ export type SiteContact = {
 export type PageMeta = {
   title: string;
   intro: string;
-  sectionLinks: SectionLink[];
 };
 
 export type LocalGalleryImage = {
