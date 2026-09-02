@@ -15,11 +15,9 @@ const resources = `${cloudfrontImgBase}/resources.webp`;
 const many_people_drawing = `${cloudfrontImgBase}/many_people_drawing.webp`;
 const outdoor_play_area = `${cloudfrontImgBase}/outdoor_play_area.webp`;
 const tower_of_hanoi = `${cloudfrontImgBase}/tower_of_hanoi.webp`;
-import photo3 from "../../tmp-photos/photo-3.jpg";
-import photo4 from "../../tmp-photos/photo-4.jpg";
 import supportEducatorMau from "../assets/staff/Support-Educator-Mau.webp";
 import sproutsCoEducatorCourtney from "../assets/staff/Sprouts Co-educator Courtney .webp";
-import seedsLeadEducatorPricila from "../assets/staff/Seeds Lead Educator - Pricila .webp";
+import seedsLeadEducatorPriscilla from "../assets/staff/Seeds Lead Educator - Priscilla .webp";
 import sproutsLeadEducatorKenna from "../assets/staff/Sprouts - Lead Educator Kenna .webp";
 import supportEducatorJasmin from "../assets/staff/Support-Educator-Jasmin.webp";
 import blossomEarlyChildhoodTeacherView from "../assets/staff/Blossom Early Childhood Teacher - View .webp";
@@ -35,7 +33,7 @@ import stalksCoEducatorGayatri from "../assets/staff/Stalks-Co-educator-Gayatri.
 import seedlingsCoEducatorLambrini from "../assets/staff/Seedlings Co-Educator Lambrini .webp";
 import seedsCoEducatorSellam from "../assets/staff/Seeds Co-educator Sellam.webp";
 import educationalLeaderAdi from "../assets/staff/Educational Leader - Adi.webp";
-import supportEducatorNasteha from "../assets/staff/Support-Educator-Nasteha.webp";
+import blossomCoEducatorNasteho from "../assets/staff/Blossom Co-educator-Nasteho.webp";
 import fayCook from "../assets/staff/Fay -Cook.webp";
 import stalksEarlyChildhoodTeacherMiro from "../assets/staff/Stalks-Early-Childood-Teacher-Miro-.webp";
 import blossomEarlyChildhoodTeacherJules from "../assets/staff/Blossom Early Childhood Teacher Jules .webp";
@@ -55,6 +53,7 @@ import type {
   ProgramGroup,
   SiteContact,
   TeamMember,
+  TeamMemberGroup,
 } from "../types/content";
 
 export const navItems: NavItem[] = [
@@ -167,23 +166,30 @@ export const homePage: HomePageContent = {
 
 export const teamMembers: TeamMember[] = [
   {
-    name: "Jandan",
+    name: "Jandan Basaran",
     role: "Centre Director",
+    qualification: "Bachelor of Early Childhood (Honours)",
     bio: "",
     image: centreDirectorJandan,
   },
   {
-    name: "Adi",
+    name: "Aditya Panchhakshari",
     role: "Educational Leader",
+    qualification: "Master of Education (Early Childhood Specialty)",
     bio: "",
     image: educationalLeaderAdi,
   },
-  { name: "Christine", role: "Administrator", bio: "", image: adminChristine },
   {
-    name: "Pricila",
+    name: "Christine Mengato",
+    role: "Centre Administrator",
+    bio: "",
+    image: adminChristine,
+  },
+  {
+    name: "Priscilla",
     role: "Seeds Lead Educator",
     bio: "",
-    image: seedsLeadEducatorPricila,
+    image: seedsLeadEducatorPriscilla,
   },
   {
     name: "Rashika",
@@ -307,10 +313,10 @@ export const teamMembers: TeamMember[] = [
   },
   { name: "Mau", role: "Support Educator", bio: "", image: supportEducatorMau },
   {
-    name: "Nasteha",
-    role: "Support Educator",
+    name: "Nasteho",
+    role: "Blossom Co-educator",
     bio: "",
-    image: supportEducatorNasteha,
+    image: blossomCoEducatorNasteho,
   },
   {
     name: "Sara",
@@ -320,6 +326,56 @@ export const teamMembers: TeamMember[] = [
   },
   { name: "Einat", role: "Cook", bio: "", image: einatCook },
   { name: "Fay", role: "Cook", bio: "", image: fayCook },
+];
+
+const membersByName = (names: string[]) =>
+  names.map((name) => {
+    const member = teamMembers.find((teamMember) => teamMember.name === name);
+
+    if (!member) {
+      throw new Error(`Missing team member: ${name}`);
+    }
+
+    return member;
+  });
+
+export const teamMemberGroups: TeamMemberGroup[] = [
+  {
+    title: "Leadership",
+    members: membersByName([
+      "Jandan Basaran",
+      "Aditya Panchhakshari",
+      "Christine Mengato",
+    ]),
+  },
+  {
+    title: "Seeds",
+    members: membersByName(["Priscilla", "Sellam", "Rashika", "Tarryn"]),
+  },
+  {
+    title: "Seedlings",
+    members: membersByName(["Natalia", "Tania", "Lambrini", "Greta"]),
+  },
+  {
+    title: "Sprouts",
+    members: membersByName(["Kenna", "Rachel", "Antonia", "Ngoc", "Courtney"]),
+  },
+  {
+    title: "Stalks",
+    members: membersByName(["Miro", "Cody", "Gayatri"]),
+  },
+  {
+    title: "Blossoms",
+    members: membersByName(["View", "Jules", "Maus", "Nasteho"]),
+  },
+  {
+    title: "Support Staff",
+    members: membersByName(["Mau", "Sara", "Alessia", "Jasmin"]),
+  },
+  {
+    title: "Kitchen",
+    members: membersByName(["Einat", "Fay"]),
+  },
 ];
 
 export const galleryImages: LocalGalleryImage[] = [

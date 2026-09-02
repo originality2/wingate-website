@@ -1,4 +1,4 @@
-import { peoplePage, teamMembers } from "../../content/siteContent";
+import { peoplePage, teamMemberGroups } from "../../content/siteContent";
 import {
   Eyebrow,
   Main,
@@ -6,7 +6,14 @@ import {
   TextPanel,
 } from "../../styles/pageLayout.styles";
 import PageHero from "../../components/PageHero";
-import { TeamBody, TeamCard, TeamGrid, TeamImage } from "./OurPeople.styles";
+import {
+  TeamBody,
+  TeamCard,
+  TeamGrid,
+  TeamGroup,
+  TeamImage,
+  TeamQualification,
+} from "./OurPeople.styles";
 
 export default function OurPeople() {
   return (
@@ -41,26 +48,36 @@ export default function OurPeople() {
             values that have guided Wingate since 1975.
           </p>
 
-          <TeamGrid>
-            {teamMembers.map((member) => (
-              <TeamCard
-                key={`${member.name}-${member.role}`}
-                data-reveal="true"
-                data-visible="false"
-              >
-                <TeamImage
-                  src={member.image}
-                  alt={`${member.name} at Wingate Childcare`}
-                  loading="lazy"
-                />
-                <TeamBody>
-                  <h3>{member.name}</h3>
-                  <Eyebrow>{member.role}</Eyebrow>
-                  {member.bio && <p>{member.bio}</p>}
-                </TeamBody>
-              </TeamCard>
-            ))}
-          </TeamGrid>
+          {teamMemberGroups.map((group) => (
+            <TeamGroup key={group.title}>
+              <h2>{group.title}</h2>
+              <TeamGrid>
+                {group.members.map((member) => (
+                  <TeamCard
+                    key={`${group.title}-${member.name}-${member.role}`}
+                    data-reveal="true"
+                    data-visible="false"
+                  >
+                    <TeamImage
+                      src={member.image}
+                      alt={`${member.name} at Wingate Childcare`}
+                      loading="lazy"
+                    />
+                    <TeamBody>
+                      <h3>{member.name}</h3>
+                      <Eyebrow>{member.role}</Eyebrow>
+                      {member.qualification && (
+                        <TeamQualification>
+                          {member.qualification}
+                        </TeamQualification>
+                      )}
+                      {member.bio && <p>{member.bio}</p>}
+                    </TeamBody>
+                  </TeamCard>
+                ))}
+              </TeamGrid>
+            </TeamGroup>
+          ))}
         </TextPanel>
       </Section>
     </Main>

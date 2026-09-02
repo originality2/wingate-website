@@ -44,8 +44,14 @@ export type HomePageContent = {
 export type TeamMember = {
   name: string;
   role: string;
+  qualification?: string;
   bio: string;
   image: string;
+};
+
+export type TeamMemberGroup = {
+  title: string;
+  members: TeamMember[];
 };
 
 export type ProgramGroup = {

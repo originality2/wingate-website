@@ -15,6 +15,10 @@ export const TeamGrid = styled.div`
   }
 `;
 
+export const TeamGroup = styled.section`
+  margin-top: 2.5rem;
+`;
+
 export const TeamCard = styled.article`
   border-radius: 0;
   overflow: hidden;
@@ -32,4 +36,9 @@ export const TeamImage = styled.img`
 
 export const TeamBody = styled.div`
   padding: 1rem;
+`;
+
+export const TeamQualification = styled.p`
+  margin: 0.2rem 0 0;
+  font-size: 0.875rem;
 `;
