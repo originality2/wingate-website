@@ -1,9 +1,11 @@
-import { enrolmentsPage } from "../../content/siteContent";
+import { enrolmentsPage, galleryImages } from "../../content/siteContent";
 import {
   ContentGrid,
   Main,
   Section,
   TextPanel,
+  ImagePanel,
+  RoundedMedia,
 } from "../../styles/pageLayout.styles";
 import PageHero from "../../components/PageHero";
 
@@ -49,6 +51,13 @@ export default function Enrolments() {
               journey is important.
             </p>
           </TextPanel>
+          <ImagePanel>
+            <RoundedMedia
+              src={galleryImages[5].src}
+              alt={galleryImages[5].alt}
+              loading="lazy"
+            />
+          </ImagePanel>
         </ContentGrid>
       </Section>
 
@@ -65,18 +74,17 @@ export default function Enrolments() {
               as soon as possible.
             </p>
             <p>
-              No fees are charged for the closure period over Christmas/New
-              Year (usually two weeks). Full fees are payable at all other
-              times, including absence for sickness, public holidays or any
-              other reason.
+              No fees are charged for the closure period over Christmas/New Year
+              (usually two weeks). Full fees are payable at all other times,
+              including absence for sickness, public holidays or any other
+              reason.
             </p>
             <p>
               Your ongoing fee will be calculated according to your days of
-              enrolment plus any casual bookings you may access. Casual
-              bookings are charged at the same price as your daily fee. Any
-              out-of-pocket expenses will vary depending on families&apos;
-              access to Childcare subsidies, including Additional Childcare
-              Subsidy.
+              enrolment plus any casual bookings you may access. Casual bookings
+              are charged at the same price as your daily fee. Any out-of-pocket
+              expenses will vary depending on families&apos; access to Childcare
+              subsidies, including Additional Childcare Subsidy.
             </p>
             <p>
               As the Centre is open 11 hours a day, families&apos; CCS hours are
@@ -106,15 +114,21 @@ export default function Enrolments() {
 
       <Section data-reveal="true" data-visible="false">
         <ContentGrid>
+          <ImagePanel>
+            <RoundedMedia
+              src={galleryImages[7].src}
+              alt={galleryImages[7].alt}
+              loading="lazy"
+            />
+          </ImagePanel>
           <TextPanel>
             <h2>Child Care Subsidy (CCS)</h2>
             <p>
               Many families may be eligible to receive assistance through the
               Australian Government&apos;s Child Care Subsidy (CCS), which can
-              help reduce the cost of childcare fees. The amount of CCS a
-              family receives depends on individual circumstances, including
-              household income, activity levels, and the type of care being
-              accessed.
+              help reduce the cost of childcare fees. The amount of CCS a family
+              receives depends on individual circumstances, including household
+              income, activity levels, and the type of care being accessed.
             </p>
             <p>
               Families are encouraged to complete their CCS assessment through

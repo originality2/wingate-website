@@ -33,9 +33,9 @@ export const navItems: NavItem[] = [
   { label: "About", to: "/about" },
   { label: "Program", to: "/program" },
   { label: "Enrolments", to: "/enrolments" },
+  { label: "Child Safe Practice", to: "/child-safe-practice" },
   { label: "Our People", to: "/our-people" },
   { label: "Our Spaces", to: "/gallery" },
-  { label: "Parent Resources", to: "/parent-resources" },
 ];
 
 export const siteContact: SiteContact = {
@@ -66,6 +66,12 @@ export const enrolmentsPage: PageMeta = {
   title: "Enrolments",
   intro:
     "Families are encouraged to join the waitlist early. Offers are made throughout the year based on availability and Priority of Access.",
+};
+
+export const childSafePracticePage: PageMeta = {
+  title: "Child Safe Practice",
+  intro:
+    "Wingate Avenue Children's Co-operative is committed to a child-safe culture where every child feels safe, respected, heard, and empowered.",
 };
 
 export const peoplePage: PageMeta = {

@@ -1,9 +1,5 @@
-import {
-  Container,
-  Eyebrow,
-  HeroSection,
-  Intro,
-} from "../../styles/pageLayout.styles";
+import { Container, Eyebrow } from "../../styles/pageLayout.styles";
+import { HeroSection, Intro } from "./PageHero.styles";
 
 type PageHeroProps = {
   title: string;
