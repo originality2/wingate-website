@@ -24,6 +24,7 @@ export const HeroOverlay = styled.div`
   padding: clamp(1.2rem, 4vw, 3.5rem);
   max-width: 780px;
   color: #fff;
+  text-shadow: 0 2px 12px rgba(51, 42, 30, 0.96);
 `;
 
 export const Eyebrow = styled.p`
@@ -102,11 +103,7 @@ export const TileOverlay = styled.div`
   padding: 1.5rem;
   color: #fff;
   z-index: 2;
-  transition: background 0.35s ease;
-
-  ${Tile}:hover & {
-    background: linear-gradient(rgba(51, 42, 30, 0.22), rgba(51, 42, 30, 0.82));
-  }
+  text-shadow: 0 2px 12px rgba(51, 42, 30, 0.96);
 
   h2,
   p {

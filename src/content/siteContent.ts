@@ -130,14 +130,14 @@ export const homePage: HomePageContent = {
       title: "About",
       text: "History, philosophy, and how our co-operative is governed.",
       to: "/about",
-      image: tablePlaydoughSetting,
+      image: blockConstruction,
       alt: "Children and educators in a learning space",
     },
     {
       title: "Program",
       text: "Pedagogy, age groups, and meals across the day.",
       to: "/program",
-      image: classroomInterior,
+      image: farmersMarket,
       alt: "Program activities in an early learning room",
     },
     {
