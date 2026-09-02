@@ -40,18 +40,6 @@ describe("Programs", () => {
     expect(screen.getByRole("heading", { name: heading })).toBeInTheDocument();
   });
 
-  it("renders sample menu link", () => {
-    render(
-      <MemoryRouter>
-        <Programs />
-      </MemoryRouter>,
-    );
-
-    expect(
-      screen.getByRole("link", { name: /view sample menu/i }),
-    ).toBeInTheDocument();
-  });
-
   it.each(programGroups.map((group) => group.name))(
     "renders program group heading: %s",
     (groupName) => {

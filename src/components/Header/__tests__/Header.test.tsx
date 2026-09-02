@@ -15,22 +15,18 @@ describe("Header", () => {
     ).toBeInTheDocument();
   });
 
-  it.each([
-    "About",
-    "Program",
-    "Enrolments",
-    "Our People",
-    "Our Spaces",
-    "Parent Resources",
-  ])("renders navigation link: %s", (link) => {
-    render(
-      <MemoryRouter>
-        <Header />
-      </MemoryRouter>,
-    );
+  it.each(["About", "Program", "Enrolments", "Our People", "Our Spaces"])(
+    "renders navigation link: %s",
+    (link) => {
+      render(
+        <MemoryRouter>
+          <Header />
+        </MemoryRouter>,
+      );
 
-    expect(screen.getByRole("link", { name: link })).toBeInTheDocument();
-  });
+      expect(screen.getByRole("link", { name: link })).toBeInTheDocument();
+    },
+  );
 
   it("does not render the Enrol Now CTA", () => {
     render(

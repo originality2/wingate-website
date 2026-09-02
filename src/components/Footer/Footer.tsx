@@ -75,10 +75,6 @@ export default function Footer() {
         <BottomInner>
           <p>© {year} Wingate Childcare Co-operative.</p>
           <p>
-            <BottomLink as={Link} to="/parent-resources">
-              Parent Resources
-            </BottomLink>
-            {" · "}
             <BottomLink as={Link} to="/enrolments">
               Enrolments
             </BottomLink>

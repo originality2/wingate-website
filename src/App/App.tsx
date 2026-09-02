@@ -9,7 +9,6 @@ import Enrolments from "../pages/Enrolments";
 import ChildSafePractice from "../pages/ChildSafePractice";
 import OurPeople from "../pages/OurPeople";
 import GalleryPage from "../pages/GalleryPage";
-import ParentResources from "../pages/ParentResources";
 import {
   AppContainer,
   GlobalStyles,
@@ -94,7 +93,6 @@ function AppShell() {
           <Route path="/child-safe-practice" element={<ChildSafePractice />} />
           <Route path="/our-people" element={<OurPeople />} />
           <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/parent-resources" element={<ParentResources />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MainContent>

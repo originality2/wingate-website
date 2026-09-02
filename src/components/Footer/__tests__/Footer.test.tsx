@@ -75,16 +75,16 @@ describe("Footer", () => {
     ).toHaveAttribute("href", `mailto:${siteContact.email}`);
   });
 
-  it.each([
-    [/parent resources/i, 2],
-    [/enrolments/i, 2],
-  ])("renders utility links %s count %i", (label, count) => {
-    render(
-      <MemoryRouter>
-        <Footer />
-      </MemoryRouter>,
-    );
+  it.each([[/enrolments/i, 2]])(
+    "renders utility links %s count %i",
+    (label, count) => {
+      render(
+        <MemoryRouter>
+          <Footer />
+        </MemoryRouter>,
+      );
 
-    expect(screen.getAllByRole("link", { name: label })).toHaveLength(count);
-  });
+      expect(screen.getAllByRole("link", { name: label })).toHaveLength(count);
+    },
+  );
 });

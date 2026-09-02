@@ -59,13 +59,3 @@ export type ProgramGroup = {
   ages: string;
   summary: string;
 };
-
-export type ResourceLink = {
-  label: string;
-  href: string;
-};
-
-export type ParentResourceLinks = {
-  documents: ResourceLink[];
-  policies: ResourceLink[];
-};

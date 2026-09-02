@@ -11,7 +11,6 @@ const seedlings_empty_room = `${cloudfrontImgBase}/seedlings_empty_room.webp`;
 const seedlings_empty_room_2 = `${cloudfrontImgBase}/seedlings_empty_room_2.webp`;
 const child_gardening = `${cloudfrontImgBase}/child_gardening.webp`;
 const child_on_playground = `${cloudfrontImgBase}/child_on_playground.webp`;
-const resources = `${cloudfrontImgBase}/resources.webp`;
 const many_people_drawing = `${cloudfrontImgBase}/many_people_drawing.webp`;
 const outdoor_play_area = `${cloudfrontImgBase}/outdoor_play_area.webp`;
 const tower_of_hanoi = `${cloudfrontImgBase}/tower_of_hanoi.webp`;
@@ -49,7 +48,6 @@ import type {
   LocalGalleryImage,
   NavItem,
   PageMeta,
-  ParentResourceLinks,
   ProgramGroup,
   SiteContact,
   TeamMember,
@@ -64,7 +62,6 @@ export const navItems: NavItem[] = [
   { label: "Child Safe Practice", to: "/child-safe-practice" },
   { label: "Our People", to: "/our-people" },
   { label: "Our Spaces", to: "/gallery" },
-  { label: "Parent Resources", to: "/parent-resources" },
 ];
 
 export const siteContact: SiteContact = {
@@ -109,12 +106,6 @@ export const peoplePage: PageMeta = {
     "Our educators, leaders, and support team create inclusive, diverse partnerships with children and community.",
 };
 
-export const resourcesPage: PageMeta = {
-  title: "Parent Resources",
-  intro:
-    "Important family documents, policy links, and day-to-day information are grouped here for quick access.",
-};
-
 export const homePage: HomePageContent = {
   title: "Wingate Avenue Children's Co-Operative",
   subtitle:
@@ -154,13 +145,6 @@ export const homePage: HomePageContent = {
       to: "/gallery",
       image: child_on_playground,
       alt: "Gallery style view of childcare spaces",
-    },
-    {
-      title: "Parent Resources",
-      text: "Family handbook, policies, and useful links in one place.",
-      to: "/parent-resources",
-      image: resources,
-      alt: "Parent resources and service information",
     },
   ],
 };
@@ -498,38 +482,3 @@ export const kindergartenSupportFocusAreas = [
       "Through art, construction, clay, open-ended materials and imaginative play, children discover new ways to understand and express themselves.",
   },
 ];
-
-export const parentResourceLinks: ParentResourceLinks = {
-  documents: [
-    {
-      label: "Family Handbook",
-      href: "https://www.wingatechildcare.org/_files/ugd/ac9d19_e42ae39ee67e4bf98a8791f0417eb713.pdf",
-    },
-    {
-      label: "Enrolment Policy",
-      href: "https://www.wingatechildcare.org/_files/ugd/ac9d19_511ffe5cf6d043f3a25f6e079afc5a11.pdf",
-    },
-    {
-      label: "Priority of Access",
-      href: "https://www.wingatechildcare.org/_files/ugd/ccdf24_65e80b9fe38d44a2b3279e7123f89365.pdf",
-    },
-    {
-      label: "Kinder Program Info",
-      href: "https://www.wingatechildcare.org/_files/ugd/ac9d19_7214e7d7fc4a4bf295bd151ed3b6c32d.pdf",
-    },
-  ],
-  policies: [
-    {
-      label: "Fee Payment Policy",
-      href: "https://www.wingatechildcare.org/_files/ugd/ac9d19_26df6b5ab281490f99ff37dba5489a18.pdf",
-    },
-    {
-      label: "Child Care Subsidy - How to Claim",
-      href: "https://www.servicesaustralia.gov.au/individuals/services/centrelink/child-care-subsidy/how-claim",
-    },
-    {
-      label: "Additional Child Care Subsidy",
-      href: "https://www.servicesaustralia.gov.au/how-to-apply-for-additional-child-care-subsidy?context=41866",
-    },
-  ],
-};
