@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "images:staff": "node scripts/resize_staff_images.mjs"
+    "images:staff": "node scripts/resize_staff_images.mjs",
+    "images:photos": "node scripts/resize_photos.mjs"
   },
   "dependencies": {
     "@fluentui/react-components": "^9.74.3",

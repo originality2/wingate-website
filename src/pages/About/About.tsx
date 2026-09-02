@@ -1,4 +1,4 @@
-import { aboutPage, galleryImages } from "../../content/siteContent";
+import { aboutPage, pageImages } from "../../content/siteContent";
 import {
   Main,
   ContentGrid,
@@ -38,8 +38,8 @@ export default function About() {
           </TextPanel>
           <ImagePanel>
             <RoundedMedia
-              src={galleryImages[0].src}
-              alt={galleryImages[0].alt}
+              src={pageImages.aboutHistory}
+              alt="Early learning art room with child-sized furniture"
               loading="lazy"
             />
           </ImagePanel>
@@ -50,8 +50,8 @@ export default function About() {
         <ContentGrid>
           <ImagePanel>
             <RoundedMedia
-              src={galleryImages[3].src}
-              alt={galleryImages[3].alt}
+              src={pageImages.aboutPhilosophy}
+              alt="Children's playdough table with natural materials"
               loading="lazy"
             />
           </ImagePanel>

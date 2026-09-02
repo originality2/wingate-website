@@ -1,7 +1,4 @@
-import {
-  childSafePracticePage,
-  galleryImages,
-} from "../../content/siteContent";
+import { childSafePracticePage, pageImages } from "../../content/siteContent";
 import {
   ContentGrid,
   Main,
@@ -42,8 +39,8 @@ export default function ChildSafePractice() {
           </TextPanel>
           <ImagePanel>
             <RoundedMedia
-              src={galleryImages[1].src}
-              alt={galleryImages[1].alt}
+              src={pageImages.childSafeCommitment}
+              alt="Bright early learning room with sensory materials and child-sized tables"
               loading="lazy"
             />
           </ImagePanel>
@@ -85,8 +82,8 @@ export default function ChildSafePractice() {
         <ContentGrid>
           <ImagePanel>
             <RoundedMedia
-              src={galleryImages[6].src}
-              alt={galleryImages[2].alt}
+              src={pageImages.childSafetyAdvocate}
+              alt="Sensory play materials with reflective discs and natural objects"
               loading="lazy"
             />
           </ImagePanel>

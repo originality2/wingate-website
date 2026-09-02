@@ -6,9 +6,9 @@ export const Main = styled.main`
   background: #f5f1ed;
 `;
 
-export const Hero = styled.section`
+export const Hero = styled.section<{ $backgroundImage: string }>`
   min-height: 80vh;
-  background-image: url("https://d2kvbtvlrloztz.cloudfront.net/img/child_with_bucket.webp");
+  background-image: url(${({ $backgroundImage }) => $backgroundImage});
   background-size: cover;
   background-position: center;
   display: flex;

@@ -1,10 +1,10 @@
 import {
-  galleryImages,
-  toddlerClassroomGroups,
   kindergartenClassroomGroups,
-  programPage,
-  toddlerSupportFocusAreas,
   kindergartenSupportFocusAreas,
+  pageImages,
+  programPage,
+  toddlerClassroomGroups,
+  toddlerSupportFocusAreas,
 } from "../../content/siteContent";
 import {
   CardGrid,
@@ -44,8 +44,8 @@ export default function Programs() {
           </TextPanel>
           <ImagePanel>
             <RoundedMedia
-              src={galleryImages[2].src}
-              alt={galleryImages[2].alt}
+              src={pageImages.programLearningApproach}
+              alt="Caterpillar investigation table with drawing and painting materials"
               loading="lazy"
             />
           </ImagePanel>
@@ -60,8 +60,8 @@ export default function Programs() {
         <ContentGrid>
           <ImagePanel>
             <RoundedMedia
-              src={galleryImages[3].src}
-              alt={galleryImages[3].alt}
+              src={pageImages.programExpressionAndInquiry}
+              alt="Language learning activity with pictures and letters"
               loading="lazy"
             />
           </ImagePanel>
@@ -232,8 +232,8 @@ export default function Programs() {
         <ContentGrid>
           <ImagePanel>
             <RoundedMedia
-              src={galleryImages[4].src}
-              alt={galleryImages[4].alt}
+              src={pageImages.programMeals}
+              alt="Imaginative play at a farmers market"
               loading="lazy"
             />
           </ImagePanel>

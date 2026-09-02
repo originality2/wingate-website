@@ -1,4 +1,4 @@
-import { enrolmentsPage, galleryImages } from "../../content/siteContent";
+import { enrolmentsPage, pageImages } from "../../content/siteContent";
 import {
   ContentGrid,
   Main,
@@ -53,8 +53,8 @@ export default function Enrolments() {
           </TextPanel>
           <ImagePanel>
             <RoundedMedia
-              src={galleryImages[5].src}
-              alt={galleryImages[5].alt}
+              src={pageImages.enrolmentsJourney}
+              alt="Outdoor garden and play area with a greenhouse"
               loading="lazy"
             />
           </ImagePanel>
@@ -116,8 +116,8 @@ export default function Enrolments() {
         <ContentGrid>
           <ImagePanel>
             <RoundedMedia
-              src={galleryImages[7].src}
-              alt={galleryImages[7].alt}
+              src={pageImages.enrolmentsSubsidy}
+              alt="Light table with colourful translucent learning materials"
               loading="lazy"
             />
           </ImagePanel>

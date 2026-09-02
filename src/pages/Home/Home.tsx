@@ -18,7 +18,7 @@ import { PrimaryButtonLink } from "../../styles/pageLayout.styles";
 export default function Home() {
   return (
     <Main>
-      <Hero>
+      <Hero $backgroundImage={homePage.heroImage}>
         <HeroOverlay>
           <Eyebrow>Ascot Vale</Eyebrow>
           <HeroTitle>{homePage.title}</HeroTitle>

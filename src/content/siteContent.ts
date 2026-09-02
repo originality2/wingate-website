@@ -1,19 +1,21 @@
-const cloudfrontImgBase = "https://d2kvbtvlrloztz.cloudfront.net/img";
-
-const child_with_bucket = `${cloudfrontImgBase}/child_with_bucket.webp`;
-const people_drawings = `${cloudfrontImgBase}/people_drawings.webp`;
-const child_with_sand = `${cloudfrontImgBase}/child_with_sand.webp`;
-const farmers_market = `${cloudfrontImgBase}/farmers_market.webp`;
-const play_corner = `${cloudfrontImgBase}/play_corner.webp`;
-const table_playdough_setting = `${cloudfrontImgBase}/table_playdough_setting.webp`;
-const seeds_empty_room = `${cloudfrontImgBase}/seeds_empty_room.webp`;
-const seedlings_empty_room = `${cloudfrontImgBase}/seedlings_empty_room.webp`;
-const seedlings_empty_room_2 = `${cloudfrontImgBase}/seedlings_empty_room_2.webp`;
-const child_gardening = `${cloudfrontImgBase}/child_gardening.webp`;
-const child_on_playground = `${cloudfrontImgBase}/child_on_playground.webp`;
-const many_people_drawing = `${cloudfrontImgBase}/many_people_drawing.webp`;
-const outdoor_play_area = `${cloudfrontImgBase}/outdoor_play_area.webp`;
-const tower_of_hanoi = `${cloudfrontImgBase}/tower_of_hanoi.webp`;
+import childWateringPlants from "../assets/photos/260615 Wingate - 0704.webp";
+import classroomArtDisplay from "../assets/photos/260615 Wingate - 0069.webp";
+import drawingTable from "../assets/photos/260615 Wingate - 0023.webp";
+import playdoughTable from "../assets/photos/260615 Wingate - 0034.webp";
+import languageActivity from "../assets/photos/260615 Wingate - 0067.webp";
+import lightTable from "../assets/photos/260615 Wingate - 0092.webp";
+import caterpillarProject from "../assets/photos/260615 Wingate - 0191.webp";
+import sensoryMaterials from "../assets/photos/260615 Wingate - 0275.webp";
+import farmersMarket from "../assets/photos/260615 Wingate - 0559.webp";
+import blockConstruction from "../assets/photos/260615 Wingate - 0154.webp";
+import tablePlaydoughSetting from "../assets/photos/260615 Wingate - 0033.webp";
+import classroomActivityArea from "../assets/photos/260615 Wingate - 0205.webp";
+import classroomInterior from "../assets/photos/260615 Wingate - 0039.webp";
+import artRoom from "../assets/photos/260615 Wingate - 0025.webp";
+import childGardening from "../assets/photos/260615 Wingate - 0684.webp";
+import childOnPlayground from "../assets/photos/260615 Wingate - 0768.webp";
+import gardenAndGreenhouse from "../assets/photos/260615 Wingate - 0876.webp";
+import constructionMaterials from "../assets/photos/260615 Wingate - 0149.webp";
 import supportEducatorMau from "../assets/staff/Support-Educator-Mau.webp";
 import sproutsCoEducatorCourtney from "../assets/staff/Sprouts Co-educator Courtney .webp";
 import seedsLeadEducatorPriscilla from "../assets/staff/Seeds Lead Educator - Priscilla .webp";
@@ -53,6 +55,18 @@ import type {
   TeamMember,
   TeamMemberGroup,
 } from "../types/content";
+
+export const pageImages = {
+  aboutHistory: artRoom,
+  aboutPhilosophy: playdoughTable,
+  childSafeCommitment: classroomActivityArea,
+  childSafetyAdvocate: sensoryMaterials,
+  enrolmentsJourney: gardenAndGreenhouse,
+  enrolmentsSubsidy: lightTable,
+  programLearningApproach: caterpillarProject,
+  programExpressionAndInquiry: languageActivity,
+  programMeals: farmersMarket,
+};
 
 export const navItems: NavItem[] = [
   { label: "Home", to: "/" },
@@ -110,47 +124,48 @@ export const homePage: HomePageContent = {
   title: "Wingate Avenue Children's Co-Operative",
   subtitle:
     "High-quality, not-for-profit early learning in Ascot Vale with a strong community focus and welcoming, play-based environments.",
+  heroImage: childWateringPlants,
   tiles: [
     {
       title: "About",
       text: "History, philosophy, and how our co-operative is governed.",
       to: "/about",
-      image: table_playdough_setting,
+      image: tablePlaydoughSetting,
       alt: "Children and educators in a learning space",
     },
     {
       title: "Program",
       text: "Pedagogy, age groups, and meals across the day.",
       to: "/program",
-      image: seedlings_empty_room,
+      image: classroomInterior,
       alt: "Program activities in an early learning room",
     },
     {
       title: "Enrolments",
       text: "Waitlist, fees, tours, and orientation information.",
       to: "/enrolments",
-      image: child_gardening,
+      image: childGardening,
       alt: "Welcoming childcare environment for families",
     },
     {
       title: "Child Safe Practice",
       text: "Wingate Avenue Children's Co-operative is committed to a child-safe culture where every child feels safe, respected, heard, and empowered.",
       to: "/child-safe-practice",
-      image: child_with_sand,
+      image: childOnPlayground,
       alt: "Welcoming childcare environment for families",
     },
     {
       title: "Our People",
       text: "Meet our leadership and educator team.",
       to: "/our-people",
-      image: many_people_drawing,
+      image: classroomArtDisplay,
       alt: "Drawing of children and educators in a learning space",
     },
     {
       title: "Our Spaces",
       text: "A visual look at our spaces, routines, and learning moments.",
       to: "/gallery",
-      image: child_on_playground,
+      image: drawingTable,
       alt: "Gallery style view of childcare spaces",
     },
   ],
@@ -372,24 +387,67 @@ export const teamMemberGroups: TeamMemberGroup[] = [
 
 export const galleryImages: LocalGalleryImage[] = [
   {
-    src: seedlings_empty_room_2,
+    src: drawingTable,
+    alt: "Drawing table with clipboards, pencils and colourful art materials",
+  },
+  {
+    src: artRoom,
     alt: "Room with toys in baskets, child-sized furniture and book corner for early learning",
   },
   {
-    src: play_corner,
+    src: tablePlaydoughSetting,
+    alt: "Playdough invitation in an early learning room",
+  },
+  {
+    src: playdoughTable,
+    alt: "Children's playdough table with natural materials",
+  },
+  {
+    src: classroomInterior,
+    alt: "Open early learning room with tables, chairs and activity areas",
+  },
+  {
+    src: languageActivity,
+    alt: "Language learning activity with pictures and letters",
+  },
+  {
+    src: classroomArtDisplay,
+    alt: "Children's artwork displayed throughout a learning space",
+  },
+  {
+    src: lightTable,
+    alt: "Light table with colourful translucent learning materials",
+  },
+  {
+    src: constructionMaterials,
+    alt: "Construction materials arranged for play-based learning",
+  },
+  {
+    src: blockConstruction,
     alt: "Creative play setup in an early learning environment",
   },
-  { src: table_playdough_setting, alt: "Indoor sensory play with playdough" },
-  { src: child_on_playground, alt: "Our outdoor playground area" },
-  { src: farmers_market, alt: "Imaginative play at a farmers market" },
   {
-    src: seeds_empty_room,
-    alt: "Room for our seeds with cots, child-sized furniture and play areas",
+    src: caterpillarProject,
+    alt: "Caterpillar investigation table with drawing and painting materials",
   },
-  { src: tower_of_hanoi, alt: "Warm and inviting learning spaces" },
   {
-    src: outdoor_play_area,
-    alt: "Outdoor play area with various equipment for children",
+    src: classroomActivityArea,
+    alt: "Bright learning space with sensory materials and child-sized tables",
+  },
+  {
+    src: sensoryMaterials,
+    alt: "Sensory play materials with reflective discs and natural objects",
+  },
+  { src: farmersMarket, alt: "Imaginative play at a farmers market" },
+  { src: childGardening, alt: "Child exploring plants in the garden" },
+  {
+    src: childWateringPlants,
+    alt: "Child watering plants in the outdoor garden",
+  },
+  { src: childOnPlayground, alt: "Our outdoor playground area" },
+  {
+    src: gardenAndGreenhouse,
+    alt: "Outdoor garden and play area with a greenhouse",
   },
 ];
 

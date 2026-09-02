@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import About from "../About";
-import { aboutPage, galleryImages } from "../../../content/siteContent";
+import { aboutPage } from "../../../content/siteContent";
 
 describe("About", () => {
   it("renders the about heading", () => {
@@ -23,12 +23,12 @@ describe("About", () => {
     },
   );
 
-  it.each([galleryImages[0].alt, galleryImages[3].alt])(
-    "renders section image alt text: %s",
-    (altText) => {
-      render(<About />);
+  it.each([
+    "Early learning art room with child-sized furniture",
+    "Children's playdough table with natural materials",
+  ])("renders section image alt text: %s", (altText) => {
+    render(<About />);
 
-      expect(screen.getByAltText(altText)).toBeInTheDocument();
-    },
-  );
+    expect(screen.getByAltText(altText)).toBeInTheDocument();
+  });
 });

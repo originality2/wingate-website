@@ -38,6 +38,7 @@ export type HomeTile = {
 export type HomePageContent = {
   title: string;
   subtitle: string;
+  heroImage: string;
   tiles: HomeTile[];
 };
 
