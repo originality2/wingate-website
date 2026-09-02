@@ -187,7 +187,9 @@ export const NotFoundInner = styled.div`
   gap: 1rem;
 `;
 
-export const NotFoundEmoji = styled.span``;
+export const NotFoundEmoji = styled.span`
+  font-size: 3rem;
+`;
 
 export const NotFoundTitle = styled.h1`
   color: var(--color-text);

@@ -25,11 +25,9 @@ function NotFound() {
   return (
     <NotFoundMain>
       <NotFoundInner>
-        <NotFoundEmoji aria-hidden="true">🔍</NotFoundEmoji>
+        <NotFoundEmoji aria-hidden="true">🤷‍♀️</NotFoundEmoji>
         <NotFoundTitle>Page Not Found</NotFoundTitle>
-        <NotFoundText>
-          Oops! We couldn&apos;t find the page you&apos;re looking for.
-        </NotFoundText>
+        <NotFoundText>Nothing to see here... Unless 👀</NotFoundText>
         <PrimaryLinkButton href="/">Go Back Home</PrimaryLinkButton>
       </NotFoundInner>
     </NotFoundMain>
