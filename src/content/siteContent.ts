@@ -64,6 +64,7 @@ export const navItems: NavItem[] = [
   { label: "Child Safe Practice", to: "/child-safe-practice" },
   { label: "Our People", to: "/our-people" },
   { label: "Our Spaces", to: "/gallery" },
+  { label: "Parent Resources", to: "/parent-resources" },
 ];
 
 export const siteContact: SiteContact = {

@@ -12,6 +12,7 @@ import {
   Eyebrow,
   ImagePanel,
   Main,
+  PrimaryButtonLink,
   Section,
   SoftCard,
   TextPanel,
@@ -248,9 +249,9 @@ export default function Programs() {
               Wingate also supplies nappies, wipes, sunscreen, and
               children&apos;s bedding as part of the daily program.
             </p>
-            {/* <PrimaryButtonLink to="/parent-resources">
+            <PrimaryButtonLink to="/parent-resources">
               View Sample Menu
-            </PrimaryButtonLink> */}
+            </PrimaryButtonLink>
           </TextPanel>
         </ContentGrid>
       </Section>

@@ -8,7 +8,7 @@ describe("GalleryPage", () => {
     render(<GalleryPage />);
 
     expect(
-      screen.getByRole("heading", { name: /gallery/i }),
+      screen.getByRole("heading", { name: /our spaces/i }),
     ).toBeInTheDocument();
   });
 

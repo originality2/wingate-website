@@ -20,7 +20,7 @@ describe("Header", () => {
     "Program",
     "Enrolments",
     "Our People",
-    "Gallery",
+    "Our Spaces",
     "Parent Resources",
   ])("renders navigation link: %s", (link) => {
     render(

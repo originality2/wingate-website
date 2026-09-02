@@ -2,7 +2,16 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Programs from "../Programs";
-import { programGroups, programPage } from "../../../content/siteContent";
+import {
+  toddlerClassroomGroups,
+  kindergartenClassroomGroups,
+  programPage,
+} from "../../../content/siteContent";
+
+const programGroups = [
+  ...toddlerClassroomGroups,
+  ...kindergartenClassroomGroups,
+];
 
 describe("Programs", () => {
   it("renders page heading", () => {

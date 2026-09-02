@@ -100,22 +100,3 @@ export async function fetchEntries(
     return [];
   }
 }
-
-/**
- * Fetch a single entry by its Contentful entry ID.
- * Returns null when CMS is not configured or the entry is not found.
- */
-export async function fetchEntry(entryId: string): Promise<unknown | null> {
-  const client = getClient();
-  if (!client) return null;
-  try {
-    const entry = await client.getEntry(entryId);
-    return normalizeContentfulValue(entry);
-  } catch (err) {
-    console.warn(
-      `Contentful fetch failed for entry "${entryId}":`,
-      getErrorMessage(err),
-    );
-    return null;
-  }
-}
