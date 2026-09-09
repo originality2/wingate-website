@@ -178,6 +178,10 @@ export const CardGrid = styled.div<{ $twoCol?: boolean }>`
   gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
+  h3 {
+    font-family: var(--font-body);
+  }
+
   @media (max-width: ${layoutBreakpoints.tablet}) {
     grid-template-columns: 1fr 1fr;
   }
