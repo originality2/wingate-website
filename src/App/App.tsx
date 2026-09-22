@@ -91,6 +91,7 @@ function AppShell() {
           <Route path="/child-safe-practice" element={<ChildSafePractice />} />
           <Route path="/our-people" element={<OurPeople />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MainContent>
