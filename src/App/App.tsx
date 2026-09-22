@@ -40,19 +40,9 @@ function NotFound() {
   );
 }
 
-function getBasename() {
-  const pathname = window.location.pathname;
-
-  if (pathname.startsWith("/wingate-website/")) {
-    return "/wingate-website";
-  }
-
-  return "/";
-}
-
 export default function App() {
   return (
-    <BrowserRouter basename={getBasename()}>
+    <BrowserRouter>
       <GlobalStyles />
       <AppShell />
     </BrowserRouter>
