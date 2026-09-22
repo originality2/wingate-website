@@ -1,4 +1,5 @@
 {
+  "homepage": "https://wingatechildcare.org",
   "name": "wingate-childcare-website",
   "private": true,
   "version": "1.0.0",
@@ -12,7 +13,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "images:staff": "node scripts/resize_staff_images.mjs",
-    "images:photos": "node scripts/resize_photos.mjs"
+    "images:photos": "node scripts/resize_photos.mjs",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fluentui/react-components": "^9.74.3",
@@ -20,6 +23,7 @@
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "contentful": "^11.10.6",
+    "gh-pages": "^6.3.0",
     "jsdom": "^28.1.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
