@@ -1,11 +1,5 @@
 import { useEffect } from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Home from "../pages/Home";
@@ -42,28 +36,15 @@ function NotFound() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <GlobalStyles />
       <AppShell />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
 function AppShell() {
   const location = useLocation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const redirectTarget = new URLSearchParams(window.location.search).get(
-      "redirect",
-    );
-
-    if (!redirectTarget || location.pathname !== "/") {
-      return;
-    }
-
-    navigate(redirectTarget, { replace: true });
-  }, [location.pathname, navigate]);
 
   useEffect(() => {
     if (!import.meta.env.DEV) {
