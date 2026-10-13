@@ -3,7 +3,6 @@ import classroomArtDisplay from "../assets/photos/260615 Wingate - 0069.webp";
 import drawingTable from "../assets/photos/260615 Wingate - 0023.webp";
 import playdoughTable from "../assets/photos/260615 Wingate - 0034.webp";
 import languageActivity from "../assets/photos/260615 Wingate - 0067.webp";
-import lightTable from "../assets/photos/260615 Wingate - 0092.webp";
 import caterpillarProject from "../assets/photos/260615 Wingate - 0191.webp";
 import sensoryMaterials from "../assets/photos/260615 Wingate - 0275.webp";
 import farmersMarket from "../assets/photos/260615 Wingate - 0559.webp";
@@ -62,7 +61,7 @@ export const pageImages = {
   childSafeCommitment: classroomActivityArea,
   childSafetyAdvocate: sensoryMaterials,
   enrolmentsJourney: gardenAndGreenhouse,
-  enrolmentsSubsidy: lightTable,
+  enrolmentsSubsidy: childGardening,
   programLearningApproach: caterpillarProject,
   programExpressionAndInquiry: languageActivity,
   programMeals: farmersMarket,
@@ -413,10 +412,6 @@ export const galleryImages: LocalGalleryImage[] = [
   {
     src: classroomArtDisplay,
     alt: "Children's artwork displayed throughout a learning space",
-  },
-  {
-    src: lightTable,
-    alt: "Light table with colourful translucent learning materials",
   },
   {
     src: constructionMaterials,
