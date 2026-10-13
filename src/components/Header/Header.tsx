@@ -9,7 +9,6 @@ import {
   LogoIconImage,
   LogoImage,
   LogoLink,
-  MobileSpacer,
   Subnav,
   SubnavContainer,
   SubnavLink,
@@ -72,8 +71,6 @@ export default function Header() {
         </LogoLink>
 
         <HeaderNavigation menuOpen={menuOpen} onCloseMenu={closeMenu} />
-
-        <MobileSpacer aria-hidden="true" />
       </HeaderInner>
     </HeaderRoot>
   );

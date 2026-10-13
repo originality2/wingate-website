@@ -36,7 +36,7 @@ export const HeaderInner = styled.div`
 
   @media (max-width: ${layoutBreakpoints.large}) {
     display: grid;
-    grid-template-columns: 36px 1fr 36px;
+    grid-template-columns: 36px minmax(0, 1fr) 36px;
     align-items: center;
     gap: 0.75rem;
     min-height: 68px;
@@ -126,17 +126,6 @@ export const LogoIconImage = styled.img`
 
   @media (max-width: ${layoutBreakpoints.large}) {
     display: block;
-  }
-`;
-
-export const MobileSpacer = styled.span`
-  display: none;
-
-  @media (max-width: ${layoutBreakpoints.large}) {
-    display: block;
-    width: 36px;
-    height: 36px;
-    grid-column: 3;
   }
 `;
 

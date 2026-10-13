@@ -1,4 +1,5 @@
 import { navItems } from "../../content/siteContent";
+import { PrimaryButtonLink } from "../../styles/pageLayout.styles";
 import {
   MainNavLink,
   NavCloseButton,
@@ -46,6 +47,13 @@ export default function HeaderNavigation({
             </NavItem>
           ))}
         </NavList>
+        <PrimaryButtonLink
+          to="https://prodadmin.myxplor.com/enrollment/index/dllrYUJ1THpWSGlCT2luRVlIM0NqZz09"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Enrol now
+        </PrimaryButtonLink>
       </Navigation>
     </>
   );

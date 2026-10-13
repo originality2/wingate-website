@@ -28,12 +28,15 @@ describe("Header", () => {
     },
   );
 
-  it("does not render the Enrol Now CTA", () => {
+  it("renders the Enrol Now CTA with the enrollment link", () => {
     render(
       <MemoryRouter>
         <Header />
       </MemoryRouter>,
     );
-    expect(screen.queryByRole("link", { name: /enrol now/i })).toBeNull();
+    expect(screen.getByRole("link", { name: /enrol now/i })).toHaveAttribute(
+      "href",
+      "https://prodadmin.myxplor.com/enrollment/index/dllrYUJ1THpWSGlCT2luRVlIM0NqZz09",
+    );
   });
 });
