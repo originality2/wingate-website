@@ -9,6 +9,10 @@ export const Navigation = styled.nav<{ $open: boolean }>`
   flex: 1;
   justify-content: flex-end;
 
+  > a:last-child {
+    margin-top: 0;
+  }
+
   @media (max-width: ${layoutBreakpoints.large}) {
     display: flex;
     position: fixed;
